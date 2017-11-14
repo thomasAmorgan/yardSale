@@ -10,12 +10,11 @@
 
 	<div>
 		<h1>Yardsale</h1>
-                <p>did this work</p>
 
 		<p>Enter Login Info</p>
 
-        	<form action="functions/loginQuery.php" method="post">
-        		<label for="userName">Username: </label>
+      <form action="functions/loginQuery.php" method="post">
+      <label for="userName">Username: </label>
 			<input type="text" name="userName" id="userName" required>
 			<br>
 			<label for="userPassword">Password: </label>

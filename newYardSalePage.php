@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <title>Yardsale</title>
 </head>
-  
+
 <body>
-    
+
 	<h1>Create a Yardsale</h1>
 
 	<div>
@@ -28,19 +28,19 @@
 			<select id="days" name="yardSaleDay"> </select>
 			<label for="years">Year: </label>
 			<select id="years" name="yardSaleYear"> </select>
-			
+
 			<br>
 			<label for="description">Description: </label>
-			<textarea id="description"></textarea>
-			
-	
+			<textarea id="description" name="yardSaleDescription"></textarea>
+
+
 			<br>
 			<br>
 			<button type="submit" formmethod="post" name="button">Create</button>
 		</form>
 
 		<hr>
-		<a href='/yardSale/loginPage.php'>Logout</a> 
+		<a href='/yardSale/loginPage.php'>Logout</a>
 	</div>
 
 </body>
@@ -52,14 +52,14 @@
 		var monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 		var months = document.getElementById("months");
-		
+
 		for (var i = 0; i < monthArray.length; i++) {
 			var opt = document.createElement("option");
 			opt.value = monthArray[i];
 			opt.innerHTML = monthArray[i];
 			months.appendChild(opt);
 		}
-	
+
 		var days = document.getElementById("days");
 
 		for (var i = 1; i <= 31; i++) {
@@ -70,7 +70,7 @@
                 }
 
 		var year = document.getElementById("years");
-		
+
 		for (var i = 2017; i <= 2025; i++) {
                         var opt = document.createElement("option");
                         opt.value = i;
