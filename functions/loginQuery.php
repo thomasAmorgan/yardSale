@@ -26,10 +26,10 @@ if(empty($_POST['userName'])) {
 	echo "<hr>";
 	echo "<a href='/yardSale/loginPage.php'>Login</a>";
 }
-	
+
 else if(empty($_POST['userPassword'])) {
-        echo "Error: Missing Password.";
-        echo "<hr>";
+	echo "Error: Missing Password.";
+  echo "<hr>";
 	echo "<a href='/yardSale/loginPage.php'>Login</a>";
 }
 
@@ -45,7 +45,7 @@ else {
                 echo "Error: ". $mysqli->connect_error . "\n";
                 exit;
         }
-	
+
         else {
 
                 $loginQuery = "SELECT userID
@@ -64,13 +64,13 @@ else {
                         echo "<a href='/yardSale/registerPage.php'>Register</a>";
                 }
 
-                else {  
+                else {
                         echo "You did it! ;)";
-			header("Location: /yardSale/newYardSalePage.php");
+			header("Location: /yardSale/homePage.php");
                 	exit;
 		}
         }
-}	
+}
 
 
 ?>
