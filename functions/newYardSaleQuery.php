@@ -13,7 +13,13 @@ $yardSaleDay = $_POST['yardSaleDay'];
 $yardSaleYear = $_POST['yardSaleYear'];
 $yardSaleDescription = $_POST['yardSaleDescription'];
 
+echo $yardSaleMonth;
+echo $yardSaleDay;
+echo $yardSaleYear;
+
 $yardSaleDate = $yardSaleMonth + $yardSaleDay + $yardSaleYear;
+
+echo $yardSaleDate;
 
 if ($mysqli->connect_errno) {
         echo "Could not connect to database \n";
@@ -34,7 +40,8 @@ else {
 
   else {
     echo "you did it?";
-    header("Location: /yardSale/homePageLogin.php");
+    echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
+    // header("Location: /yardSale/homePageLogin.php");
     exit;
   }
 }
