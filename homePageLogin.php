@@ -75,7 +75,7 @@
           exit;
         }
 
-        echo $queryResult;
+        // echo $queryResult;
 
         else {
           if ($queryResult->num_rows > 0) {
