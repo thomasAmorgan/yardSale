@@ -54,7 +54,7 @@
           else {
             if ($queryResult->num_rows > 0) {
               while ($row = $queryResult->fetch_assoc()) {
-                echo "<br> YardSale: " . $row["yardSaleID"] . "<br>" .
+                echo "<br> <h3>YardSale: " . $row["yardSaleID"] . "</h3><br>" .
                      " Name: " . $row["yardSaleName"] . "<br>";
               }
             }
