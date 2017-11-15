@@ -15,10 +15,19 @@
 
     <hr>
 
-    <label for="searchBar">Search: </label>
-    <input type="text" name="searchBar" id="searchBar">
-    <select name="searchOptions" id="searchOptions"></select>
-    <button type="button" name="searchButton"></button>
+    <?php
+      $searchString = $_POST["searchBar"];
+      $searchOption = $_POST["searchOptions"];
+    ?>
+      <form class="" action="<?php echo $PHP_SELF;?>" method="post">
+        <label for="searchBar">Search: </label>
+        <input type="text" name="searchBar" id="searchBar">
+        <select name="searchOptions" id="searchOptions"></select>
+        <button type="submit" formmethod="post">Search</button>
+      </form>
+    <?
+      echo $searchString . " " . $searchOption;
+    ?>
 
     <div class="">
       <?php
