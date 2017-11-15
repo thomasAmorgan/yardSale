@@ -26,48 +26,52 @@
       $searchOption = $_POST["searchOptions"];
      ?>
 
-      <form class="" action="<?php echo $PHP_SELF;?>" method="post">
-        <label for="searchBar">Search: </label>
-        <input type="text" name="searchBar" id="searchBar">
-        <select name="searchOptions" id="searchOptions"></select>
-        <button type="submit" formmethod="post">Search</button>
-      </form>
-      
-    <?php
+     <div class="">
+       <form class="" action="<?php echo $PHP_SELF;?>" method="post">
+         <label for="searchBar">Search: </label>
+         <input type="text" name="searchBar" id="searchBar">
+         <select name="searchOptions" id="searchOptions"></select>
+         <button type="submit" formmethod="post">Search</button>
+       </form>
+     </div>
 
-      echo $searchString . " " . $searchOption;
+    <?php
+      if (empty($_POST["searchBar"])) {
+        if ($mysqli->connect_errno) {
+          echo "Could not connect to database \n";
+          echo "Error: ". $mysqli->connect_error . "\n";
+          exit;
+        }
+
+        else {
+          $allYardSales = "SELECT * FROM YardSales";
+
+          if (!$queryResult  = $mysqli->query($allYardSales)) {
+            echo "Query failed, loser." . $mysqli->error . "\n";
+            exit;
+          }
+
+          else {
+            if ($queryResult->num_rows > 0) {
+              while ($row = $queryResult->fetch_assoc()) {
+                echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
+              }
+            }
+
+            else {
+              echo "There are no yardsales";
+            }
+          }
+        }
+      }
+
     ?>
 
     <div class="">
       <?php
 
 
-      if ($mysqli->connect_errno) {
-        echo "Could not connect to database \n";
-        echo "Error: ". $mysqli->connect_error . "\n";
-        exit;
-      }
 
-      else {
-        $allYardSales = "SELECT * FROM YardSales";
-
-        if (!$queryResult  = $mysqli->query($allYardSales)) {
-          echo "Query failed, loser." . $mysqli->error . "\n";
-          exit;
-        }
-
-        else {
-          if ($queryResult->num_rows > 0) {
-            while ($row = $queryResult->fetch_assoc()) {
-              echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
-            }
-          }
-
-          else {
-            echo "There are no yardsales";
-          }
-        }
-      }
       ?>
     </div>
   </body>
