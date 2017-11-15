@@ -25,7 +25,7 @@
         <select name="searchOptions" id="searchOptions"></select>
         <button type="submit" formmethod="post">Search</button>
       </form>
-    <?
+    <?php
       echo $searchString . " " . $searchOption;
     ?>
 
