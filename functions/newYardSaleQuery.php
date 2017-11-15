@@ -13,7 +13,46 @@ $yardSaleDay = $_POST['yardSaleDay'];
 $yardSaleYear = $_POST['yardSaleYear'];
 $yardSaleDescription = $_POST['yardSaleDescription'];
 
+if ($yardSaleMonth == "Jan") {
+  $yardSaleMonth = "01";
+}
+elseif ($yardSaleMonth == "Feb") {
+  $yardSaleMonth = "02";
+}
+elseif ($yardSaleMonth == "Mar") {
+  $yardSaleMonth = "03";
+}
+elseif ($yardSaleMonth == "Apr") {
+  $yardSaleMonth = "04";
+}
+elseif ($yardSaleMonth == "May") {
+  $yardSaleMonth = "05";
+}
+elseif ($yardSaleMonth == "June") {
+  $yardSaleMonth = "06";
+}
+elseif ($yardSaleMonth == "July") {
+  $yardSaleMonth = "07";
+}
+elseif ($yardSaleMonth == "Aug") {
+  $yardSaleMonth = "08";
+}
+elseif ($yardSaleMonth == "Sept") {
+  $yardSaleMonth = "09";
+}
+elseif ($yardSaleMonth == "Oct") {
+  $yardSaleMonth = "10";
+}
+elseif ($yardSaleMonth == "Nov") {
+  $yardSaleMonth = "11";
+}
+elseif ($yardSaleMonth == "Dec") {
+  $yardSaleMonth = "12";
+}
+
 echo $yardSaleMonth;
+settype($yardSaleDay);
+settype($yardSaleYear);
 echo $yardSaleDay;
 echo $yardSaleYear;
 
@@ -39,7 +78,6 @@ else {
   }
 
   else {
-    echo "you did it?";
     echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
     // header("Location: /yardSale/homePageLogin.php");
     exit;
