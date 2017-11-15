@@ -13,6 +13,8 @@ $yardSaleDay = $_POST['yardSaleDay'];
 $yardSaleYear = $_POST['yardSaleYear'];
 $yardSaleDescription = $_POST['yardSaleDescription'];
 
+$yardSaleDate = $yardSaleMonth + $yardSaleDay + $yardSaleYear;
+
 if ($mysqli->connect_errno) {
         echo "Could not connect to database \n";
         echo "Error: ". $mysqli->connect_error . "\n";
@@ -22,10 +24,10 @@ if ($mysqli->connect_errno) {
 else {
   $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                           address, yardSaleName, yardSaleDescription)
-                          VALUES ("ys1234", "dummy", "12/12/2017", "123 Dummy St"
-                          "Dummy YardSale", "This is a test yardsale")";
+                          VALUES ('ys1234', 'dummy', '$yardSaleDate',
+                          '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
-  if (!$createYardSaleQuery  = $mysqli->query($loginQuery)) {
+  if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
     echo "Query failed, loser." . $mysqli->error . "\n";
     exit;
   }
