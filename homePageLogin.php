@@ -15,10 +15,7 @@
 
     <hr>
 
-    <?php
-      $searchString = $_POST["searchBar"];
-      $searchOption = $_POST["searchOptions"];
-    ?>
+    
       <form class="" action="<?php echo $PHP_SELF;?>" method="post">
         <label for="searchBar">Search: </label>
         <input type="text" name="searchBar" id="searchBar">
@@ -26,6 +23,8 @@
         <button type="submit" formmethod="post">Search</button>
       </form>
     <?php
+      $searchString = $_POST["searchBar"];
+      $searchOption = $_POST["searchOptions"];
       echo $searchString . " " . $searchOption;
     ?>
 
