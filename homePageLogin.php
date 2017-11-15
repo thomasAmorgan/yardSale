@@ -68,6 +68,6 @@ for (var i = 0; i < optionsArray.length; i++) {
   var opt = document.createElement("option");
   opt.value = optionsArray[i];
   opt.innerHTML = optionsArray[i];
-  months.appendChild(opt);
+  searchOptions.appendChild(opt);
 }
 </script>
