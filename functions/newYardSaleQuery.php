@@ -31,13 +31,11 @@ else {
   }
 
   else if () {
+    echo "you did it?";
     header("Location: /yardSale/homePageLogin.php");
     exit;
   }
 }
 
-
-
-echo "<h1>Under Construction</h1>";
 
 ?>
