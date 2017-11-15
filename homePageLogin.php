@@ -15,6 +15,11 @@
 
     <hr>
 
+    <label for="searchBar">Search: </label>
+    <input type="text" name="searchBar" id="searchBar">
+    <select name="searchOptions" id="searchOptions"></select>
+    <button type="button" name="searchButton"></button>
+
     <div class="">
       <?php
       $host = 'localhost';
@@ -51,8 +56,18 @@
       }
       ?>
     </div>
-
-
   </body>
-
 </html>
+
+<script type="text/javascript">
+var optionsArray = ["yardSaleID", "userID", "dateTime", "address", "yardSaleName", "yardSaleDescription"];
+
+var searchOptions = document.getElementById("searchOptions");
+
+for (var i = 0; i < optionsArray.length; i++) {
+  var opt = document.createElement("option");
+  opt.value = optionsArray[i];
+  opt.innerHTML = optionsArray[i];
+  months.appendChild(opt);
+}
+</script>
