@@ -67,7 +67,7 @@
 
       else {
         $searchQuery = "SELECT * FROM YardSales
-                        WHERE '$searchOption'
+                        WHERE $searchOption
                         LIKE '$searchBar'";
 
         if (!$queryResult  = $mysqli->query($searchQuery)) {
@@ -76,7 +76,6 @@
         }
 
         else {
-          echo $queryResult;
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
               echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
