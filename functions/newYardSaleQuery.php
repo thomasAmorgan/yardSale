@@ -30,7 +30,7 @@ else {
     exit;
   }
 
-  else if () {
+  else {
     echo "you did it?";
     header("Location: /yardSale/homePageLogin.php");
     exit;
