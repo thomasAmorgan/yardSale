@@ -36,7 +36,7 @@
      </div>
 
     <?php
-      if (empty($_POST["searchBar"])) {
+      if (empty($searchString)) {
         if ($mysqli->connect_errno) {
           echo "Could not connect to database \n";
           echo "Error: ". $mysqli->connect_error . "\n";
