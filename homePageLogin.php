@@ -16,7 +16,32 @@
     <hr>
 
     <div class="">
-      <?php  ?>
+      <?php
+      $host = 'localhost';
+      $username = 'root';
+      $password = 'Muffin380!'; //enter password
+      $database = 'yardSaleDatabase'; //Enter database name
+      $mysqli = new mysqli($host, $username, $password, $database);
+
+      if ($mysqli->connect_errno) {
+        echo "Could not connect to database \n";
+        echo "Error: ". $mysqli->connect_error . "\n";
+        exit;
+      }
+
+      else {
+        $allYardSales = "SELECT * FROM YardSales";
+
+        if (!$queryResult  = $mysqli->query($allYardSales)) {
+          echo "Query failed, loser." . $mysqli->error . "\n";
+          exit;
+        }
+
+        else {
+          echo $queryResult;
+        }
+      }
+      ?>
     </div>
 
 

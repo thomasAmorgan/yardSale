@@ -50,15 +50,10 @@ elseif ($yardSaleMonth == "Dec") {
   $yardSaleMonth = "12";
 }
 
-echo $yardSaleMonth;
 settype($yardSaleDay);
 settype($yardSaleYear);
-echo $yardSaleDay;
-echo $yardSaleYear;
 
 $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
-
-echo $yardSaleDate;
 
 if ($mysqli->connect_errno) {
         echo "Could not connect to database \n";
