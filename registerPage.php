@@ -25,6 +25,7 @@
 
         <hr>
         <a href="loginPage.php">Login</a>
+        <a href='/yardSale/homePageOpen.php'>Home</a>
 	</div>
 
 </body>

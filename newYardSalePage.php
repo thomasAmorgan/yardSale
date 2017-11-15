@@ -41,6 +41,7 @@
 
 		<hr>
 		<a href='/yardSale/loginPage.php'>Logout</a>
+		<a href='/yardSale/homePageLogin.php'>Home</a>
 	</div>
 
 </body>

@@ -25,6 +25,7 @@
 
 		<hr>
 		<a href="registerPage.php">Register</a>
+		<a href='/yardSale/homePageOpen.php'>Home</a>
 
 	</div>
 
