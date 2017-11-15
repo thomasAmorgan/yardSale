@@ -67,7 +67,7 @@
 
       else {
         $searchQuery = "SELECT * FROM YardSales
-                        WHERE $searchOption
+                        WHERE '$searchOption'
                         LIKE '$searchBar'";
 
         if (!$queryResult  = $mysqli->query($searchQuery)) {
@@ -87,16 +87,8 @@
           }
         }
       }
-
     ?>
 
-    <div class="">
-      <?php
-
-
-
-      ?>
-    </div>
   </body>
 </html>
 
