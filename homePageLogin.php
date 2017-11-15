@@ -78,13 +78,15 @@
         else {
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
-              echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
+              echo "<br> YardSale: " . $row["yardSaleID"] . "<br>" .
+                   " Name: " . $row["yardSaleName"] .  . "<br>";
             }
             $searchString = "";
             $searchOption = "";
           }
 
           else {
+            echo "<br>";
             echo "There are no yardsales that match the search";
           }
         }
