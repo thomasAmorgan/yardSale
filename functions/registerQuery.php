@@ -29,9 +29,8 @@ else {
 	}
 	else {
         	$checkQuery = "SELECT userID
-                       	       FROM logins
-                               WHERE userID = '$newUserName'
-                               ";
+                       	 FROM logins
+                         WHERE userID = '$newUserName'";
 
         	if (!$queryResult = $mysqli->query($checkQuery)) {
           		echo "Query failed, loser." . $mysqli->error . "\n";
