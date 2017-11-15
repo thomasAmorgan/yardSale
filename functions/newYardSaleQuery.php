@@ -20,7 +20,20 @@ if ($mysqli->connect_errno) {
 }
 
 else {
-  $createYardSaleQuery = "";
+  $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
+                          address, yardSaleName, yardSaleDescription)
+                          VALUES ("ys1234", "dummy", "12/12/2017", "123 Dummy St"
+                          "Dummy YardSale", "This is a test yardsale")";
+
+  if (!$createYardSaleQuery  = $mysqli->query($loginQuery)) {
+    echo "Query failed, loser." . $mysqli->error . "\n";
+    exit;
+  }
+
+  else if () {
+    header("Location: /yardSale/homePageLogin.php");
+    exit;
+  }
 }
 
 
