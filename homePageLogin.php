@@ -15,26 +15,32 @@
 
     <hr>
 
-    
+    <?php
+      $host = 'localhost';
+      $username = 'root';
+      $password = 'Muffin380!'; //enter password
+      $database = 'yardSaleDatabase'; //Enter database name
+      $mysqli = new mysqli($host, $username, $password, $database);
+
+      $searchString = $_POST["searchBar"];
+      $searchOption = $_POST["searchOptions"];
+     ?>
+
       <form class="" action="<?php echo $PHP_SELF;?>" method="post">
         <label for="searchBar">Search: </label>
         <input type="text" name="searchBar" id="searchBar">
         <select name="searchOptions" id="searchOptions"></select>
         <button type="submit" formmethod="post">Search</button>
       </form>
+      
     <?php
-      $searchString = $_POST["searchBar"];
-      $searchOption = $_POST["searchOptions"];
+
       echo $searchString . " " . $searchOption;
     ?>
 
     <div class="">
       <?php
-      $host = 'localhost';
-      $username = 'root';
-      $password = 'Muffin380!'; //enter password
-      $database = 'yardSaleDatabase'; //Enter database name
-      $mysqli = new mysqli($host, $username, $password, $database);
+
 
       if ($mysqli->connect_errno) {
         echo "Could not connect to database \n";
