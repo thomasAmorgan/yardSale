@@ -44,18 +44,18 @@ else {
         	}
 
         	else {
-			$registerQuery = "INSERT INTO logins (userID, password)
-					  VALUES ('$newUserName', '$newUserPassword')";
+			         $registerQuery = "INSERT INTO logins (userID, password)
+					     VALUES ('$newUserName', '$newUserPassword')";
 
-			if (!$queryResult = $mysqli->query($registerQuery)) {
-				echo "Register query failed." . $mysqli->error ."\n";
-				exit;
-			}
+			         if (!$queryResult = $mysqli->query($registerQuery)) {
+				             echo "Register query failed." . $mysqli->error ."\n";
+				             exit;
+			         }
 
-          		echo "You registered! ;)";
-			        echo "<hr>";
-			        echo "<a href='/yardSale/loginPage.php'>Login</a>";
-        	}
+               echo "You registered! ;)";
+			         echo "<hr>";
+			         echo "<a href='/yardSale/loginPage.php'>Login</a>";
+         }
 	}
 }
 

@@ -56,7 +56,7 @@ else {
 
                 else {
                     echo "You did it! ;)";
-										header("Location: /yardSale/homePage.php");
+										header("Location: /yardSale/homePageLogin.php");
                 		exit;
 								}
       }
