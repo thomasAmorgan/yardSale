@@ -35,6 +35,7 @@
      </div>
 
     <?php
+    // will display all the yardsales in the database when nothing is searched
       if (empty($searchString) || empty($_POST["searchBar"])) {
         if ($mysqli->connect_errno) {
           echo "Could not connect to database \n";
@@ -79,10 +80,12 @@
             while ($row = $queryResult->fetch_assoc()) {
               echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
             }
+            $searchString = "";
+            $searchOption = "";
           }
 
           else {
-            echo "There are no yardsales";
+            echo "There are no yardsales that match the search";
           }
         }
       }
