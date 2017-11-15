@@ -56,7 +56,7 @@ settype($yardSaleYear);
 echo $yardSaleDay;
 echo $yardSaleYear;
 
-$yardSaleDate = $yardSaleMonth + $yardSaleDay + $yardSaleYear;
+$yardSaleDate = "$yardSaleMonth" + "$yardSaleDay" + "$yardSaleYear";
 
 echo $yardSaleDate;
 
