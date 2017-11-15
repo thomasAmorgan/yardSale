@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -93,14 +92,14 @@
 </html>
 
 <script type="text/javascript">
-var optionsArray = ["yardSaleID", "userID", "dateTime", "address", "yardSaleName", "yardSaleDescription"];
+  var optionsArray = ["yardSaleID", "userID", "dateTime", "address", "yardSaleName", "yardSaleDescription"];
 
-var searchOptions = document.getElementById("searchOptions");
+  var searchOptions = document.getElementById("searchOptions");
 
-for (var i = 0; i < optionsArray.length; i++) {
-  var opt = document.createElement("option");
-  opt.value = optionsArray[i];
-  opt.innerHTML = optionsArray[i];
-  searchOptions.appendChild(opt);
-}
+  for (var i = 0; i < optionsArray.length; i++) {
+    var opt = document.createElement("option");
+    opt.value = optionsArray[i];
+    opt.innerHTML = optionsArray[i];
+    searchOptions.appendChild(opt);
+  }
 </script>
