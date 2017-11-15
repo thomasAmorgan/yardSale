@@ -75,9 +75,8 @@
           exit;
         }
 
-        // echo $queryResult;
-
         else {
+          echo $queryResult;
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
               echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
