@@ -36,7 +36,7 @@
      </div>
 
     <?php
-      if (empty($searchString)) {
+      if (empty($searchString) || empty($_POST["searchBar"])) {
         if ($mysqli->connect_errno) {
           echo "Could not connect to database \n";
           echo "Error: ". $mysqli->connect_error . "\n";
@@ -61,6 +61,29 @@
             else {
               echo "There are no yardsales";
             }
+          }
+        }
+      }
+
+      else {
+        $searchQuery = "SELECT * FROM YardSales
+                        WHERE '$searchOption'
+                        LIKE '$searchBar'";
+
+        if (!$queryResult  = $mysqli->query($searchQuery)) {
+          echo "Query failed, loser." . $mysqli->error . "\n";
+          exit;
+        }
+
+        else {
+          if ($queryResult->num_rows > 0) {
+            while ($row = $queryResult->fetch_assoc()) {
+              echo "<br> YardSale: " . $row["yardSaleID"] . " - Name: " . $row["yardSaleName"] . "<br>";
+            }
+          }
+
+          else {
+            echo "There are no yardsales";
           }
         }
       }
