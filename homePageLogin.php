@@ -56,7 +56,7 @@
               while ($row = $queryResult->fetch_assoc()) {
                 echo "<br> <h3>YardSale: " . $row["yardSaleID"] . "</h3>" .
                      "Name: " . $row["yardSaleName"] . "<br>"
-                     "Address: " . $row["yardSaleAddress"] . "<br>"
+                     "Address: " . $row["yardSaleAddress"] . "<br>" .
                      "Date: " . $row["dateTime"] . "<br>";
               }
             }
@@ -82,8 +82,8 @@
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
               echo "<br> <h3>YardSale: " . $row["yardSaleID"] . "</h3>" .
-                   "Name: " . $row["yardSaleName"] . "<br>"
-                   "Address: " . $row["yardSaleAddress"] . "<br>"
+                   "Name: " . $row["yardSaleName"] . "<br>" .
+                   "Address: " . $row["yardSaleAddress"] . "<br>" .
                    "Date: " . $row["dateTime"] . "<br>";
             }
             $searchString = "";
