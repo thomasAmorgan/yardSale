@@ -75,6 +75,8 @@
           exit;
         }
 
+        echo $queryResult;
+
         else {
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
