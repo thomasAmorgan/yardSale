@@ -2,65 +2,62 @@
 <html>
 
 <head>
-<title>YardSale</title>
+	<title>YardSale</title>
 <!-- <link rel="styleSheet" type="text/css" href="homePage.css"> -->
+
+	<script type="text/javascript">
+		function loginFailed() {
+			alert("Login failed, please try again or create an account.")
+		}
+	</script>
+
+	<?php
+		$host = 'localhost';
+		$username = 'root';
+		$password = 'Muffin380!'; //enter password
+		$database = 'yardSaleDatabase'; //Enter database name
+		$mysqli = new mysqli($host, $username, $password, $database);
+		$userName = $_POST["userName"];
+		$userPassword = $_POST["userPassword"];
+
+		// Check for connection error
+		// If there is an error we will use $mysqli->connect_error
+		// to print the cause of the error
+		if ($mysqli->connect_errno) {
+						echo "Could not connect to database \n";
+						echo "Error: ". $mysqli->connect_error . "\n";
+						exit;
+		}
+
+		else {
+
+						$loginQuery = "SELECT userID
+													 FROM logins
+													 WHERE userID = '$userName'
+													 AND password = '$userPassword'";
+
+						if (!$queryResult = $mysqli->query($loginQuery)) {
+								echo "Query failed, loser." . $mysqli->error . "\n";
+								exit;
+						}
+
+						else if ($queryResult->num_rows === 0) {
+								// echo "Error: You don't have an account, plase make one.";
+								// echo "<hr>";
+								// echo "<a href='/yardSale/registerPage.php'>Register</a>";
+								echo "<script type="text/javascript"> loginFailed(); </script>";
+						}
+
+						else {
+								echo "You did it! ;)";
+								header("Location: /yardSale/homePageLogin.php");
+								exit;
+						}
+		}
+	?>
 </head>
 
-<script type="text/javascript">
-	function loginFailed() {
-		alert("Login failed, please try again or create an account.")
-	}
-</script>
-
-<?php
-$host = 'localhost';
-$username = 'root';
-$password = 'Muffin380!'; //enter password
-$database = 'yardSaleDatabase'; //Enter database name
-$mysqli = new mysqli($host, $username, $password, $database);
-$userName = $_POST["userName"];
-$userPassword = $_POST["userPassword"];
-?>
-
-<?php
-// Check for connection error
-// If there is an error we will use $mysqli->connect_error
-// to print the cause of the error
-if ($mysqli->connect_errno) {
-				echo "Could not connect to database \n";
-				echo "Error: ". $mysqli->connect_error . "\n";
-				exit;
-}
-
-else {
-
-				$loginQuery = "SELECT userID
-											 FROM logins
-											 WHERE userID = '$userName'
-											 AND password = '$userPassword'";
-
-				if (!$queryResult = $mysqli->query($loginQuery)) {
-						echo "Query failed, loser." . $mysqli->error . "\n";
-						exit;
-				}
-
-				else if ($queryResult->num_rows === 0) {
-						// echo "Error: You don't have an account, plase make one.";
-						// echo "<hr>";
-						// echo "<a href='/yardSale/registerPage.php'>Register</a>";
-						echo "<script type="text/javascript"> loginFailed(); </script>";
-				}
-
-				else {
-						echo "You did it! ;)";
-						header("Location: /yardSale/homePageLogin.php");
-						exit;
-				}
-}
-?>
-
 <body>
-
 	<div>
 		<h1>Yardsale</h1>
 
