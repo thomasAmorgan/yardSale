@@ -41,7 +41,9 @@
     function checkID() {
       $yardSaleID = generateID();
 
+      echo "before while \n";
       while (!$idOK) {
+        echo "in while \n";
         $checkYardSaleID =  "SELECT yardSaleID
                              FROM YardSales
                              WHERE yardSaleID = '$yardSaleID'";
@@ -52,10 +54,12 @@
         }
 
         else if($queryResult->num_rows === 1){
+          echo "id exists \n";
           $yardSaleID = generateID();
         }
 
         else {
+          echo "it worked \n";
           $idOK = true;
         }
       }
@@ -84,7 +88,7 @@
 
         else {
           // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
-          header("Location: /yardSale/homePageLogin.php");
+          // header("Location: /yardSale/homePageLogin.php");
           exit;
         }
       }
