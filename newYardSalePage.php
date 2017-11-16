@@ -44,7 +44,7 @@
       echo "before while \n";
       while (!$idOK) {
         echo "in while \n";
-        $checkYardSaleID =  "SELECT yardSaleID
+        $checkYardSaleID =  "SELECT *
                              FROM YardSales
                              WHERE yardSaleID = '$yardSaleID'";
         echo "after string \n";
