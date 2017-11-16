@@ -70,7 +70,7 @@
 
       <p>Register Here</p>
 
-        <form action="" method="post">
+        <form action="<?php echo $PHP_SELF;?>" method="post">
           <label for="userName">Username: </label>
           <input type="text" name="newUserName" id="newUserName" required>
           <br>
