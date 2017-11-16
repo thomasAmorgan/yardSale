@@ -33,9 +33,10 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    // function generateID() {
-    //   return rand(int 0, int 999999);
-    // }
+    function generateID() {
+      $randNumber = rand(int 0, int 999999);
+      return $randNumber;
+    }
 
     // function checkID() {
     //   $yardSaleID = generateID();
@@ -70,8 +71,7 @@
 
       else {
         // checkID();
-        // $blah = generateID();
-        // echo "$blah";
+
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
@@ -84,8 +84,10 @@
         }
 
         else {
+          $blah = generateID();
+          echo "$blah";
           // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
-          header("Location: /yardSale/homePageLogin.php");
+          // header("Location: /yardSale/homePageLogin.php");
           exit;
         }
       }
