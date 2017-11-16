@@ -7,12 +7,12 @@
   <title>Yardsale</title>
 
   <?php
-
-
     if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
       header("location: loginPage.php");
     }
+
+    include 'generateYardSaleID.php';
 
     //$Host = '128.163.141.169';
     $host = 'localhost';
@@ -33,39 +33,39 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    function generateID() {
-      $randNumber = rand(0, 999999);
-      return $randNumber;
-    }
-
-    function checkID() {
-      $yardSaleID = generateID();
-
-      echo "before while \n";
-      while (!$idOK) {
-        echo "in while \n";
-        $checkYardSaleID =  "SELECT yardSaleID
-                             FROM YardSales
-                             WHERE yardSaleID = '$yardSaleID'";
-        echo "after string \n";
-
-        // if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
-        //   echo "Query failed, loser." . $mysqli->error . "\n";
-        //   exit;
-        // }
-        //
-        // else if($queryResult->num_rows === 1) {
-        //   echo "id exists \n";
-        //   $yardSaleID = generateID();
-        // }
-        //
-        // else {
-        //   echo "it worked \n";
-          $idOK = true;
-        // }
-      }
-      echo "while finished \n";
-    }
+    // function generateID() {
+    //   $randNumber = rand(0, 999999);
+    //   return $randNumber;
+    // }
+    //
+    // function checkID() {
+    //   $yardSaleID = generateID();
+    //
+    //   echo "before while \n";
+    //   while (!$idOK) {
+    //     echo "in while \n";
+    //     $checkYardSaleID =  "SELECT yardSaleID
+    //                          FROM YardSales
+    //                          WHERE yardSaleID = '$yardSaleID'";
+    //     echo "after string \n";
+    //
+    //     if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
+    //       echo "Query failed, loser." . $mysqli->error . "\n";
+    //       exit;
+    //     }
+    //
+    //     else if($queryResult->num_rows === 1) {
+    //       echo "id exists \n";
+    //       $yardSaleID = generateID();
+    //     }
+    //
+    //     else {
+    //       echo "it worked \n";
+    //       $idOK = true;
+    //     }
+    //   }
+    //   echo "while finished \n";
+    // }
 
     if (!empty($_POST)) {
 
@@ -76,7 +76,7 @@
       }
 
       else {
-        checkID();
+        $yardSaleIDm = checkID();
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
@@ -90,7 +90,7 @@
 
         else {
           // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
-          // header("Location: /yardSale/homePageLogin.php");
+          header("Location: /yardSale/homePageLogin.php");
           exit;
         }
       }
