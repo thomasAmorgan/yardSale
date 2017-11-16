@@ -80,7 +80,7 @@
         </form>
 
         <br>
-        <p>After a successfully registering, you will be taken to the login page.</p>
+        <p>After successfully registering, you will be taken to the login page.</p>
 
         <hr>
         <a href="loginPage.php">Login</a>

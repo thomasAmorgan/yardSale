@@ -4,6 +4,60 @@
 <head>
   <meta charset="utf-8">
   <title>Yardsale</title>
+
+  <?php
+
+    if (!$_SESSION['loggedIn']) {
+      $_SESSION['status'] = "failed";
+      header("location: loginPage.php");
+    }
+
+    //$Host = '128.163.141.169';
+    $host = 'localhost';
+    $username = 'root';
+    $password = 'Muffin380!'; //enter password
+    $database = 'yardSaleDatabase'; //Enter database name
+    $mysqli = new mysqli($host, $username, $password, $database);
+
+    $yardSaleName = $_POST['yardSaleName'];
+    $yardSaleAddress = $_POST['yardSaleAddress'];
+    $yardSaleMonth = $_POST['yardSaleMonth'];
+    $yardSaleDay = $_POST['yardSaleDay'];
+    $yardSaleYear = $_POST['yardSaleYear'];
+    $yardSaleDescription = $_POST['yardSaleDescription'];
+
+    settype($yardSaleDay);
+    settype($yardSaleYear);
+
+    $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
+
+    if (!empty($_POST)) {
+      if ($mysqli->connect_errno) {
+              echo "Could not connect to database \n";
+              echo "Error: ". $mysqli->connect_error . "\n";
+              exit;
+      }
+
+      else {
+        $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
+                                address, yardSaleName, yardSaleDescription)
+                                VALUES ('ys1234', 'dummy', '$yardSaleDate',
+                                '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
+
+        if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
+          echo "Query failed, loser." . $mysqli->error . "\n";
+          exit;
+        }
+
+        else {
+          // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
+          header("Location: /yardSale/homePageLogin.php");
+          exit;
+        }
+      }
+    }
+  ?>
+
 </head>
 
 <body>
@@ -50,7 +104,7 @@
 
 <script>
 	window.onload = function() {
-		var monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+		var monthArray = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 
 		var months = document.getElementById("months");
 
