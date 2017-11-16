@@ -70,8 +70,8 @@
 
       else {
         // checkID();
-        $blah = generateID();
-        echo "$blah";
+        // $blah = generateID();
+        // echo "$blah";
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
