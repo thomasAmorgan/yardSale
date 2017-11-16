@@ -49,12 +49,11 @@
                              WHERE yardSaleID = '$yardSaleID'";
         echo "after string \n";
 
-        if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
-          echo "Query failed, loser." . $mysqli->error . "\n";
-          exit;
-        }
-
-        echo "$queryResult";
+        // if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
+        //   echo "Query failed, loser." . $mysqli->error . "\n";
+        //   exit;
+        // }
+        //
         // else if($queryResult->num_rows === 1) {
         //   echo "id exists \n";
         //   $yardSaleID = generateID();
@@ -62,7 +61,7 @@
         //
         // else {
         //   echo "it worked \n";
-        //   $idOK = true;
+          $idOK = true;
         // }
       }
       echo "while finished \n";
