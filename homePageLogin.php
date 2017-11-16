@@ -58,7 +58,7 @@
               while ($row = $queryResult->fetch_assoc()) {
                 echo "<br> <h3>YardSale: " . $row["yardSaleID"] . "</h3>" .
                      "Name: " . $row["yardSaleName"] . "<br>" .
-                     "Address: " . $row["yardSaleAddress"] . "<br>" .
+                     "Address: " . $row["address"] . "<br>" .
                      "Date: " . $row["dateTime"] . "<br>";
               }
             }
