@@ -8,10 +8,10 @@
   <?php
 
 
-    // if ($_SESSION['loggedIn'] == false) {
-    //   $_SESSION['status'] = "failed";
-    //   header("location: loginPage.php");
-    // }
+    if ($_SESSION['loggedIn'] == false) {
+      $_SESSION['status'] = "failed";
+      header("location: loginPage.php");
+    }
 
     //$Host = '128.163.141.169';
     $host = 'localhost';
