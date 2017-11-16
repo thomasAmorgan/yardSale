@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 
 <head>
@@ -19,9 +20,7 @@
 		$mysqli = new mysqli($host, $username, $password, $database);
 		$userName = $_POST["userName"];
 		$userPassword = $_POST["userPassword"];
-
-		session_start();
-
+		
 		if (!empty($_POST)) {
 			// Check for connection error
 			// If there is an error we will use $mysqli->connect_error
