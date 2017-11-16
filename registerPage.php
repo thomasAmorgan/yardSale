@@ -70,7 +70,7 @@
 
       <p>Register Here</p>
 
-        <form action="functions/registerQuery.php" method="post">
+        <form action="" method="post">
           <label for="userName">Username: </label>
           <input type="text" name="newUserName" id="newUserName" required>
           <br>
