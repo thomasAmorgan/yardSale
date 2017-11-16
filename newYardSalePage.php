@@ -41,34 +41,39 @@
     function checkID() {
       $yardSaleID = generateID();
 
-      if ($mysqli->connect_errno) {
-              echo "Could not connect to database \n";
-              echo "Error: ". $mysqli->connect_error . "\n";
-              exit;
-      }
-
       echo "before while \n";
       while (!$idOK) {
-        echo "in while \n";
-        $checkYardSaleID =  "SELECT yardSaleID
-                             FROM YardSales
-                             WHERE yardSaleID = '$yardSaleID'";
-        echo "after string \n";
 
-        if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
-          echo "Query failed, loser." . $mysqli->error . "\n";
-          exit;
-        }
-
-        else if($queryResult->num_rows === 1) {
-          echo "id exists \n";
-          $yardSaleID = generateID();
+        if ($mysqli->connect_errno) {
+                echo "Could not connect to database \n";
+                echo "Error: ". $mysqli->connect_error . "\n";
+                exit;
         }
 
         else {
-          echo "it worked \n";
-          $idOK = true;
+          echo "in while \n";
+          $checkYardSaleID =  "SELECT yardSaleID
+                               FROM YardSales
+                               WHERE yardSaleID = '$yardSaleID'";
+          echo "after string \n";
+
+          if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
+            echo "Query failed, loser." . $mysqli->error . "\n";
+            exit;
+          }
+
+          else if($queryResult->num_rows === 1) {
+            echo "id exists \n";
+            $yardSaleID = generateID();
+          }
+
+          else {
+            echo "it worked \n";
+            $idOK = true;
+          }
         }
+
+
       }
       echo "while finished \n";
     }
