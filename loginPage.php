@@ -20,6 +20,8 @@
 		$userName = $_POST["userName"];
 		$userPassword = $_POST["userPassword"];
 
+		session_start();
+
 		if (!empty($_POST)) {
 			// Check for connection error
 			// If there is an error we will use $mysqli->connect_error
@@ -43,14 +45,12 @@
 							}
 
 							else if ($queryResult->num_rows === 0) {
-									// echo "Error: You don't have an account, plase make one.";
-									// echo "<hr>";
-									// echo "<a href='/yardSale/registerPage.php'>Register</a>";
 									echo "<script> loginFailed(); </script>";
 							}
 
 							else {
-									echo "You did it! ;)";
+									$_SESSION['userName'] = $userName;
+									$_SESSION['loggedIn'] = true;
 									header("Location: /yardSale/homePageLogin.php");
 									exit;
 							}
@@ -65,7 +65,7 @@
 
 		<p>Enter Login Info</p>
 
-      <form action="<?php echo $PHP_SELF;?>" method="post">
+    <form action="<?php echo $PHP_SELF;?>" method="post">
       <label for="userName">Username: </label>
 			<input type="text" name="userName" id="userName" required>
 			<br>
