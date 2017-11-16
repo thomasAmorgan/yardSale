@@ -34,7 +34,7 @@
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
     function generateID() {
-      $randNumber = rand(int 0, int 999999);
+      $randNumber = rand(0, 999999);
       return $randNumber;
     }
 
