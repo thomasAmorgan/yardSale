@@ -36,7 +36,7 @@
     if (!empty($_POST)) {
 
       function generateID() {
-        return rand(int 0, int 9999999);
+        return rand(int 0, int 999999);
       }
 
       function checkID() {
@@ -69,6 +69,8 @@
       }
 
       else {
+        checkID();
+
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
                                 VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
