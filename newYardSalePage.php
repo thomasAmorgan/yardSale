@@ -33,34 +33,34 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    if (!empty($_POST)) {
+    function generateID() {
+      return rand(int 0, int 999999);
+    }
 
-      function generateID() {
-        return rand(int 0, int 999999);
-      }
+    function checkID() {
+      $yardSaleID = generateID();
 
-      function checkID() {
-        $yardSaleID = generateID();
+      while (!$idOK) {
+        $checkYardSaleID =  "SELECT yardSaleID
+                             FROM YardSales
+                             WHERE yardSaleID = '$yardSaleID'";
 
-        while (!$idOK) {
-          $checkYardSaleID =  "SELECT yardSaleID
-                               FROM YardSales
-                               WHERE yardSaleID = '$yardSaleID'";
+        if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
+          echo "Query failed, loser." . $mysqli->error . "\n";
+          exit;
+        }
 
-          if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
-            echo "Query failed, loser." . $mysqli->error . "\n";
-            exit;
-          }
+        else if($queryResult->num_rows === 1){
+          $yardSaleID = generateID();
+        }
 
-          else if($queryResult->num_rows === 1){
-            $yardSaleID = generateID();
-          }
-
-          else {
-            $idOK = true;
-          }
+        else {
+          $idOK = true;
         }
       }
+    }
+
+    if (!empty($_POST)) {
 
       if ($mysqli->connect_errno) {
               echo "Could not connect to database \n";
