@@ -63,6 +63,7 @@
           $idOK = true;
         }
       }
+      echo "while finished \n";
     }
 
     if (!empty($_POST)) {
