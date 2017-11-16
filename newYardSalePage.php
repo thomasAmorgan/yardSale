@@ -47,13 +47,14 @@
         $checkYardSaleID =  "SELECT yardSaleID
                              FROM YardSales
                              WHERE yardSaleID = '$yardSaleID'";
+        echo "after string \n";
 
         if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
           echo "Query failed, loser." . $mysqli->error . "\n";
           exit;
         }
 
-        else if($queryResult->num_rows === 1){
+        else if($queryResult->num_rows === 1) {
           echo "id exists \n";
           $yardSaleID = generateID();
         }
