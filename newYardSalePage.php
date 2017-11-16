@@ -75,7 +75,7 @@
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
-                                VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
+                                VALUES ('ys1234', '$userID', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
         if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
