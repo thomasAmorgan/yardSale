@@ -7,7 +7,7 @@
 
 	<script type="text/javascript">
 		function loginFailed() {
-			alert("Login failed, please try again or create an account.")
+			alert("Login failed, please try again or create an account.");
 		}
 	</script>
 
@@ -45,7 +45,7 @@
 								// echo "Error: You don't have an account, plase make one.";
 								// echo "<hr>";
 								// echo "<a href='/yardSale/registerPage.php'>Register</a>";
-								echo "<script type="text/javascript"> loginFailed(); </script>";
+								echo "<script> loginFailed(); </script>";
 						}
 
 						else {
