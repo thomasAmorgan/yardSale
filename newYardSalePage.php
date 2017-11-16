@@ -7,7 +7,7 @@
 
   <?php
 
-    if (!$_SESSION['loggedIn']) {
+    if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
       header("location: loginPage.php");
     }
