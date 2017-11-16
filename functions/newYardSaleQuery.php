@@ -53,7 +53,7 @@ elseif ($yardSaleMonth == "Dec") {
 settype($yardSaleDay);
 settype($yardSaleYear);
 
-$yardSaleDate = "$yardSaleMonth" . "/" . "$yardSaleDay" . "/" . "$yardSaleYear";
+$yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
 if ($mysqli->connect_errno) {
         echo "Could not connect to database \n";
