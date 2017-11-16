@@ -6,6 +6,12 @@
 <!-- <link rel="styleSheet" type="text/css" href="homePage.css"> -->
 </head>
 
+<script type="text/javascript">
+	function loginFailed() {
+		alert("Login failed, please try again or create an account.")
+	}
+</script>
+
 <?php
 $host = 'localhost';
 $username = 'root';
@@ -42,7 +48,7 @@ else {
 						// echo "Error: You don't have an account, plase make one.";
 						// echo "<hr>";
 						// echo "<a href='/yardSale/registerPage.php'>Register</a>";
-						echo "<script> loginFailed() </script>";
+						echo "<script type="text/javascript"> loginFailed(); </script>";
 				}
 
 				else {
@@ -78,9 +84,3 @@ else {
 
 </body>
 </html>
-
-<script type="text/javascript">
-	function loginFailed() {
-		alert("Login failed, please try again or create an account.")
-	}
-</script>
