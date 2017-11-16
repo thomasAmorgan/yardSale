@@ -27,6 +27,7 @@
     $yardSaleDay = $_POST['yardSaleDay'];
     $yardSaleYear = $_POST['yardSaleYear'];
     $yardSaleDescription = $_POST['yardSaleDescription'];
+    $userID = $_SESSION['userName'];
 
     settype($yardSaleDay);
     settype($yardSaleYear);
@@ -43,7 +44,7 @@
       else {
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
-                                VALUES ('ys1234', '$_SESSION['userName']', '$yardSaleDate',
+                                VALUES ('ys1234', '$userID', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
         if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
