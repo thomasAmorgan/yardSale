@@ -33,9 +33,9 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    function generateID() {
-      return rand(int 0, int 999999);
-    }
+    // function generateID() {
+    //   return rand(int 0, int 999999);
+    // }
 
     // function checkID() {
     //   $yardSaleID = generateID();
