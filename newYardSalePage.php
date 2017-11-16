@@ -77,7 +77,7 @@
 
       else {
         echo "before calling function";
-        $yardSaleIDm = checkID();
+        $yardSaleID = checkID();
         echo "after calling function";
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,

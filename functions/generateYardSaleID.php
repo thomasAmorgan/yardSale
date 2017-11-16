@@ -26,7 +26,6 @@ function checkID() {
   else {
 
     while (!$idOK) {
-
       $checkYardSaleID =  "SELECT yardSaleID
                            FROM YardSales
                            WHERE yardSaleID = '$yardSaleID'";
