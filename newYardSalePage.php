@@ -38,28 +38,28 @@
       return $randNumber;
     }
 
-    // function checkID() {
-    //   $yardSaleID = generateID();
-    //
-    //   while (!$idOK) {
-    //     $checkYardSaleID =  "SELECT yardSaleID
-    //                          FROM YardSales
-    //                          WHERE yardSaleID = '$yardSaleID'";
-    //
-    //     if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
-    //       echo "Query failed, loser." . $mysqli->error . "\n";
-    //       exit;
-    //     }
-    //
-    //     else if($queryResult->num_rows === 1){
-    //       $yardSaleID = generateID();
-    //     }
-    //
-    //     else {
-    //       $idOK = true;
-    //     }
-    //   }
-    // }
+    function checkID() {
+      $yardSaleID = generateID();
+
+      while (!$idOK) {
+        $checkYardSaleID =  "SELECT yardSaleID
+                             FROM YardSales
+                             WHERE yardSaleID = '$yardSaleID'";
+
+        if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
+          echo "Query failed, loser." . $mysqli->error . "\n";
+          exit;
+        }
+
+        else if($queryResult->num_rows === 1){
+          $yardSaleID = generateID();
+        }
+
+        else {
+          $idOK = true;
+        }
+      }
+    }
 
     if (!empty($_POST)) {
 
@@ -70,8 +70,7 @@
       }
 
       else {
-        // checkID();
-
+        checkID();
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
@@ -84,10 +83,8 @@
         }
 
         else {
-          $blah = generateID();
-          echo "$blah";
           // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
-          // header("Location: /yardSale/homePageLogin.php");
+          header("Location: /yardSale/homePageLogin.php");
           exit;
         }
       }
