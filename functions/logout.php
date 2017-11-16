@@ -3,6 +3,6 @@
   session_unset();
   session_destroy();
 
-  header("location: /yardSale/homePageLogin.php");
+  header("location: /yardSale/homePageOpen.php");
 
  ?>
