@@ -28,7 +28,7 @@
     $yardSaleYear = $_POST['yardSaleYear'];
     $yardSaleDescription = $_POST['yardSaleDescription'];
     $userID = $_SESSION['userName'];
-    $yardSaleID = '';
+    $yardSaleID;
     $idOK = false;
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
