@@ -43,7 +43,7 @@
       else {
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
-                                VALUES ('ys1234', 'dummy', '$yardSaleDate',
+                                VALUES ('ys1234', '$_SESSION['userName']', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
         if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
