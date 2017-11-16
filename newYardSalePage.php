@@ -28,13 +28,40 @@
     $yardSaleYear = $_POST['yardSaleYear'];
     $yardSaleDescription = $_POST['yardSaleDescription'];
     $userID = $_SESSION['userName'];
-
-    settype($yardSaleDay);
-    settype($yardSaleYear);
+    $yardSaleID = '';
+    $idOK = false;
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
     if (!empty($_POST)) {
+
+      function generateID() {
+        return rand(int 0, int 9999999);
+      }
+
+      function checkID() {
+        $yardSaleID = generateID();
+
+        while (!$idOK) {
+          $checkYardSaleID =  "SELECT yardSaleID
+                               FROM YardSales
+                               WHERE yardSaleID = '$yardSaleID'";
+
+          if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
+            echo "Query failed, loser." . $mysqli->error . "\n";
+            exit;
+          }
+
+          else if($queryResult->num_rows === 1){
+            $yardSaleID = generateID();
+          }
+
+          else {
+            $idOK = true;
+          }
+        }
+      }
+
       if ($mysqli->connect_errno) {
               echo "Could not connect to database \n";
               echo "Error: ". $mysqli->connect_error . "\n";
@@ -44,7 +71,7 @@
       else {
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
-                                VALUES ('ys1234', '$userID', '$yardSaleDate',
+                                VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
         if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
