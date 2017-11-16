@@ -41,10 +41,16 @@
     function checkID() {
       $yardSaleID = generateID();
 
+      if ($mysqli->connect_errno) {
+              echo "Could not connect to database \n";
+              echo "Error: ". $mysqli->connect_error . "\n";
+              exit;
+      }
+
       echo "before while \n";
       while (!$idOK) {
         echo "in while \n";
-        $checkYardSaleID =  "SELECT *
+        $checkYardSaleID =  "SELECT yardSaleID
                              FROM YardSales
                              WHERE yardSaleID = '$yardSaleID'";
         echo "after string \n";
