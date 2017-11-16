@@ -20,39 +20,41 @@
 		$userName = $_POST["userName"];
 		$userPassword = $_POST["userPassword"];
 
-		// Check for connection error
-		// If there is an error we will use $mysqli->connect_error
-		// to print the cause of the error
-		if ($mysqli->connect_errno) {
-						echo "Could not connect to database \n";
-						echo "Error: ". $mysqli->connect_error . "\n";
-						exit;
-		}
+		if (!empty($_POST)) {
+			// Check for connection error
+			// If there is an error we will use $mysqli->connect_error
+			// to print the cause of the error
+			if ($mysqli->connect_errno) {
+							echo "Could not connect to database \n";
+							echo "Error: ". $mysqli->connect_error . "\n";
+							exit;
+			}
 
-		else {
+			else {
 
-						$loginQuery = "SELECT userID
-													 FROM logins
-													 WHERE userID = '$userName'
-													 AND password = '$userPassword'";
+							$loginQuery = "SELECT userID
+														 FROM logins
+														 WHERE userID = '$userName'
+														 AND password = '$userPassword'";
 
-						if (!$queryResult = $mysqli->query($loginQuery)) {
-								echo "Query failed, loser." . $mysqli->error . "\n";
-								exit;
-						}
+							if (!$queryResult = $mysqli->query($loginQuery)) {
+									echo "Query failed, loser." . $mysqli->error . "\n";
+									exit;
+							}
 
-						else if ($queryResult->num_rows === 0) {
-								// echo "Error: You don't have an account, plase make one.";
-								// echo "<hr>";
-								// echo "<a href='/yardSale/registerPage.php'>Register</a>";
-								echo "<script> loginFailed(); </script>";
-						}
+							else if ($queryResult->num_rows === 0) {
+									// echo "Error: You don't have an account, plase make one.";
+									// echo "<hr>";
+									// echo "<a href='/yardSale/registerPage.php'>Register</a>";
+									echo "<script> loginFailed(); </script>";
+							}
 
-						else {
-								echo "You did it! ;)";
-								header("Location: /yardSale/homePageLogin.php");
-								exit;
-						}
+							else {
+									echo "You did it! ;)";
+									header("Location: /yardSale/homePageLogin.php");
+									exit;
+							}
+			}
 		}
 	?>
 </head>
