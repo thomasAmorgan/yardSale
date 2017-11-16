@@ -10,7 +10,7 @@
       alert("Account already exist, please login.");
     }
     function registerSuccess() {
-      alert("You successfully registered!")
+      alert("You successfully registered!");
     }
   </script>
 
@@ -54,7 +54,6 @@
     				             exit;
     			         }
 
-                   echo "<script> registerSuccess(); </script>";
                    header("Location: /yardSale/loginPage.php");
              }
     	}
@@ -79,6 +78,9 @@
           <br>
 			    <button type="submit" formmethod="post">Register</button>
         </form>
+
+        <br>
+        <p>After a successfully registering, you will be taken to the login page.</p>
 
         <hr>
         <a href="loginPage.php">Login</a>
