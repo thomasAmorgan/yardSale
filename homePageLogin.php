@@ -56,11 +56,12 @@
           else {
             if ($queryResult->num_rows > 0) {
               while ($row = $queryResult->fetch_assoc()) {
-                echo "<br> <h3>YardSale: " . $row["yardSaleID"] . "</h3>" .
-                     "<b> User: " . $row["userID"] . "</b> <br>" .
-                     "Name: " . $row["yardSaleName"] . "<br>" .
+                echo "<br> <h3>" ."Name: " . $row["yardSaleName"] . "</h3>" .
+                     "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                     "Host: " . $row["userID"] . "<br>" .
                      "Address: " . $row["address"] . "<br>" .
-                     "Date: " . $row["dateTime"] . "<br>";
+                     "Date: " . $row["dateTime"] . "<br>" .
+                     "Description: " . $row["yardSaleDescription"] . "<br>";
               }
             }
 
@@ -85,10 +86,12 @@
         else {
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
-              echo "<br> <h3>YardSale: " . $row["yardSaleID"] . "</h3>" .
-                   "Name: " . $row["yardSaleName"] . "<br>" .
-                   "Address: " . $row["yardSaleAddress"] . "<br>" .
-                   "Date: " . $row["dateTime"] . "<br>";
+              echo "<br> <h3>" ."Name: " . $row["yardSaleName"] . "</h3>" .
+                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                   "Host: " . $row["userID"] . "<br>" .
+                   "Address: " . $row["address"] . "<br>" .
+                   "Date: " . $row["dateTime"] . "<br>" .
+                   "Description: " . $row["yardSaleDescription"] . "<br>";
             }
             $searchString = "";
             $searchOption = "";
