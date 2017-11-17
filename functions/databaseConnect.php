@@ -1,6 +1,6 @@
 <?php
-$host = '128.163.141.169';
-// $host = 'localhost';
+// $host = '128.163.141.169';
+$host = 'localhost';
 $username = 'root';
 $password = 'Muffin380!'; //enter password
 $database = 'yardSaleDatabase'; //Enter database name
