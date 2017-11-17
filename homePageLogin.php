@@ -41,7 +41,7 @@
 
             // https://www.w3schools.com/php/php_mysql_select.asp
             // else {
-              if ($result->num_rows > 0) {
+            if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                   echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                        "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
@@ -52,9 +52,11 @@
                 }
               // }
 
-              else {
-                echo "There are no yardsales";
-              }
+
+            }
+
+            else {
+              echo "There are no yardsales";
             }
           // }
         }
