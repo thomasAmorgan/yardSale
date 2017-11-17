@@ -12,7 +12,7 @@
       header("location: loginPage.php");
     }
 
-    include 'generateYardSaleID.php';
+    // include 'generateYardSaleID.php';
 
     //$Host = '128.163.141.169';
     $host = 'localhost';
@@ -33,10 +33,10 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    // function generateID() {
-    //   $randNumber = rand(0, 999999);
-    //   return $randNumber;
-    // }
+    function generateID() {
+      $randNumber = rand(0, 99999);
+      return $randNumber;
+    }
     //
     // function checkID() {
     //   $yardSaleID = generateID();
@@ -69,6 +69,9 @@
 
     if (!empty($_POST)) {
 
+      $randNum = generateID();
+      $yardSaleID = "$userID" . "$randNum";
+
       if ($mysqli->connect_errno) {
               echo "Could not connect to database \n";
               echo "Error: ". $mysqli->connect_error . "\n";
@@ -76,13 +79,14 @@
       }
 
       else {
-        echo "before calling function";
-        $yardSaleID = checkID();
-        echo "after calling function";
+        // checkID doesn't work can't see what error is so try another fix later
+        // echo "before calling function";
+        // $yardSaleID = checkID();
+        // echo "after calling function";
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
                                 address, yardSaleName, yardSaleDescription)
-                                VALUES ('ys1234', '$userID', '$yardSaleDate',
+                                VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
         if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {

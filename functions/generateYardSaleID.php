@@ -30,6 +30,7 @@ function checkID() {
                            FROM YardSales
                            WHERE yardSaleID = '$yardSaleID'";
 
+      // problem is here
       if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
         echo "Query failed, loser." . $mysqli->error . "\n";
         exit;
