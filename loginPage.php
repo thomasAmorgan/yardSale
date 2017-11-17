@@ -13,25 +13,25 @@
 	</script>
 
 	<?php
-		$host = 'localhost';
-		$username = 'root';
-		$password = 'Muffin380!'; //enter password
-		$database = 'yardSaleDatabase'; //Enter database name
-		$mysqli = new mysqli($host, $username, $password, $database);
-		$userName = $_POST["userName"];
-		$userPassword = $_POST["userPassword"];
+		// $host = 'localhost';
+		// $username = 'root';
+		// $password = 'Muffin380!'; //enter password
+		// $database = 'yardSaleDatabase'; //Enter database name
+		// $mysqli = new mysqli($host, $username, $password, $database);
+		// $userName = $_POST["userName"];
+		// $userPassword = $_POST["userPassword"];
 
 		if (!empty($_POST)) {
 			// Check for connection error
 			// If there is an error we will use $mysqli->connect_error
 			// to print the cause of the error
-			if ($mysqli->connect_errno) {
-							echo "Could not connect to database \n";
-							echo "Error: ". $mysqli->connect_error . "\n";
-							exit;
-			}
+			// if ($mysqli->connect_errno) {
+			// 				echo "Could not connect to database \n";
+			// 				echo "Error: ". $mysqli->connect_error . "\n";
+			// 				exit;
+			// }
 
-			else {
+			// else {
 
 							$loginQuery = "SELECT userID
 														 FROM logins
@@ -53,7 +53,7 @@
 									header("Location: /yardSale/homePageLogin.php");
 									exit;
 							}
-			}
+			// } 
 		}
 	?>
 </head>
