@@ -15,11 +15,11 @@
     // include 'generateYardSaleID.php';
 
     //$Host = '128.163.141.169';
-    $host = 'localhost';
-    $username = 'root';
-    $password = 'Muffin380!'; //enter password
-    $database = 'yardSaleDatabase'; //Enter database name
-    $mysqli = new mysqli($host, $username, $password, $database);
+    // $host = 'localhost';
+    // $username = 'root';
+    // $password = 'Muffin380!'; //enter password
+    // $database = 'yardSaleDatabase'; //Enter database name
+    // $mysqli = new mysqli($host, $username, $password, $database);
 
     $yardSaleName = $_POST['yardSaleName'];
     $yardSaleAddress = $_POST['yardSaleAddress'];
@@ -72,13 +72,13 @@
       $randNum = generateID();
       $yardSaleID = "$userID" . "$randNum";
 
-      if ($mysqli->connect_errno) {
-              echo "Could not connect to database \n";
-              echo "Error: ". $mysqli->connect_error . "\n";
-              exit;
-      }
+      // if ($mysqli->connect_errno) {
+      //         echo "Could not connect to database \n";
+      //         echo "Error: ". $mysqli->connect_error . "\n";
+      //         exit;
+      // }
 
-      else {
+      // else {
         // checkID doesn't work can't see what error is so try another fix later
         // echo "before calling function";
         // $yardSaleID = checkID();
@@ -89,17 +89,19 @@
                                 VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
-        if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
-          echo "Query failed, loser." . $mysqli->error . "\n";
-          exit;
-        }
+        $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-        else {
+        // if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
+        //   echo "Query failed, loser." . $mysqli->error . "\n";
+        //   exit;
+        // }
+
+        // else {
           // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
           header("Location: /yardSale/homePageLogin.php");
           exit;
-        }
-      }
+        // }
+      // }
     }
   ?>
 

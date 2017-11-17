@@ -11,9 +11,7 @@
       }
     </script>
   </head>
-
-
-
+  
   <body>
     <div class="">
       <a href="#">View Yardsales</a>
@@ -34,34 +32,16 @@
 
      <?php
        include 'functions/databaseConnect.php';
-       // $host = 'localhost';
-       // $username = 'root';
-       // $password = 'Muffin380!'; //enter password
-       // $database = 'yardSaleDatabase'; //Enter database name
-       // $mysqli = new mysqli($host, $username, $password, $database);
 
        $searchString = $_POST["searchBar"];
        $searchOption = $_POST["searchOptions"];
 
        // will display all the yardsales in the database when nothing is searched
          if (empty($searchString) || empty($_POST["searchBar"])) {
-           // if ($mysqli->connect_errno) {
-           //   echo "Could not connect to database \n";
-           //   echo "Error: ". $mysqli->connect_error . "\n";
-           //   exit;
-           // }
 
-           // else {
              $allYardSales = "SELECT * FROM YardSales";
              $result = $mysqli->query($allYardSales);
 
-             // if (!$queryResult  = $mysqli->query($allYardSales)) {
-             //   echo "Query failed, loser." . $mysqli->error . "\n";
-             //   exit;
-             // }
-
-             // https://www.w3schools.com/php/php_mysql_select.asp
-             // else {
              if ($result->num_rows > 0) {
                  while ($row = $result->fetch_assoc()) {
                    echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
@@ -71,15 +51,11 @@
                         "Date: " . $row["dateTime"] . "<br>" .
                         "Description: " . $row["yardSaleDescription"] . "<br>";
                  }
-               // }
-
-
              }
 
              else {
                echo "There are no yardsales";
              }
-           // }
          }
 
          else {
@@ -90,13 +66,6 @@
 
            $searchResult = $mysqli->query($searchQuery);
 
-           // if (!$queryResult  = $mysqli->query($searchQuery)) {
-           //   echo "Query failed, loser." . $mysqli->error . "\n";
-           //   exit;
-           // }
-
-           // https://www.w3schools.com/php/php_mysql_select.asp
-           // else {
              if ($searchResult->num_rows > 0) {
 
                while ($row = $searchResult->fetch_assoc()) {
@@ -117,7 +86,6 @@
              }
            }
       ?>
-
   </body>
 </html>
 
