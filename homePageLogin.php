@@ -82,7 +82,7 @@
         $searchQuery = "SELECT * FROM YardSales
                         WHERE '$searchOption'
                         LIKE '$searchBar'";
-
+        echo "<script> log(); </script>";
         if (!$queryResult  = $mysqli->query($searchQuery)) {
           echo "Query failed, loser." . $mysqli->error . "\n";
           exit;
@@ -91,7 +91,7 @@
         // https://www.w3schools.com/php/php_mysql_select.asp
         else {
           if ($queryResult->num_rows > 0) {
-            echo "<script> log(); </script>";
+
             while ($row = $queryResult->fetch_assoc()) {
               echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                    "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
