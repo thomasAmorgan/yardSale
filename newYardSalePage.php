@@ -101,7 +101,7 @@
         if ($checkQuery->num_rows > 0) {
 
           while ($row = $checkQuery->fetch_assoc()) {
-            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
+            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" 
             ;
           }
         }
