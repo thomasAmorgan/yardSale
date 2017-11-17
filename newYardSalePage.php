@@ -100,6 +100,8 @@
   										 WHERE yardSaleID = '$yardSaleID'
   										 AND userID = '$userID'";
 
+        $checkQueryResult = $mysqli->query($checkQuery);
+
         if ($checkQuery->num_rows > 0) {
 
           while ($row = $checkQuery->fetch_assoc()) {
