@@ -13,6 +13,7 @@
 	</script>
 
 	<?php
+	include 'functions/databaseConnect.php';
 		// $host = 'localhost';
 		// $username = 'root';
 		// $password = 'Muffin380!'; //enter password
@@ -38,12 +39,14 @@
 														 WHERE userID = '$userName'
 														 AND password = '$userPassword'";
 
-							if (!$queryResult = $mysqli->query($loginQuery)) {
-									echo "Query failed, loser." . $mysqli->error . "\n";
-									exit;
-							}
+							// if (!$queryResult = $mysqli->query($loginQuery)) {
+							// 		echo "Query failed, loser." . $mysqli->error . "\n";
+							// 		exit;
+							// }
+							$result = $mysqli->query($loginQuery);
 
-							else if ($queryResult->num_rows === 0) {
+
+							if ($queryResult->num_rows === 0) {
 									echo "<script> loginFailed(); </script>";
 							}
 
@@ -53,7 +56,7 @@
 									header("Location: /yardSale/homePageLogin.php");
 									exit;
 							}
-			// } 
+			// }
 		}
 	?>
 </head>
