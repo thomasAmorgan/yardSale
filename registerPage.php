@@ -15,48 +15,52 @@
   </script>
 
   <?php
+    include 'functions/databaseConnect.php';
     //$Host = '128.163.141.169';
-    $host = 'localhost';
-    $username = 'root';
-    $password = 'Muffin380!'; //enter password
-    $database = 'yardSaleDatabase'; //Enter database name
-    $mysqli = new mysqli($host, $username, $password, $database);
+    // $host = 'localhost';
+    // $username = 'root';
+    // $password = 'Muffin380!'; //enter password
+    // $database = 'yardSaleDatabase'; //Enter database name
+    // $mysqli = new mysqli($host, $username, $password, $database);
     $newUserName = $_POST["newUserName"];
     $newUserPassword = $_POST["newUserPassword"];
 
     if (!empty($_POST)) {
 
-      if ($mysqli->connect_errno) {
-            	echo "Could not connect to database \n";
-            	echo "Error: ". $mysqli->connect_error . "\n";
-            	exit;
-    	}
+      // if ($mysqli->connect_errno) {
+      //       	echo "Could not connect to database \n";
+      //       	echo "Error: ". $mysqli->connect_error . "\n";
+      //       	exit;
+    	// }
 
-    	else {
+    	// else {
             	$checkQuery = "SELECT userID
                            	 FROM logins
                              WHERE userID = '$newUserName'";
 
-            	if (!$queryResult = $mysqli->query($checkQuery)) {
-              		echo "Query failed, loser." . $mysqli->error . "\n";
-              		exit;
-            	}
-            	else if ($queryResult->num_rows === 1) {
+              $result = $mysqli->query($checkQuery);
+            	// if (!$queryResult = $mysqli->query($checkQuery)) {
+              // 		echo "Query failed, loser." . $mysqli->error . "\n";
+              // 		exit;
+            	// }
+            	if ($result->num_rows === 1) {
                 echo "<script> accountExist(); </script>";
             	}
 
             	else {
     			         $registerQuery = "INSERT INTO logins (userID, password)
-    					     VALUES ('$newUserName', '$newUserPassword')";
+    					                       VALUES ('$newUserName', '$newUserPassword')
+                                     ";
+                   $addUser = $mysqli->query($registerQuery);
 
-    			         if (!$queryResult = $mysqli->query($registerQuery)) {
-    				             echo "Register query failed." . $mysqli->error ."\n";
-    				             exit;
-    			         }
+    			        //  if (!$queryResult = $mysqli->query($registerQuery)) {
+    				      //        echo "Register query failed." . $mysqli->error ."\n";
+    				      //        exit;
+    			        //  }
 
                    header("Location: /yardSale/loginPage.php");
              }
-    	}
+    	// }
     }
   ?>
 

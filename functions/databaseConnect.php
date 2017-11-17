@@ -1,5 +1,5 @@
 <?php
-
+//$Host = '128.163.141.169';
 $host = 'localhost';
 $username = 'root';
 $password = 'Muffin380!'; //enter password

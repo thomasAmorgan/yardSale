@@ -14,49 +14,26 @@
 
 	<?php
 	include 'functions/databaseConnect.php';
-		// $host = 'localhost';
-		// $username = 'root';
-		// $password = 'Muffin380!'; //enter password
-		// $database = 'yardSaleDatabase'; //Enter database name
-		// $mysqli = new mysqli($host, $username, $password, $database);
-		// $userName = $_POST["userName"];
-		// $userPassword = $_POST["userPassword"];
 
 		if (!empty($_POST)) {
-			// Check for connection error
-			// If there is an error we will use $mysqli->connect_error
-			// to print the cause of the error
-			// if ($mysqli->connect_errno) {
-			// 				echo "Could not connect to database \n";
-			// 				echo "Error: ". $mysqli->connect_error . "\n";
-			// 				exit;
-			// }
 
-			// else {
+			$loginQuery = "SELECT userID
+										 FROM logins
+										 WHERE userID = '$userName'
+										 AND password = '$userPassword'";
 
-							$loginQuery = "SELECT userID
-														 FROM logins
-														 WHERE userID = '$userName'
-														 AND password = '$userPassword'";
+			$result = $mysqli->query($loginQuery);
 
-							// if (!$queryResult = $mysqli->query($loginQuery)) {
-							// 		echo "Query failed, loser." . $mysqli->error . "\n";
-							// 		exit;
-							// }
-							$result = $mysqli->query($loginQuery);
+			if ($result->num_rows === 0) {
+				echo "<script> loginFailed(); </script>";
+			}
 
-
-							if ($queryResult->num_rows === 0) {
-									echo "<script> loginFailed(); </script>";
-							}
-
-							else {
-									$_SESSION['userName'] = $userName;
-									$_SESSION['loggedIn'] = true;
-									header("Location: /yardSale/homePageLogin.php");
-									exit;
-							}
-			// }
+			else {
+				$_SESSION['userName'] = $userName;
+				$_SESSION['loggedIn'] = true;
+				header("Location: /yardSale/homePageLogin.php");
+				exit;
+			}
 		}
 	?>
 </head>
