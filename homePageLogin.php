@@ -59,9 +59,13 @@
          }
 
          else {
+
+           echo "$searchOption";
+           echo "$searchString";
+
            $searchQuery = "SELECT * FROM YardSales
                            WHERE '$searchOption'
-                           LIKE '$searchString%'";
+                           LIKE '$searchString'";
            echo "<script> log(); </script>";
 
            $searchResult = $mysqli->query($searchQuery);
@@ -83,7 +87,7 @@
 
              else {
                echo "<br>";
-               echo "There are no yardsales that match the search";
+              //  echo "There are no yardsales that match the search";
              }
            }
       ?>
