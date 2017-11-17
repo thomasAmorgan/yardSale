@@ -95,7 +95,6 @@
               echo "There are no yardsales that match the search";
             }
           }
-        }
      ?>
 
   </head>
