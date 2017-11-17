@@ -102,9 +102,9 @@
 
         $checkQueryResult = $mysqli->query($checkQuery);
 
-        if ($checkQuery->num_rows > 0) {
+        if ($checkQueryResult->num_rows > 0) {
 
-          while ($row = $checkQuery->fetch_assoc()) {
+          while ($row = $checkQueryResult->fetch_assoc()) {
             echo "<br> <h3>" . $row["yardSaleName"] . "</h3>"
             ;
           }
