@@ -91,6 +91,8 @@
                                 VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                                 '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
 
+        echo "$createYardSaleQuery";
+
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
         $checkQuery = "SELECT *
@@ -101,7 +103,7 @@
         if ($checkQuery->num_rows > 0) {
 
           while ($row = $checkQuery->fetch_assoc()) {
-            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" 
+            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>"
             ;
           }
         }
