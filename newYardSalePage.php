@@ -98,7 +98,7 @@
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
         $checkQuery = "SELECT *
-  										 FROM logins
+  										 FROM YardSales
   										 WHERE yardSaleID = '$yardSaleID'
   										 AND userID = '$userID'";
 
