@@ -28,6 +28,7 @@
     $yardSaleMonth = $_POST['yardSaleMonth'];
     $yardSaleDay = $_POST['yardSaleDay'];
     $yardSaleYear = $_POST['yardSaleYear'];
+    $yardSaleTime = "04:20pm";
     $yardSaleDescription = $_POST['yardSaleDescription'];
     $userID = $_SESSION['userName'];
     $yardSaleID;
@@ -86,10 +87,11 @@
         // $yardSaleID = checkID();
         // echo "after calling function";
 
-        $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, dateTime,
-                                address, yardSaleName, yardSaleDescription)
+        $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, yardSaledate,
+                                yardSaleTime, address, yardSaleName, yardSaleDescription)
                                 VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-                                '$yardSaleAddress', '$yardSaleName', '$yardSaleDescription')";
+                                '$yardSaleTime', '$yardSaleAddress', '$yardSaleName',
+                                '$yardSaleDescription')";
 
         echo "$createYardSaleQuery";
 
