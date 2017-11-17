@@ -93,7 +93,11 @@
 
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-        echo "$createYardSaleResult";
+        if ($createYardSaleResult->num_rows > 0) {
+
+          while ($row = $createYardSaleResult->fetch_assoc()) {
+            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>";
+          }
 
         // if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
         //   echo "Query failed, loser." . $mysqli->error . "\n";
