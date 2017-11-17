@@ -7,6 +7,8 @@
   <title>Yardsale</title>
 
   <?php
+    include 'functions/databaseConnect.php';
+
     if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
       header("location: loginPage.php");
