@@ -11,7 +11,7 @@
       }
     </script>
   </head>
-  
+
   <body>
     <div class="">
       <a href="#">View Yardsales</a>
@@ -48,7 +48,7 @@
                         "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                         "Host: " . $row["userID"] . "<br>" .
                         "Address: " . $row["address"] . "<br>" .
-                        "Date: " . $row["dateTime"] . "<br>" .
+                        "Date: " . $row["yardSaleDate"] . "<br>" .
                         "Description: " . $row["yardSaleDescription"] . "<br>";
                  }
              }
@@ -73,7 +73,8 @@
                       "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                       "Host: " . $row["userID"] . "<br>" .
                       "Address: " . $row["address"] . "<br>" .
-                      "Date: " . $row["dateTime"] . "<br>" .
+                      "Date: " . $row["yardSaleDate"] .
+                      "Time: " . $row["yardSaleTime"] . "<br>" .
                       "Description: " . $row["yardSaleDescription"] . "<br>";
                }
                $searchString = "";
