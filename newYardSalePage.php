@@ -8,7 +8,7 @@
 
   <?php
     include 'functions/databaseConnect.php';
-    // include 'generateYardSaleID.php';
+    include 'generateYardSaleID.php';
 
     if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
