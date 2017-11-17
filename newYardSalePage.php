@@ -114,7 +114,7 @@
 	<h1>Create a Yardsale</h1>
 
 	<div>
-		<form action="<?php echo $PHP_SELF;?>" method="post">
+		<form action="" method="post">
 			<label for="yardSaleName">Yardsale Name: </label>
 			<input type="text" name="yardSaleName" id="yardSaleName" required>
 			<br>
