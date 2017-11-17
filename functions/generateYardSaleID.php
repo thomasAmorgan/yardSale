@@ -27,6 +27,6 @@ function checkID() {
         $idOK = true;
         return $yardSaleID;
       }
-    }
+  }
 }
  ?>

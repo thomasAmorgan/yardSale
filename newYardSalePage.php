@@ -8,7 +8,7 @@
 
   <?php
     include 'functions/databaseConnect.php';
-    include 'functions/generateYardSaleID.php';
+    // include 'functions/generateYardSaleID.php';
 
     if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
@@ -28,39 +28,31 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    // function generateID() {
-    //   $randNumber = rand(0, 99999);
-    //   return $randNumber;
-    // }
-    //
-    // function checkID() {
-    //   $yardSaleID = generateID();
-    //
-    //   echo "before while \n";
-    //   while (!$idOK) {
-    //     echo "in while \n";
-    //     $checkYardSaleID =  "SELECT yardSaleID
-    //                          FROM YardSales
-    //                          WHERE yardSaleID = '$yardSaleID'";
-    //     echo "after string \n";
-    //
-    //     if (!$queryResult  = $mysqli->query($checkYardSaleID)) {
-    //       echo "Query failed, loser." . $mysqli->error . "\n";
-    //       exit;
-    //     }
-    //
-    //     else if($queryResult->num_rows === 1) {
-    //       echo "id exists \n";
-    //       $yardSaleID = generateID();
-    //     }
-    //
-    //     else {
-    //       echo "it worked \n";
-    //       $idOK = true;
-    //     }
-    //   }
-    //   echo "while finished \n";
-    // }
+    function generateID() {
+      $randNumber = rand(0, 99999);
+      return $randNumber;
+    }
+
+    function checkID() {
+      $yardSaleID = generateID();
+
+      while (!$idOK) {
+        $checkYardSaleID =  "SELECT yardSaleID
+                             FROM YardSales
+                             WHERE yardSaleID = '$yardSaleID'";
+
+        $result = $mysqli->query($checkYardSaleID);
+
+        else if($result->num_rows === 1) {
+          $yardSaleID = generateID();
+        }
+
+        else {
+          $idOK = true;
+          return $yardSaleID;
+        }
+      }
+    }
 
     if (!empty($_POST)) {
 
