@@ -35,7 +35,8 @@
       else {
     		$registerQuery = "INSERT INTO logins (userID, password)
     					            VALUES ('$newUserName', '$newUserPassword')
-                                     ";
+                         ";
+                         
         $addUser = $mysqli->query($registerQuery);
         header("Location: /yardSale/loginPage.php");
       }

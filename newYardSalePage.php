@@ -93,10 +93,16 @@
 
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-        if ($createYardSaleResult->num_rows > 0) {
+        $checkQuery = "SELECT *
+  										 FROM logins
+  										 WHERE yardSaleID = '$yardSaleID'
+  										 AND userID = '$userID'";
 
-          while ($row = $createYardSaleResult->fetch_assoc()) {
-            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>";
+        if ($checkQuery->num_rows > 0) {
+
+          while ($row = $checkQuery->fetch_assoc()) {
+            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
+            ;
           }
         }
         // if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
