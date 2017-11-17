@@ -56,7 +56,7 @@
           else {
             if ($queryResult->num_rows > 0) {
               while ($row = $queryResult->fetch_assoc()) {
-                echo "<br> <h3>" ."Name: " . $row["yardSaleName"] . "</h3>" .
+                echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                      "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                      "Host: " . $row["userID"] . "<br>" .
                      "Address: " . $row["address"] . "<br>" .
@@ -86,7 +86,7 @@
         else {
           if ($queryResult->num_rows > 0) {
             while ($row = $queryResult->fetch_assoc()) {
-              echo "<br> <h3>" ."Name: " . $row["yardSaleName"] . "</h3>" .
+              echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                    "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                    "Host: " . $row["userID"] . "<br>" .
                    "Address: " . $row["address"] . "<br>" .
