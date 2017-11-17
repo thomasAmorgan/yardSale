@@ -16,64 +16,40 @@
 
   <?php
     include 'functions/databaseConnect.php';
-    //$Host = '128.163.141.169';
-    // $host = 'localhost';
-    // $username = 'root';
-    // $password = 'Muffin380!'; //enter password
-    // $database = 'yardSaleDatabase'; //Enter database name
-    // $mysqli = new mysqli($host, $username, $password, $database);
+
     $newUserName = $_POST["newUserName"];
     $newUserPassword = $_POST["newUserPassword"];
 
     if (!empty($_POST)) {
 
-      // if ($mysqli->connect_errno) {
-      //       	echo "Could not connect to database \n";
-      //       	echo "Error: ". $mysqli->connect_error . "\n";
-      //       	exit;
-    	// }
+      $checkQuery = "SELECT userID
+                     FROM logins
+                     WHERE userID = '$newUserName'";
 
-    	// else {
-            	$checkQuery = "SELECT userID
-                           	 FROM logins
-                             WHERE userID = '$newUserName'";
+      $result = $mysqli->query($checkQuery);
 
-              $result = $mysqli->query($checkQuery);
-            	// if (!$queryResult = $mysqli->query($checkQuery)) {
-              // 		echo "Query failed, loser." . $mysqli->error . "\n";
-              // 		exit;
-            	// }
-            	if ($result->num_rows === 1) {
-                echo "<script> accountExist(); </script>";
-            	}
+      if ($result->num_rows === 1) {
+        echo "<script> accountExist(); </script>";
+      }
 
-            	else {
-    			         $registerQuery = "INSERT INTO logins (userID, password)
-    					                       VALUES ('$newUserName', '$newUserPassword')
+      else {
+    		$registerQuery = "INSERT INTO logins (userID, password)
+    					            VALUES ('$newUserName', '$newUserPassword')
                                      ";
-                   $addUser = $mysqli->query($registerQuery);
-
-    			        //  if (!$queryResult = $mysqli->query($registerQuery)) {
-    				      //        echo "Register query failed." . $mysqli->error ."\n";
-    				      //        exit;
-    			        //  }
-
-                   header("Location: /yardSale/loginPage.php");
-             }
-    	// }
+        $addUser = $mysqli->query($registerQuery);
+        header("Location: /yardSale/loginPage.php");
+      }
     }
   ?>
-
 </head>
 
 <body>
-
 	<div>
 		<h1>Register</h1>
 
       <p>Register Here</p>
 
-        <form action="<?php echo $PHP_SELF;?>" method="post">
+        <form action="" method="post">
           <label for="userName">Username: </label>
           <input type="text" name="newUserName" id="newUserName" required>
           <br>
