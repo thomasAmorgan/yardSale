@@ -52,7 +52,7 @@
     //       return $yardSaleID;
     //     }
     //   }
-    }
+    // }
 
     if (!empty($_POST)) {
 
