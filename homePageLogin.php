@@ -22,6 +22,7 @@
     <hr>
 
     <?php
+      include 'functions/databaseConnect.php';
       // $host = 'localhost';
       // $username = 'root';
       // $password = 'Muffin380!'; //enter password
