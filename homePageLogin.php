@@ -6,6 +6,12 @@
     <title></title>
   </head>
 
+  <script type="text/javascript">
+    function log() {
+      console.log("search results");
+    }
+  </script>
+
   <body>
     <div class="">
       <a href="#">View Yardsales</a>
@@ -85,6 +91,7 @@
         // https://www.w3schools.com/php/php_mysql_select.asp
         else {
           if ($queryResult->num_rows > 0) {
+            echo "<script> log(); </script>";
             while ($row = $queryResult->fetch_assoc()) {
               echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                    "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
