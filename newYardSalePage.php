@@ -8,20 +8,12 @@
 
   <?php
     include 'functions/databaseConnect.php';
+    // include 'generateYardSaleID.php';
 
     if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
       header("location: loginPage.php");
     }
-
-    // include 'generateYardSaleID.php';
-
-    //$Host = '128.163.141.169';
-    // $host = 'localhost';
-    // $username = 'root';
-    // $password = 'Muffin380!'; //enter password
-    // $database = 'yardSaleDatabase'; //Enter database name
-    // $mysqli = new mysqli($host, $username, $password, $database);
 
     $yardSaleName = $_POST['yardSaleName'];
     $yardSaleAddress = $_POST['yardSaleAddress'];
@@ -36,10 +28,10 @@
 
     $yardSaleDate = "$yardSaleMonth" . "$yardSaleDay" . "$yardSaleYear";
 
-    function generateID() {
-      $randNumber = rand(0, 99999);
-      return $randNumber;
-    }
+    // function generateID() {
+    //   $randNumber = rand(0, 99999);
+    //   return $randNumber;
+    // }
     //
     // function checkID() {
     //   $yardSaleID = generateID();
@@ -72,20 +64,9 @@
 
     if (!empty($_POST)) {
 
-      $randNum = generateID();
-      $yardSaleID = "$userID" . "$randNum";
-
-      // if ($mysqli->connect_errno) {
-      //         echo "Could not connect to database \n";
-      //         echo "Error: ". $mysqli->connect_error . "\n";
-      //         exit;
-      // }
-
-      // else {
-        // checkID doesn't work can't see what error is so try another fix later
-        // echo "before calling function";
-        // $yardSaleID = checkID();
-        // echo "after calling function";
+      // $randNum = generateID();
+      // $yardSaleID = "$userID" . "$randNum";
+      $yardSaleID = checkID();
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, yardSaledate,
                                 yardSaleTime, address, yardSaleName, yardSaleDescription)
@@ -111,17 +92,9 @@
             ;
           }
         }
-        // if (!$queryResult  = $mysqli->query($createYardSaleQuery)) {
-        //   echo "Query failed, loser." . $mysqli->error . "\n";
-        //   exit;
-        // }
 
-        // else {
-          // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
           header("Location: /yardSale/homePageLogin.php");
           exit;
-        // }
-      // }
     }
   ?>
 
