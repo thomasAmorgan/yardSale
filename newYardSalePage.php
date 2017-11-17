@@ -43,7 +43,7 @@
 
         $result = $mysqli->query($checkYardSaleID);
 
-        else if($result->num_rows === 1) {
+        if($result->num_rows === 1) {
           $yardSaleID = generateID();
         }
 
