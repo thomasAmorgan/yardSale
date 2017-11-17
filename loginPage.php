@@ -15,6 +15,9 @@
 	<?php
 	include 'functions/databaseConnect.php';
 
+	$userName = $_POST["userName"];
+	$userPassword = $_POST["userPassword"];
+
 		if (!empty($_POST)) {
 
 			$loginQuery = "SELECT userID
@@ -44,7 +47,7 @@
 
 		<p>Enter Login Info</p>
 
-    <form action="<?php echo $PHP_SELF;?>" method="post">
+    <form action="" method="post">
       <label for="userName">Username: </label>
 			<input type="text" name="userName" id="userName" required>
 			<br>
