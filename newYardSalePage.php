@@ -118,7 +118,7 @@
 
         // else {
           // echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
-          // header("Location: /yardSale/homePageLogin.php");
+          header("Location: /yardSale/homePageLogin.php");
           exit;
         // }
       // }
