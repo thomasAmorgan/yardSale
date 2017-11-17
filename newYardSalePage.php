@@ -33,32 +33,32 @@
       return $randNumber;
     }
 
-    function checkID() {
-      $yardSaleID = generateID();
-
-      while (!$idOK) {
-        $checkYardSaleID =  "SELECT yardSaleID
-                             FROM YardSales
-                             WHERE yardSaleID = '$yardSaleID'";
-
-        $result = $mysqli->query($checkYardSaleID);
-
-        if($result->num_rows === 1) {
-          $yardSaleID = generateID();
-        }
-
-        else {
-          $idOK = true;
-          return $yardSaleID;
-        }
-      }
+    // function checkID() {
+    //   $yardSaleID = generateID();
+    //
+    //   while (!$idOK) {
+    //     $checkYardSaleID =  "SELECT yardSaleID
+    //                          FROM YardSales
+    //                          WHERE yardSaleID = '$yardSaleID'";
+    //
+    //     $result = $mysqli->query($checkYardSaleID);
+    //
+    //     if($result->num_rows === 1) {
+    //       $yardSaleID = generateID();
+    //     }
+    //
+    //     else {
+    //       $idOK = true;
+    //       return $yardSaleID;
+    //     }
+    //   }
     }
 
     if (!empty($_POST)) {
 
-      // $randNum = generateID();
-      // $yardSaleID = "$userID" . "$randNum";
-      $yardSaleID = checkID();
+      $randNum = generateID();
+      $yardSaleID = "$userID" . "$randNum";
+      // $yardSaleID = checkID();
 
         $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, yardSaledate,
                                 yardSaleTime, address, yardSaleName, yardSaleDescription)
