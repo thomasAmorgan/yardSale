@@ -60,13 +60,13 @@
       $yardSaleID = "$userID" . "$randNum";
       // $yardSaleID = checkID();
 
-        $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, yardSaledate,
+      $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, yardSaledate,
                                 yardSaleTime, address, yardSaleName, yardSaleDescription)
                                 VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                                 '$yardSaleTime', '$yardSaleAddress', '$yardSaleName',
                                 '$yardSaleDescription')";
 
-        echo "$createYardSaleQuery";
+        // echo "$createYardSaleQuery";
 
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 

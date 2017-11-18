@@ -65,8 +65,7 @@
 
            $searchQuery = "SELECT * FROM YardSales
                            WHERE '$searchOption'
-                           LIKE '$searchString'";
-           echo "<script> log(); </script>";
+                           LIKE '%$searchString%'";
 
            $searchResult = $mysqli->query($searchQuery);
 
@@ -87,7 +86,7 @@
 
              else {
                echo "<br>";
-              //  echo "There are no yardsales that match the search";
+               echo "There are no yardsales that match the search";
              }
            }
       ?>
@@ -95,7 +94,8 @@
 </html>
 
 <script type="text/javascript">
-  var optionsArray = ["yardSaleID", "userID", "dateTime", "address", "yardSaleName", "yardSaleDescription"];
+  var optionsArray = ["yardSaleID", "userID", "yardSaleDate", "yardSaleTime",
+                      "address", "yardSaleName", "yardSaleDescription"];
 
   var searchOptions = document.getElementById("searchOptions");
 
