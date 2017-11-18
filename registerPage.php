@@ -36,7 +36,7 @@
     		$registerQuery = "INSERT INTO logins (userID, password)
     					            VALUES ('$newUserName', '$newUserPassword')
                          ";
-                         
+
         $addUser = $mysqli->query($registerQuery);
         header("Location: /yardSale/loginPage.php");
       }
@@ -64,8 +64,8 @@
         <p>After successfully registering, you will be taken to the login page.</p>
 
         <hr>
-        <a href="loginPage.php">Login</a>
         <a href='/yardSale/homePageOpen.php'>Home</a>
+        <a href="loginPage.php">Login</a>
 	</div>
 
 </body>

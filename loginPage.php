@@ -58,9 +58,8 @@
 		</form>
 
 		<hr>
-		<a href="registerPage.php">Register</a>
 		<a href='/yardSale/homePageOpen.php'>Home</a>
-
+		<a href="registerPage.php">Register</a>
 	</div>
 
 </body>
