@@ -79,10 +79,10 @@
                               yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
                               zipCode, city)
-                              VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-                              '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-                              '$yardSaleDescription', '$yardSaleState',
-                              '$yardSaleZip', '$yardSaleCity')";
+                              VALUES ("$yardSaleID", "$userID", "$yardSaleDate",
+                              "$yardSaleTime", "$yardSaleStreet", "$yardSaleName",
+                              "$yardSaleDescription", "$yardSaleState",
+                              "$yardSaleZip", "$yardSaleCity")";
 
         // echo "$createYardSaleQuery";
 
