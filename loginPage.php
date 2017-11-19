@@ -43,7 +43,7 @@
 
 <body>
 	<div>
-		<h1>Yardsale</h1>
+		<h3>Login</h3>
 
 		<p>Enter Login Info</p>
 

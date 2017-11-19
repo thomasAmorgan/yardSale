@@ -46,7 +46,7 @@
 
 <body>
 	<div>
-		<h1>Register</h1>
+		<h3>Register</h3>
 
       <p>Register Here</p>
 

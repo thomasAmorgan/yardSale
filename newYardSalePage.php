@@ -94,7 +94,7 @@
 
 <body>
 
-	<h1>Create a Yardsale</h1>
+	<h3>Create a Yardsale</h3>
 
 	<div>
 		<form action="" method="post">
