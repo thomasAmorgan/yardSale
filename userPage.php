@@ -22,26 +22,32 @@
         include 'functions/databaseConnect.php';\
         // will display all the yardsales in the database when nothing is searched
 
-        $userName = $_SESSION['userName'];
-        $userYardSales = "SELECT * FROM YardSales
-                          WHERE userID = '$userName'";
-        $result = $mysqli->query($userYardSales);
+        $searchString = "";
+        $searchOption = "";
 
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
-                 "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                 "Host: " . $row["userID"] . "<br>" .
-                 "Address: " . $row["address"] . "<br>" .
-                 "Date: " . $row["yardSaleDate"] . "<br>" .
-                 "Description: " . $row["yardSaleDescription"] . "<br>";
+        // will display all the yardsales in the database when nothing is searched
+        if (empty($searchString) || empty($_POST["searchBar"])) {
+
+          $userName = $_SESSION['userName'];
+          $userYardSales = "SELECT * FROM YardSales
+                            WHERE userID = '$userName'";
+          $result = $mysqli->query($userYardSales);
+
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
+                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                   "Host: " . $row["userID"] . "<br>" .
+                   "Address: " . $row["address"] . "<br>" .
+                   "Date: " . $row["yardSaleDate"] . "<br>" .
+                   "Description: " . $row["yardSaleDescription"] . "<br>";
+            }
+          }
+
+          else {
+            echo "There are no yardsales";
           }
         }
-
-        else {
-          echo "There are no yardsales";
-        }
-
         ?>
     </div>
 
