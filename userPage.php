@@ -22,9 +22,10 @@
         include 'functions/databaseConnect.php';\
         // will display all the yardsales in the database when nothing is searched
 
-        $allYardSales = "SELECT * FROM YardSales
-                         WHERE userID = '$_SESSION['userName']'";
-        $result = $mysqli->query($allYardSales);
+        $userName = $_SESSION['userName'];
+        $userYardSales = "SELECT * FROM YardSales
+                          WHERE userID = '$userName'";
+        $result = $mysqli->query($userYardSales);
 
         if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
