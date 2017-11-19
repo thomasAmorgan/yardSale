@@ -7,7 +7,9 @@
   </head>
   <body>
 
-    <h3><?php $_SESSION['userName'] ?></h3>
+    <?php $userName = $_SESSION['userName']; ?>
+
+    <h3><<?php echo "$userName"; ?>></h3>
 
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
@@ -22,33 +24,26 @@
         include 'functions/databaseConnect.php';\
         // will display all the yardsales in the database when nothing is searched
 
-        $searchString = " ";
-        $searchOption = " ";
+        $userName = $_SESSION['userName'];
+        $userYardSales = "SELECT * FROM YardSales
+                          WHERE userID = '$userName'";
+        $result = $mysqli->query($userYardSales);
 
-        // will display all the yardsales in the database when nothing is searched
-        if (empty($searchString) || empty($searchOption)) {
-
-          $userName = $_SESSION['userName'];
-          $userYardSales = "SELECT * FROM YardSales
-                            WHERE userID = '$userName'";
-          $result = $mysqli->query($userYardSales);
-
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
-                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                   "Host: " . $row["userID"] . "<br>" .
-                   "Address: " . $row["address"] . "<br>" .
-                   "Date: " . $row["yardSaleDate"] . "<br>" .
-                   "Description: " . $row["yardSaleDescription"] . "<br>";
-            }
-          }
-
-          else {
-            echo "There are no yardsales";
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
+                 "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                 "Host: " . $row["userID"] . "<br>" .
+                 "Address: " . $row["address"] . "<br>" .
+                 "Date: " . $row["yardSaleDate"] . "<br>" .
+                 "Description: " . $row["yardSaleDescription"] . "<br>";
           }
         }
-        ?>
+
+        else {
+          echo "There are no yardsales";
+        }
+      ?>
     </div>
 
 
