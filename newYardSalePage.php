@@ -127,7 +127,8 @@
 			<label for="days">Day: </label>
 			<select id="days" name="yardSaleDay"> </select>
 			<label for="years">Year: </label>
-			<select id="years" name="yardSaleYear"> </select>
+			<select id="years" name="yardSaleYear"> </select>\
+      <br>
       <label for="yardSaleTime">Time: </label>
 			<select id="hours" name="yardSaleTime"> </select>
 			<select id="ampm" name="yardSaleAMPM"> </select>
