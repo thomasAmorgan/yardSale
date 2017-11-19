@@ -11,7 +11,7 @@
     <h1>YardSale!</h1>
 
     <div class="">
-      <a href="/yardSale/homePageOpen.php">View Yardsales</a>
+      <a href="/yardSale/homePageOpen.php">Home</a>
       <a href='/yardSale/loginPage.php'>Login</a>
       <a href='/yardSale/registerPage.php'>Register</a>
     </div>
