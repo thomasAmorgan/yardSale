@@ -66,7 +66,7 @@
       // $yardSaleID = checkID();
 
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
-                              yardSaledate, yardSaleTime, streetAddress,
+                              yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
                               zipCode, city)
                               VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
@@ -78,23 +78,23 @@
 
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-        $checkQuery = "SELECT *
-  										 FROM YardSales
-  										 WHERE yardSaleID = '$yardSaleID'
-  										 AND userID = '$userID'";
+        // $checkQuery = "SELECT *
+  			// 							 FROM YardSales
+  			// 							 WHERE yardSaleID = '$yardSaleID'
+  			// 							 AND userID = '$userID'";
+        //
+        // $checkQueryResult = $mysqli->query($checkQuery);
+        //
+        // if ($checkQueryResult->num_rows > 0) {
+        //
+        //   while ($row = $checkQueryResult->fetch_assoc()) {
+        //     echo "<br> <h3>" . $row["yardSaleName"] . "</h3>"
+        //     ;
+        //   }
+        // }
 
-        $checkQueryResult = $mysqli->query($checkQuery);
-
-        if ($checkQueryResult->num_rows > 0) {
-
-          while ($row = $checkQueryResult->fetch_assoc()) {
-            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>"
-            ;
-          }
-        }
-
-          header("Location: /yardSale/homePageLogin.php");
-          exit;
+        header("Location: /yardSale/homePageLogin.php");
+        exit;
     }
   ?>
 
