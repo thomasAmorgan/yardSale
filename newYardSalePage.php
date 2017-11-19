@@ -16,16 +16,21 @@
     }
 
     $yardSaleName = $_POST['yardSaleName'];
+
     $yardSaleStreet = $_POST['yardSaleStreet'];
     $yardSaleCity = $_POST['yardSaleCity'];
     $yardSaleState = $_POST['yardSaleState'];
     $yardSaleZip = $_POST['yardSaleZip'];
+
     $yardSaleMonth = $_POST['yardSaleMonth'];
     $yardSaleDay = $_POST['yardSaleDay'];
     $yardSaleYear = $_POST['yardSaleYear'];
+
     $yardSaleHour = $_POST['yardSaleHour'];
     $yardSaleAMPM = $_POST['yardSaleAMPM'];
+
     $yardSaleDescription = $_POST['yardSaleDescription'];
+
     $userID = $_SESSION['userName'];
     $yardSaleID;
     $idOK = false;
@@ -65,6 +70,11 @@
       $yardSaleID = "$userID" . "$randNum";
       // $yardSaleID = checkID();
 
+      echo $yardSaleID . '<br>' . $userID . '<br>' . $yardSaleDate . '<br>' .
+      $yardSaleTime . '<br>' . $yardSaleStreet . '<br>' . $yardSaleName . '<br>' .
+      $yardSaleDescription . '<br>' . $yardSaleState . '<br>' .
+      $yardSaleZip . '<br>' . $yardSaleCity;
+
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
@@ -93,8 +103,8 @@
         //   }
         // }
 
-        header("Location: /yardSale/homePageLogin.php");
-        exit;
+        // header("Location: /yardSale/homePageLogin.php");
+        // exit;
     }
   ?>
 
