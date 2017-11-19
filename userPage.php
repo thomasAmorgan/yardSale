@@ -17,7 +17,7 @@
   <body>
 
     <div class="">
-      <h3><<?php echo "Hi, " . $userName; ?>></h3>
+      <?php echo "<h3> Hi, " . $userName . "</h3>"; ?>
     </div>
 
     <div class="">
@@ -42,7 +42,8 @@
             echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                  "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                  "Host: " . $row["userID"] . "<br>" .
-                 "Address: " . $row["address"] . "<br>" .
+                 "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                 . $row["state"] . " " . $row["zipCode"] .  "<br>" .
                  "Date: " . $row["yardSaleDate"] . "<br>" .
                  "Description: " . $row["yardSaleDescription"] . "<br>";
           }

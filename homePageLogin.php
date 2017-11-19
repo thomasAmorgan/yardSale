@@ -4,14 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-
-    <script type="text/javascript">
-      function log() {
-        console.log("search results");
-      }
-    </script>
-
-    <?php 
+    
+    <?php
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
         header("location: loginPage.php");
