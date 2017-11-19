@@ -52,6 +52,8 @@
                            '$newUserLastName', '$newUserStreet', '$newUserZip',
                            '$newUserState', '$newUserCity', '$newUserPhone', 0)";
 
+        $insertUserTable = $mysqli->query($insertUserInfo); 
+
         header("Location: /yardSale/loginPage.php");
       }
     }
