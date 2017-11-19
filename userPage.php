@@ -26,7 +26,7 @@
         $searchOption = "";
 
         // will display all the yardsales in the database when nothing is searched
-        if (empty($searchString) || empty($_POST["searchBar"])) {
+        if (empty($searchString) || empty($searchOption) {
 
           $userName = $_SESSION['userName'];
           $userYardSales = "SELECT * FROM YardSales

@@ -29,7 +29,7 @@
         $searchOption = "";
 
         // will display all the yardsales in the database when nothing is searched
-          if (empty($searchString) || empty($_POST["searchBar"])) {
+          if (empty($searchString) || empty($searchOption) {
 
               $allYardSales = "SELECT * FROM YardSales";
               $result = $mysqli->query($allYardSales);
