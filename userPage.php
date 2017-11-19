@@ -21,7 +21,7 @@
 
     <div class="">
       <?php
-        include 'functions/databaseConnect.php';\
+        include 'functions/databaseConnect.php';
         // will display all the yardsales in the database when nothing is searched
 
         $userYardSales = "SELECT * FROM YardSales
