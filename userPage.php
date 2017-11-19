@@ -4,12 +4,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <?php $userName = $_SESSION['userName']; ?>
   </head>
   <body>
 
-    <?php $userName = $_SESSION['userName']; ?>
-
-    <h3><<?php echo "$userName"; ?>></h3>
+    <div class="">
+      <h3><<?php echo "Hi, " . "$userName"; ?>></h3>
+    </div>
 
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
