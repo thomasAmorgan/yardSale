@@ -70,10 +70,10 @@
       $yardSaleID = "$userID" . "$randNum";
       // $yardSaleID = checkID();
 
-      echo $yardSaleID . '<br>' . $userID . '<br>' . $yardSaleDate . '<br>' .
-      $yardSaleTime . '<br>' . $yardSaleStreet . '<br>' . $yardSaleName . '<br>' .
-      $yardSaleDescription . '<br>' . $yardSaleState . '<br>' .
-      $yardSaleZip . '<br>' . $yardSaleCity;
+      // echo $yardSaleID . '<br>' . $userID . '<br>' . $yardSaleDate . '<br>' .
+      // $yardSaleTime . '<br>' . $yardSaleStreet . '<br>' . $yardSaleName . '<br>' .
+      // $yardSaleDescription . '<br>' . $yardSaleState . '<br>' .
+      // $yardSaleZip . '<br>' . $yardSaleCity;
 
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
@@ -103,8 +103,7 @@
         //   }
         // }
 
-        // header("Location: /yardSale/homePageLogin.php");
-        // exit;
+        header("Location: /yardSale/homePageLogin.php");
     }
   ?>
 
