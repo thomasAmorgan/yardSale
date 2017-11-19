@@ -24,7 +24,6 @@
         include 'functions/databaseConnect.php';\
         // will display all the yardsales in the database when nothing is searched
 
-        $userName = $_SESSION['userName'];
         $userYardSales = "SELECT * FROM YardSales
                           WHERE userID = '$userName'";
         $result = $mysqli->query($userYardSales);
