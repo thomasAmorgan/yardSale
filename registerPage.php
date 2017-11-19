@@ -45,28 +45,29 @@
 </head>
 
 <body>
-	<div>
-		<h3>Register</h3>
 
-      <p>Register Here</p>
+  <h3>Register</h3>
 
-        <form action="" method="post">
-          <label for="userName">Username: </label>
-          <input type="text" name="newUserName" id="newUserName" required>
-          <br>
-			    <label for="newUserPassword">Password: </label>
-			    <input type="password" name="newUserPassword" id="newUserPassword" required>
-          <br>
-			    <button type="submit" formmethod="post">Register</button>
-        </form>
+  <div class="">
+    <a href='/yardSale/homePageOpen.php'>Home</a>
+    <a href="loginPage.php">Login</a>
+  </div>
 
-        <br>
-        <p>After successfully registering, you will be taken to the login page.</p>
+  <div class="">
+    <p>Register Here</p>
+    <br>
+    <p>After successfully registering, you will be taken to the login page.</p>
 
-        <hr>
-        <a href='/yardSale/homePageOpen.php'>Home</a>
-        <a href="loginPage.php">Login</a>
-	</div>
+    <form action="" method="post">
+      <label for="userName">Username: </label>
+      <input type="text" name="newUserName" id="newUserName" required>
+      <br>
+      <label for="newUserPassword">Password: </label>
+      <input type="password" name="newUserPassword" id="newUserPassword" required>
+      <br>
+      <button type="submit" formmethod="post">Register</button>
+    </form>
+  </div>
 
 </body>
 </html>

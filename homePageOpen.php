@@ -1,3 +1,8 @@
+<!-- Authors: Thomas Morgan d & Grayson Murphy
+     Description: Main page, has links for user to login or register. Also
+     displays all of the yardsales that are active.
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +15,7 @@
 
     <h1>YardSale!</h1>
 
+    <!-- simple navigation "bar" -->
     <div class="">
       <a href="/yardSale/homePageOpen.php">Home</a>
       <a href='/yardSale/loginPage.php'>Login</a>
@@ -18,6 +24,8 @@
 
     <hr>
 
+    <!-- Displays all the active yardsales; with name, id, host, address,
+         date, and description -->
     <div class="">
       <?php
         include 'functions/databaseConnect.php';
