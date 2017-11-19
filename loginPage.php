@@ -59,8 +59,6 @@
 	<hr>
 
 	<div>
-		<p>Enter Login Info</p>
-
 		<!-- handles the form input for logging in -->
     <form action="" method="post">
       <label for="userName">Username: </label>

@@ -17,14 +17,22 @@
   <?php
     include 'functions/databaseConnect.php';
 
-    $newUserName = $_POST["newUserName"];
+    $newUserID = $_POST["newUserName"];
     $newUserPassword = $_POST["newUserPassword"];
+
+    $newUserFirstName = $_POST['newUserFirstName'];
+    $newUserLastName = $_POST['newUserLastName'];
+    $newUserPhone = $_POST['newUserPhone'];
+    $newUserStreet = $_POST['newUserStreet'];
+    $newUserCity = $_POST['newUserCity'];
+    $newUserState = $_POST['newUserState'];
+    $newUserZip = $_POST['newUserZip'];
 
     if (!empty($_POST)) {
 
       $checkQuery = "SELECT userID
                      FROM logins
-                     WHERE userID = '$newUserName'";
+                     WHERE userID = '$newUserID'";
 
       $result = $mysqli->query($checkQuery);
 
@@ -34,10 +42,16 @@
 
       else {
     		$registerQuery = "INSERT INTO logins (userID, password)
-    					            VALUES ('$newUserName', '$newUserPassword')
+    					            VALUES ('$newUserID', '$newUserPassword')
                          ";
 
         $addUser = $mysqli->query($registerQuery);
+
+        $insertUserInfo = "INSERT INTO UserProfiles
+                           VALUES ('$newUserID', '$newUserFirstName',
+                           '$newUserLastName', '$newUserStreet', '$newUserZip',
+                           '$newUserState', '$newUserCity', '$newUserPhone', 0)";
+
         header("Location: /yardSale/loginPage.php");
       }
     }
@@ -56,7 +70,6 @@
   <hr>
 
   <div class="">
-    <p>Register Here</p>
     <p>After successfully registering, you will be taken to the login page.</p>
 
     <form action="" method="post">
@@ -77,7 +90,7 @@
       <br>
       <br>
 
-      <label for="newUserPhone"></label>
+      <label for="newUserPhone">Phone: </label>
       <input type="text" name="newUserPhone" id="newUserPhone" required>
       <br>
       <br>
