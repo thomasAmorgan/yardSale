@@ -57,7 +57,6 @@
 
   <div class="">
     <p>Register Here</p>
-    <br>
     <p>After successfully registering, you will be taken to the login page.</p>
 
     <form action="" method="post">
