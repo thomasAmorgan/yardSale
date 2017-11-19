@@ -4,6 +4,14 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <?php
+      if ($_SESSION['loggedIn'] == false) {
+        $_SESSION['status'] = "failed";
+        header("location: loginPage.php");
+      }
+    ?>
+
     <?php $userName = $_SESSION['userName']; ?>
   </head>
   <body>

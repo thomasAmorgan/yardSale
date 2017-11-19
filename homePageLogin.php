@@ -10,6 +10,13 @@
         console.log("search results");
       }
     </script>
+
+    <?php 
+      if ($_SESSION['loggedIn'] == false) {
+        $_SESSION['status'] = "failed";
+        header("location: loginPage.php");
+      }
+    ?>
   </head>
 
   <body>
