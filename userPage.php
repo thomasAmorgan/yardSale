@@ -9,7 +9,7 @@
   <body>
 
     <div class="">
-      <h3><<?php echo "Hi, " . "$userName"; ?>></h3>
+      <h3><<?php echo "Hi, " . $userName; ?>></h3>
     </div>
 
     <div class="">
