@@ -56,6 +56,8 @@
 		<a href="registerPage.php">Register</a>
 	</div>
 
+	<hr>
+
 	<div>
 		<p>Enter Login Info</p>
 

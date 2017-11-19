@@ -53,6 +53,8 @@
     <a href="loginPage.php">Login</a>
   </div>
 
+  <hr>
+
   <div class="">
     <p>Register Here</p>
     <br>
