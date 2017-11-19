@@ -23,8 +23,8 @@
     $yardSaleMonth = $_POST['yardSaleMonth'];
     $yardSaleDay = $_POST['yardSaleDay'];
     $yardSaleYear = $_POST['yardSaleYear'];
-    $yardSaleHour = $_POST[''];
-    $yardSaleAMPM = $_POST[''];
+    $yardSaleHour = $_POST['yardSaleHour'];
+    $yardSaleAMPM = $_POST['yardSaleAMPM'];
     $yardSaleDescription = $_POST['yardSaleDescription'];
     $userID = $_SESSION['userName'];
     $yardSaleID;
@@ -65,11 +65,14 @@
       $yardSaleID = "$userID" . "$randNum";
       // $yardSaleID = checkID();
 
-      $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID, yardSaledate,
-                                yardSaleTime, streetAddress, yardSaleName, yardSaleDescription)
-                                VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-                                '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-                                '$yardSaleDescription')";
+      $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
+                              yardSaledate, yardSaleTime, streetAddress,
+                              yardSaleName, yardSaleDescription, state,
+                              zipCode, city)
+                              VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
+                              '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
+                              '$yardSaleDescription', '$yardSaleState',
+                              '$yardSaleZip', '$yardSaleCity')";
 
         // echo "$createYardSaleQuery";
 
@@ -127,16 +130,16 @@
 			<label for="days">Day: </label>
 			<select id="days" name="yardSaleDay"> </select>
 			<label for="years">Year: </label>
-			<select id="years" name="yardSaleYear"> </select>\
+			<select id="years" name="yardSaleYear"> </select>
       <br>
-      <label for="yardSaleTime">Time: </label>
-			<select id="hours" name="yardSaleTime"> </select>
+      <label for="yardSaleHour">Time: </label>
+			<select id="hours" name="yardSaleHour"> </select>
 			<select id="ampm" name="yardSaleAMPM"> </select>
 
 			<br>
       <br>
 			<label for="description">Description: </label>
-			<textarea id="description" name="yardSaleDescription"></textarea>
+			<textarea id="description" name="yardSaleDescription" required></textarea>
 
 			<br>
 			<br>
