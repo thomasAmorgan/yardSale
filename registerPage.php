@@ -66,9 +66,57 @@
       <label for="newUserPassword">Password: </label>
       <input type="password" name="newUserPassword" id="newUserPassword" required>
       <br>
+      <br>
+
+      <p><b>Name</b></p>
+      <label for="userName">First Name: </label>
+      <input type="text" name="newUserFirstName" id="newUserFirstName" required>
+      <br>
+      <label for="userName">Last Name: </label>
+      <input type="text" name="newUserLastName" id="newUserLastName" required>
+      <br>
+      <br>
+
+      <label for="newUserPhone"></label>
+      <input type="text" name="newUserPhone" id="newUserPhone" required>
+      <br>
+      <br>
+
+      <p><b>Address</b></p>
+			<label for="newUserStreet">Street: </label>
+			<input type="text" name="newUserStreet" id="newUserStreet" required>
+      <br>
+			<label for="newUserCity">City: </label>
+			<input type="text" name="newUserCity" id="newUserCity" required>
+			<label for="yardSaleState">State: </label>
+			<select id="states" name="newUserState"> </select>
+      <br>
+      <label for="newUserZip">Zip Code: </label>
+			<input type="text" name="newUserZip" id="newUserZip" required>
+      <br>
+      <br>
+
       <button type="submit" formmethod="post">Register</button>
     </form>
   </div>
 
 </body>
 </html>
+
+<script type="text/javascript">
+var statesArray = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL',
+                   'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA',
+                   'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC',
+                   'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK',
+                   'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA',
+                   'VT', 'WA', 'WI', 'WV', 'WY'];
+
+var states = document.getElementById("states");
+
+for (var i = 0; i < statesArray.length; i++) {
+  var opt = document.createElement("option");
+  opt.value = statesArray[i];
+  opt.innerHTML = statesArray[i];
+  states.appendChild(opt);
+}
+</script>

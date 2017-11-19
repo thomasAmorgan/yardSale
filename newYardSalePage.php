@@ -70,11 +70,6 @@
       $yardSaleID = "$userID" . "$randNum";
       // $yardSaleID = checkID();
 
-      // echo $yardSaleID . '<br>' . $userID . '<br>' . $yardSaleDate . '<br>' .
-      // $yardSaleTime . '<br>' . $yardSaleStreet . '<br>' . $yardSaleName . '<br>' .
-      // $yardSaleDescription . '<br>' . $yardSaleState . '<br>' .
-      // $yardSaleZip . '<br>' . $yardSaleCity;
-
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
@@ -84,24 +79,7 @@
                               '$yardSaleDescription', '$yardSaleState',
                               '$yardSaleZip', '$yardSaleCity')";
 
-        // echo "$createYardSaleQuery";
-
         $createYardSaleResult = $mysqli->query($createYardSaleQuery);
-
-        // $checkQuery = "SELECT *
-  			// 							 FROM YardSales
-  			// 							 WHERE yardSaleID = '$yardSaleID'
-  			// 							 AND userID = '$userID'";
-        //
-        // $checkQueryResult = $mysqli->query($checkQuery);
-        //
-        // if ($checkQueryResult->num_rows > 0) {
-        //
-        //   while ($row = $checkQueryResult->fetch_assoc()) {
-        //     echo "<br> <h3>" . $row["yardSaleName"] . "</h3>"
-        //     ;
-        //   }
-        // }
 
         header("Location: /yardSale/homePageLogin.php");
     }
@@ -123,10 +101,12 @@
       <p><b>Yardsale Address</b></p>
 			<label for="yardSaleStreet">Street: </label>
 			<input type="text" name="yardSaleStreet" id="yardSaleStreet" required>
+      <br>
 			<label for="yardSaleCity">City: </label>
 			<input type="text" name="yardSaleCity" id="yardSaleCity" required>
 			<label for="yardSaleState">State: </label>
 			<select id="states" name="yardSaleState"> </select>
+      <br>
       <label for="yardSaleZip">Zip Code: </label>
 			<input type="text" name="yardSaleZip" id="yardSaleZip" required>
 			<br>
