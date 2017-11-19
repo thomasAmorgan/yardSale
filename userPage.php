@@ -15,6 +15,35 @@
       <a href='/yardSale/functions/logout.php'>Logout</a>
     </div>
 
+    <hr>
+
+    <div class="">
+      <?php
+        include 'functions/databaseConnect.php';\
+        // will display all the yardsales in the database when nothing is searched
+
+        $allYardSales = "SELECT * FROM YardSales
+                         WHERE userID = '$_SESSION['userName']'";
+        $result = $mysqli->query($allYardSales);
+
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
+                 "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                 "Host: " . $row["userID"] . "<br>" .
+                 "Address: " . $row["address"] . "<br>" .
+                 "Date: " . $row["yardSaleDate"] . "<br>" .
+                 "Description: " . $row["yardSaleDescription"] . "<br>";
+          }
+        }
+
+        else {
+          echo "There are no yardsales";
+        }
+
+        ?>
+    </div>
+
 
   </body>
 </html>
