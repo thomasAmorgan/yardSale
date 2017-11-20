@@ -15,7 +15,7 @@
 
   <body>
 
-    <h3>YardSale!</h3>
+    <h1>YardSale!</h1>
 
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
