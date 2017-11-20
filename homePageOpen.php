@@ -96,3 +96,17 @@
     </div>
   </body>
 </html>
+
+<script type="text/javascript">
+  var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
+                      "zipCode", "yardSaleDescription"];
+
+  var searchOptions = document.getElementById("searchOptions");
+
+  for (var i = 0; i < optionsArray.length; i++) {
+    var opt = document.createElement("option");
+    opt.value = optionsArray[i];
+    opt.innerHTML = optionsArray[i];
+    searchOptions.appendChild(opt);
+  }
+</script>
