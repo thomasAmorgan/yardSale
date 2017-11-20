@@ -99,7 +99,8 @@
 
 	<div>
 		<form action="" method="post">
-			<label for="yardSaleName">Yardsale Name: </label>
+      <p><b>Yardsale Name</b></p>
+			<label for="yardSaleName">Name: </label>
 			<input type="text" name="yardSaleName" id="yardSaleName" required>
       <br>
 
