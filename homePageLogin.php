@@ -41,7 +41,7 @@
        $searchString = $_POST["searchBar"];
        $searchOption = $_POST["searchOptions"];
 
-       will display all the yardsales in the database when nothing is searched
+      //  will display all the yardsales in the database when nothing is searched
          if (isset($_POST['searchBar'])) {
            echo "$searchOption";
            echo "%$searchString%";
