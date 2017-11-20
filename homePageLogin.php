@@ -41,7 +41,7 @@
        // will display all the yardsales in the database when nothing is searched
          if (isset($_POST['searchBar'])) {
            echo "$searchOption";
-           echo "$searchString";
+           echo "%$searchString%";
 
            $searchQuery = "SELECT * FROM YardSales
                            WHERE '$searchOption'
@@ -49,7 +49,7 @@
 
            $searchResult = $mysqli->query($searchQuery);
 
-             if ($searchResult->num_rows >= 0) {
+             if ($searchResult->num_rows > 0) {
 
                while ($row = $searchResult->fetch_assoc()) {
                  echo "<h3>" . $row["yardSaleName"] . "</h3>" .
