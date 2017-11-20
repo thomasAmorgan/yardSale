@@ -102,7 +102,6 @@
 			<label for="yardSaleName">Yardsale Name: </label>
 			<input type="text" name="yardSaleName" id="yardSaleName" required>
       <br>
-			<br>
 
       <p><b>Yardsale Address</b></p>
 			<label for="yardSaleStreet">Street: </label>
