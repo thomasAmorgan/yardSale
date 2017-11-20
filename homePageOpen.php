@@ -35,7 +35,7 @@
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-              echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
+              echo "<h3>" . $row["yardSaleName"] . "</h3>" .
                    "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                    "Host: " . $row["userID"] . "<br>" .
                    "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
