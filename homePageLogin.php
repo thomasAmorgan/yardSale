@@ -39,8 +39,39 @@
        $searchOption = $_POST["searchOptions"];
 
        // will display all the yardsales in the database when nothing is searched
-         if (empty($searchString) || empty($_POST["searchBar"])) {
+         if (isset($_POST['searchBar'])) {
+           echo "$searchOption";
+           echo "$searchString";
 
+           $searchQuery = "SELECT * FROM YardSales
+                           WHERE '$searchOption'
+                           LIKE '%$searchString%'";
+
+           $searchResult = $mysqli->query($searchQuery);
+
+             if ($searchResult->num_rows > 0) {
+
+               while ($row = $searchResult->fetch_assoc()) {
+                 echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                      "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                      "Host: " . $row["userID"] . "<br>" .
+                      "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                      . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                      "Date: " . $row["yardSaleDate"] . "<br>" .
+                      "Time: " . $row["yardSaleTime"] . "<br>" .
+                      "Description: " . $row["yardSaleDescription"] . "<br>";
+               }
+              //  $searchString = "";
+              //  $searchOption = "";
+             }
+
+             else {
+               echo "<br>";
+               echo "There are no yardsales that match the search";
+             }
+         }
+
+         else {
              $allYardSales = "SELECT * FROM YardSales";
              $result = $mysqli->query($allYardSales);
 
@@ -59,38 +90,6 @@
 
              else {
                echo "There are no yardsales";
-             }
-         }
-
-         else {
-
-           echo "$searchOption";
-           echo "$searchString";
-
-           $searchQuery = "SELECT * FROM YardSales
-                           WHERE '$searchOption'
-                           LIKE '%$searchString%'";
-
-           $searchResult = $mysqli->query($searchQuery);
-
-             if ($searchResult->num_rows > 0) {
-
-               while ($row = $searchResult->fetch_assoc()) {
-                 echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
-                      "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                      "Host: " . $row["userID"] . "<br>" .
-                      "Address: " . $row["address"] . "<br>" .
-                      "Date: " . $row["yardSaleDate"] .
-                      "Time: " . $row["yardSaleTime"] . "<br>" .
-                      "Description: " . $row["yardSaleDescription"] . "<br>";
-               }
-              //  $searchString = "";
-              //  $searchOption = "";
-             }
-
-             else {
-               echo "<br>";
-               echo "There are no yardsales that match the search";
              }
            }
       ?>
