@@ -24,6 +24,15 @@
 
     <hr>
 
+    <div class="">
+      <form class="" action="" method="post">
+        <label for="searchBar">Search: </label>
+        <input type="text" name="searchBar" id="searchBar">
+        <select name="searchOptions" id="searchOptions"></select>
+        <button type="submit" formmethod="post">Search</button>
+      </form>
+    </div>
+
     <!-- Displays all the active yardsales; with name, id, host, address,
          date, and description -->
     <div class="">
