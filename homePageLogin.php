@@ -43,8 +43,6 @@
 
       //  will display all the yardsales in the database when nothing is searched
          if (!empty($_POST['searchBar'])) {
-           echo "$searchOption";
-           echo "%$searchString%";
 
            $searchQuery = "SELECT * FROM YardSales
                            WHERE $searchOption
@@ -64,8 +62,6 @@
                       "Time: " . $row["yardSaleTime"] . "<br>" .
                       "Description: " . $row["yardSaleDescription"] . "<br>";
                }
-              //  $searchString = "";
-              //  $searchOption = "";
              }
 
              else {
@@ -100,8 +96,8 @@
 </html>
 
 <script type="text/javascript">
-  var optionsArray = ["yardSaleID", "userID", "yardSaleDate", "yardSaleTime",
-                      "address", "yardSaleName", "yardSaleDescription"];
+  var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
+                      "zipCode", "yardSaleDescription"];
 
   var searchOptions = document.getElementById("searchOptions");
 
