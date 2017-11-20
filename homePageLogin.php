@@ -74,10 +74,10 @@
             echo "There are no yardsales that match the search";
           }
         }
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
-  // Displays all yardsales in the db
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Displays all yardsales in the db
         else {
           $allYardSales = "SELECT * FROM YardSales";
           $result = $mysqli->query($allYardSales);
@@ -99,7 +99,7 @@
             echo "There are no yardsales";
           }
         }
-  //~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ?>
     </div>
   </body>
