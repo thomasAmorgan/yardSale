@@ -14,6 +14,9 @@
   </head>
 
   <body>
+
+    <h3>YardSale!</h3>
+
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
       <a href="/yardSale/userPage.php">User Page</a>
@@ -24,7 +27,7 @@
     <hr>
 
      <div class="">
-       <form class="" action="" method="post">
+       <form class="" action="functions/searchYardSales.php" method="post">
          <label for="searchBar">Search: </label>
          <input type="text" name="searchBar" id="searchBar">
          <select name="searchOptions" id="searchOptions"></select>
