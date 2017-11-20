@@ -115,7 +115,6 @@
       <label for="yardSaleZip">Zip Code: </label>
 			<input type="text" name="yardSaleZip" id="yardSaleZip" required>
 			<br>
-			<br>
 
       <p><b>Date of Yardsale</b></p>
 			<br>
@@ -130,9 +129,9 @@
 			<select id="hours" name="yardSaleHour"> </select>
 			<select id="ampm" name="yardSaleAMPM"> </select>
 
-			<br>
       <br>
-			<label for="description">Description: </label>
+			<!-- <label for="description">Description: </label> -->
+      <p><b>Description</b></p>
 			<textarea id="description" name="yardSaleDescription" required></textarea>
 
 			<br>
