@@ -54,12 +54,11 @@
             }
 
             else {
-              echo "<br>";
               echo "There are no yardsales that match the search";
             }
         }
 
-        else {
+        else if (empty($_POST['searchBar'])){
           if ($_SESSION['loggedIn'] == false) {
             $_SESSION['status'] = "failed";
             header("Location: /yardSale/homePageOpen.php");
