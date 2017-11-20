@@ -9,21 +9,20 @@
 
   $yardSaleID = $_POST['deleteYardSale'];
   echo "$yardSaleID";
-  $userID = $_SESSION['userName'];
 
   if (!empty($_POST)) {
-    $deleteQuery = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'";
+    $deleteQuery = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
+                    AND userID = '$userID'";
 
     if ($mysqli->query($deleteQuery) === true) {
       echo "Success";
+      header("Location: /yardSale/userPage.php");
     }
 
     else {
       echo "Failure";
+      header("Location: /yardSale/userPage.php");
     }
-
-    // $result = $mysqli->query($deleteQuery);
-    // header("Location: /yardSale/userPage.php");
   }
 
  ?>
