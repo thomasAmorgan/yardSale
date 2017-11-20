@@ -88,8 +88,12 @@
 </head>
 
 <body>
-
 	<h3>Create a Yardsale</h3>
+
+  <div class="">
+    <a href='/yardSale/homePageLogin.php'>Home</a>
+    <a href='/yardSale/loginPage.php'>Logout</a>
+  </div>
 
 	<div>
 		<form action="" method="post">
@@ -136,8 +140,6 @@
 		</form>
 
 		<hr>
-    <a href='/yardSale/homePageLogin.php'>Home</a>
-		<a href='/yardSale/loginPage.php'>Logout</a>
 	</div>
 
 </body>

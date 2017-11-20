@@ -60,7 +60,7 @@
         }
 
         else {
-          echo "There are no yardsales";
+          echo "<br> <p>There are no yardsales</p>";
         }
       ?>
     </div>

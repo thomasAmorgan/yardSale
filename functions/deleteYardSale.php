@@ -8,7 +8,6 @@
   }
 
   $yardSaleID = $_POST['deleteYardSale'];
-  echo "$yardSaleID";
   $userID = $_SESSION['userName'];
 
   if (!empty($_POST)) {
@@ -16,14 +15,11 @@
                     AND userID = '$userID'";
 
     if ($mysqli->query($deleteQuery) === true) {
-      echo "Success";
       header("Location: /yardSale/userPage.php");
     }
 
     else {
-      echo "Failure";
       header("Location: /yardSale/userPage.php");
     }
   }
-
  ?>
