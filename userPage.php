@@ -29,6 +29,15 @@
     <hr>
 
     <div class="">
+      <p>To delete a yardsale enter its ID and press delete</p>
+      <form class="" action="deleteYardSale.php" method="post">
+        <label for="deleteYardSale"></label>
+        <input type="text" name="deleteYardSale" id="deleteYardSale">
+        <button type="submit" formmethod="post">Delete</button>
+      </form>
+    </div>
+
+    <div class="">
       <?php
         include 'functions/databaseConnect.php';
         // will display all the yardsales in the database when nothing is searched
@@ -45,6 +54,7 @@
                  "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
                  . $row["state"] . " " . $row["zipCode"] .  "<br>" .
                  "Date: " . $row["yardSaleDate"] . "<br>" .
+                 "Time: " . $row["yardSaleTime"] . "<br>" .
                  "Description: " . $row["yardSaleDescription"] . "<br>";
           }
         }

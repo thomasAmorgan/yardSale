@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    
+
     <?php
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
@@ -49,8 +49,10 @@
                    echo "<br> <h3>" . $row["yardSaleName"] . "</h3>" .
                         "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
                         "Host: " . $row["userID"] . "<br>" .
-                        "Address: " . $row["address"] . "<br>" .
+                        "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                        . $row["state"] . " " . $row["zipCode"] .  "<br>" .
                         "Date: " . $row["yardSaleDate"] . "<br>" .
+                        "Time: " . $row["yardSaleTime"] . "<br>" .
                         "Description: " . $row["yardSaleDescription"] . "<br>";
                  }
              }
