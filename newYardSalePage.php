@@ -131,7 +131,7 @@
       <br>
 			<!-- <label for="description">Description: </label> -->
       <p><b>Description</b></p>
-			<textarea id="description" name="yardSaleDescription" rows="10" cols="100" required></textarea>
+			<textarea id="description" name="yardSaleDescription" rows="10" cols="50" required></textarea>
 
 			<br>
 			<br>
