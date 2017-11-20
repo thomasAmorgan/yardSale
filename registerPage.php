@@ -52,7 +52,7 @@
                            '$newUserLastName', '$newUserStreet', '$newUserZip',
                            '$newUserState', '$newUserCity', '$newUserPhone', 0)";
 
-        $insertUserTable = $mysqli->query($insertUserInfo); 
+        $insertUserTable = $mysqli->query($insertUserInfo);
 
         header("Location: /yardSale/loginPage.php");
       }
@@ -75,6 +75,8 @@
     <p>After successfully registering, you will be taken to the login page.</p>
 
     <form action="" method="post">
+
+      <p><b>Account</b></p>
       <label for="userName">Username: </label>
       <input type="text" name="newUserName" id="newUserName" required>
       <br>
@@ -92,6 +94,7 @@
       <br>
       <br>
 
+      <p><b>Phone Number</b></p>
       <label for="newUserPhone">Phone: </label>
       <input type="text" name="newUserPhone" id="newUserPhone" required>
       <br>
