@@ -47,8 +47,8 @@
            echo "%$searchString%";
 
            $searchQuery = "SELECT * FROM YardSales
-                           WHERE '$searchOption'
-                           LIKE '$searchString'";
+                           WHERE $searchOption
+                           LIKE '%$searchString%'";
 
            $searchResult = $mysqli->query($searchQuery);
 
