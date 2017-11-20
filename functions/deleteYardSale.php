@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include 'functions/databaseConnect.php';
+  include 'databaseConnect.php';
 
   if ($_SESSION['loggedIn'] == false) {
     $_SESSION['status'] = "failed";
