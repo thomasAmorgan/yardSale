@@ -58,7 +58,7 @@
             }
         }
 
-        else if (empty($_POST['searchBar'])){
+        else {
           if ($_SESSION['loggedIn'] == false) {
             $_SESSION['status'] = "failed";
             header("Location: /yardSale/homePageOpen.php");

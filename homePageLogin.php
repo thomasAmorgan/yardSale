@@ -27,7 +27,7 @@
     <hr>
 
      <div class="">
-       <form class="" action="functions/searchYardSales.php" method="post">
+       <form class="" action="" method="post">
          <label for="searchBar">Search: </label>
          <input type="text" name="searchBar" id="searchBar">
          <select name="searchOptions" id="searchOptions"></select>
@@ -37,44 +37,44 @@
 
      <?php
        include 'functions/databaseConnect.php';
-       //
-      //  $searchString = $_POST["searchBar"];
-      //  $searchOption = $_POST["searchOptions"];
 
-       // will display all the yardsales in the database when nothing is searched
-        //  if (isset($_POST['searchBar'])) {
-        //    echo "$searchOption";
-        //    echo "%$searchString%";
-         //
-        //    $searchQuery = "SELECT * FROM YardSales
-        //                    WHERE '$searchOption'
-        //                    LIKE '%$searchString%'";
-         //
-        //    $searchResult = $mysqli->query($searchQuery);
-         //
-        //      if ($searchResult->num_rows > 0) {
-         //
-        //        while ($row = $searchResult->fetch_assoc()) {
-        //          echo "<h3>" . $row["yardSaleName"] . "</h3>" .
-        //               "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-        //               "Host: " . $row["userID"] . "<br>" .
-        //               "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
-        //               . $row["state"] . " " . $row["zipCode"] .  "<br>" .
-        //               "Date: " . $row["yardSaleDate"] . "<br>" .
-        //               "Time: " . $row["yardSaleTime"] . "<br>" .
-        //               "Description: " . $row["yardSaleDescription"] . "<br>";
-        //        }
-        //       //  $searchString = "";
-        //       //  $searchOption = "";
-        //      }
-         //
-        //      else {
-        //        echo "<br>";
-        //        echo "There are no yardsales that match the search";
-        //      }
-        //  }
+       $searchString = $_POST["searchBar"];
+       $searchOption = $_POST["searchOptions"];
 
-        //  else {
+       will display all the yardsales in the database when nothing is searched
+         if (isset($_POST['searchBar'])) {
+           echo "$searchOption";
+           echo "%$searchString%";
+
+           $searchQuery = "SELECT * FROM YardSales
+                           WHERE '$searchOption'
+                           LIKE '%$searchString%'";
+
+           $searchResult = $mysqli->query($searchQuery);
+
+             if ($searchResult->num_rows > 0) {
+
+               while ($row = $searchResult->fetch_assoc()) {
+                 echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                      "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                      "Host: " . $row["userID"] . "<br>" .
+                      "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                      . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                      "Date: " . $row["yardSaleDate"] . "<br>" .
+                      "Time: " . $row["yardSaleTime"] . "<br>" .
+                      "Description: " . $row["yardSaleDescription"] . "<br>";
+               }
+              //  $searchString = "";
+              //  $searchOption = "";
+             }
+
+             else {
+               echo "<br>";
+               echo "There are no yardsales that match the search";
+             }
+         }
+
+         else {
              $allYardSales = "SELECT * FROM YardSales";
              $result = $mysqli->query($allYardSales);
 
@@ -94,7 +94,7 @@
              else {
                echo "There are no yardsales";
              }
-          //  }
+           }
       ?>
   </body>
 </html>
