@@ -95,6 +95,8 @@
     <a href='/yardSale/loginPage.php'>Logout</a>
   </div>
 
+  <hr>
+
 	<div>
 		<form action="" method="post">
 			<label for="yardSaleName">Yardsale Name: </label>
