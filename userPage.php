@@ -43,6 +43,18 @@
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+    <br>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="">
+      <p>To edit a yardsale enter its ID and press edit</p>
+      <form class="" action="" method="post">
+        <label for="editYardSale"></label>
+        <input type="text" name="editYardSale" id="editYardSale">
+      </form>
+    </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SHOW USER YSs ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <?php
