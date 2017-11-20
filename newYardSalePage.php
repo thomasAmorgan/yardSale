@@ -117,7 +117,6 @@
 			<br>
 
       <p><b>Date of Yardsale</b></p>
-			<br>
 			<label for="months">Month: </label>
 			<select id="months" name="yardSaleMonth"> </select>
 			<label for="days">Day: </label>
@@ -132,7 +131,7 @@
       <br>
 			<!-- <label for="description">Description: </label> -->
       <p><b>Description</b></p>
-			<textarea id="description" name="yardSaleDescription" required></textarea>
+			<textarea id="description" name="yardSaleDescription" row="10" columns="100" required></textarea>
 
 			<br>
 			<br>
