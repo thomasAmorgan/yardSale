@@ -2,19 +2,21 @@
 <!-- session start is necessary in order to know who is currently logged in  -->
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>YardSale</title>
 <!-- <link rel="styleSheet" type="text/css" href="homePage.css"> -->
 
-	<!-- script that pops up an alert box to tell user that log in failed -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: SCRIPT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- script that pops up an alert box to tell user that log in failed -->
 	<script type="text/javascript">
 		function loginFailed() {
 			alert("Login failed, please try again or create an account.");
 		}
 	</script>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: SCRIPT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-	<!-- performs the login query, checks if user exist and lets them in or not -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: LOGIN FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- performs the login query, checks if user exist and lets them in or not -->
 	<?php
 	include 'functions/databaseConnect.php';
 
@@ -45,19 +47,23 @@
 			}
 		}
 	?>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: LOGIN FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 </head>
 
 <body>
 
 	<h3>Login</h3>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div class="">
 		<a href='/yardSale/homePageOpen.php'>Home</a>
 		<a href="registerPage.php">Register</a>
 	</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 	<hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: LOGIN FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div>
 		<!-- handles the form input for logging in -->
     <form action="" method="post">
@@ -70,6 +76,6 @@
 			<button type="submit" formmethod="post">Login</button>
 		</form>
 	</div>
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: LOGIN FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 </body>
 </html>

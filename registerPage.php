@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Register</title>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: ALERT SCRIPTS ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <script type="text/javascript">
     function accountExist() {
       alert("Account already exist, please login.");
@@ -13,7 +14,9 @@
       alert("You successfully registered!");
     }
   </script>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: ALERT SCRIPTS ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: REGISTER FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~ -->
   <?php
     include 'functions/databaseConnect.php';
 
@@ -36,10 +39,12 @@
 
       $result = $mysqli->query($checkQuery);
 
+      // check if the account already exist, if it does don't create an account
       if ($result->num_rows === 1) {
         echo "<script> accountExist(); </script>";
       }
 
+      // if the account doesn't exist go ahead and add the user
       else {
     		$registerQuery = "INSERT INTO logins (userID, password)
     					            VALUES ('$newUserID', '$newUserPassword')
@@ -58,24 +63,27 @@
       }
     }
   ?>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: REGISTER FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 </head>
 
 <body>
 
   <h3>Register</h3>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <a href='/yardSale/homePageOpen.php'>Home</a>
     <a href="loginPage.php">Login</a>
   </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
   <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: REGISTER FORM ~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <p>After successfully registering, you will be taken to the login page.</p>
 
     <form action="" method="post">
-
       <p><b>Account</b></p>
       <label for="userName">Username: </label>
       <input type="text" name="newUserName" id="newUserName" required>
@@ -117,10 +125,12 @@
       <button type="submit" formmethod="post">Register</button>
     </form>
   </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: REGISTER FORM ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 </body>
 </html>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~ START: DROPDOWN POP FUNCTION ~~~~~~~~~~~~~~~~~~~~ -->
 <script type="text/javascript">
 var statesArray = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL',
                    'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA',
@@ -138,3 +148,4 @@ for (var i = 0; i < statesArray.length; i++) {
   states.appendChild(opt);
 }
 </script>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DROPDOWN POP FUNCTION ~~~~~~~~~~~~~~~~~~~~~ -->

@@ -5,14 +5,16 @@
     <meta charset="utf-8">
     <title></title>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
     <?php
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
         header("location: loginPage.php");
       }
-    ?>
 
-    <?php $userName = $_SESSION['userName']; ?>
+      $userName = $_SESSION['userName'];
+    ?>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
   </head>
   <body>
 
@@ -20,14 +22,17 @@
       <?php echo "<h3> Hi, " . $userName . "</h3>"; ?>
     </div>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
       <a href='/yardSale/newYardSalePage.php'>Create Yardsale</a>
       <a href='/yardSale/functions/logout.php'>Logout</a>
     </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <p>To delete a yardsale enter its ID and press delete</p>
       <form class="" action="functions/deleteYardSale.php" method="post">
@@ -36,7 +41,9 @@
         <button type="submit" formmethod="post">Delete</button>
       </form>
     </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SHOW USER YSs ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <?php
         include 'functions/databaseConnect.php';
@@ -64,7 +71,6 @@
         }
       ?>
     </div>
-
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SHOW USER YSs ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   </body>
 </html>

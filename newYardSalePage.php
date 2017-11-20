@@ -6,14 +6,17 @@
   <meta charset="utf-8">
   <title>Yardsale</title>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
   <?php
-    include 'functions/databaseConnect.php';
-    // include 'functions/generateYardSaleID.php';
-
     if ($_SESSION['loggedIn'] == false) {
       $_SESSION['status'] = "failed";
       header("location: loginPage.php");
     }
+  ?>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <?php
+    include 'functions/databaseConnect.php';
 
     $yardSaleName = $_POST['yardSaleName'];
 
@@ -33,37 +36,18 @@
 
     $userID = $_SESSION['userName'];
     $yardSaleID;
-    $idOK = false;
 
     $yardSaleDate = "$yardSaleMonth" . '/' . "$yardSaleDay" . '/' . "$yardSaleYear";
     $yardSaleTime = "$yardSaleHour" . "$yardSaleAMPM";
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START: GENERATE ID ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     function generateID() {
       $randNumber = rand(0, 99999);
       return $randNumber;
     }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: GENERATE ID ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    // function checkID() {
-    //   $yardSaleID = generateID();
-    //
-    //   while (!$idOK) {
-    //     $checkYardSaleID =  "SELECT yardSaleID
-    //                          FROM YardSales
-    //                          WHERE yardSaleID = '$yardSaleID'";
-    //
-    //     $result = $mysqli->query($checkYardSaleID);
-    //
-    //     if($result->num_rows === 1) {
-    //       $yardSaleID = generateID();
-    //     }
-    //
-    //     else {
-    //       $idOK = true;
-    //       return $yardSaleID;
-    //     }
-    //   }
-    // }
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (!empty($_POST)) {
 
       $randNum = generateID();
@@ -79,24 +63,27 @@
                               '$yardSaleDescription', '$yardSaleState',
                               '$yardSaleZip', '$yardSaleCity')";
 
-        $createYardSaleResult = $mysqli->query($createYardSaleQuery);
+      $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-        header("Location: /yardSale/homePageLogin.php");
+      header("Location: /yardSale/homePageLogin.php");
     }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
-
 </head>
 
 <body>
 	<h3>Create a Yardsale</h3>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <a href='/yardSale/homePageLogin.php'>Home</a>
     <a href='/yardSale/loginPage.php'>Logout</a>
   </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
   <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div>
 		<form action="" method="post">
       <p><b>Yardsale Name</b></p>
@@ -139,11 +126,11 @@
 			<button type="submit" formmethod="post" name="button">Create</button>
 		</form>
 	</div>
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 </body>
-
 </html>
 
+<!-- ~~~~~~~~~~~~~~~~~~~ START: DROPDOWN POP FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~ -->
 <script>
 	window.onload = function() {
 		var monthArray = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
@@ -212,3 +199,4 @@
 		}
 	}
 </script>
+<!-- ~~~~~~~~~~~~~~~~~~~~ END: DROPDOWN POP FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~ -->
