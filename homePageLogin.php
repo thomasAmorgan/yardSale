@@ -97,7 +97,7 @@
 
 <script type="text/javascript">
   var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
-                      "zipCode", "yardSaleDescription"];
+                      "zipCode"];
 
   var searchOptions = document.getElementById("searchOptions");
 
