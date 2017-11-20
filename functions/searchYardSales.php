@@ -29,14 +29,15 @@
 
       // will display all the yardsales in the database when nothing is searched
         if (isset($_POST['searchBar'])) {
-          echo "$searchOption";
-          echo "%$searchString%";
+          // echo "$searchOption";
+          // echo "%$searchString%";
 
           $searchQuery = "SELECT * FROM YardSales
                           WHERE '$searchOption'
                           LIKE '%$searchString%'";
 
           $searchResult = $mysqli->query($searchQuery);
+          echo "$searchResult->num_rows";
 
             if ($searchResult->num_rows > 0) {
 
