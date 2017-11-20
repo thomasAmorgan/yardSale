@@ -30,7 +30,7 @@
 
     <div class="">
       <p>To delete a yardsale enter its ID and press delete</p>
-      <form class="" action="deleteYardSale.php" method="post">
+      <form class="" action="functions/deleteYardSale.php" method="post">
         <label for="deleteYardSale"></label>
         <input type="text" name="deleteYardSale" id="deleteYardSale">
         <button type="submit" formmethod="post">Delete</button>
