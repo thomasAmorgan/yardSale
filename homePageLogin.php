@@ -90,7 +90,7 @@
              else {
                echo "There are no yardsales";
              }
-           }
+          }
       ?>
   </body>
 </html>

@@ -30,25 +30,59 @@
       <?php
         include 'functions/databaseConnect.php';
 
-        $allYardSales = "SELECT * FROM YardSales";
-        $result = $mysqli->query($allYardSales);
+        $searchString = $_POST["searchBar"];
+        $searchOption = $_POST["searchOptions"];
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo "<h3>" . $row["yardSaleName"] . "</h3>" .
-                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                   "Host: " . $row["userID"] . "<br>" .
-                   "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
-                   . $row["state"] . " " . $row["zipCode"] .  "<br>" .
-                   "Date: " . $row["yardSaleDate"] . "<br>" .
-                   "Time: " . $row["yardSaleTime"] . "<br>" .
-                   "Description: " . $row["yardSaleDescription"] . "<br>";
-            }
-        }
+       //  will display all the yardsales in the database when nothing is searched
+          if (!empty($_POST['searchBar'])) {
 
-        else {
-          echo "There are no yardsales";
-        }
+            $searchQuery = "SELECT * FROM YardSales
+                            WHERE $searchOption
+                            LIKE '%$searchString%'";
+
+            $searchResult = $mysqli->query($searchQuery);
+
+              if ($searchResult->num_rows > 0) {
+
+                while ($row = $searchResult->fetch_assoc()) {
+                  echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                       "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                       "Host: " . $row["userID"] . "<br>" .
+                       "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                       . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                       "Date: " . $row["yardSaleDate"] . "<br>" .
+                       "Time: " . $row["yardSaleTime"] . "<br>" .
+                       "Description: " . $row["yardSaleDescription"] . "<br>";
+                }
+              }
+
+              else {
+                echo "<br>";
+                echo "There are no yardsales that match the search";
+              }
+          }
+
+          else {
+              $allYardSales = "SELECT * FROM YardSales";
+              $result = $mysqli->query($allYardSales);
+
+              if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                    echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                         "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                         "Host: " . $row["userID"] . "<br>" .
+                         "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                         . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                         "Date: " . $row["yardSaleDate"] . "<br>" .
+                         "Time: " . $row["yardSaleTime"] . "<br>" .
+                         "Description: " . $row["yardSaleDescription"] . "<br>";
+                  }
+              }
+
+              else {
+                echo "There are no yardsales";
+              }
+           }
         ?>
     </div>
   </body>
