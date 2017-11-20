@@ -1,4 +1,4 @@
-<!-- Authors: Thomas Morgan d & Grayson Murphy
+<!-- Authors: Thomas Morgan & Grayson Murphy
      Description: Main page, has links for user to login or register. Also
      displays all of the yardsales that are active.
 -->
@@ -15,15 +15,17 @@
 
     <h1>YardSale!</h1>
 
-    <!-- simple navigation "bar" -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <a href="/yardSale/homePageOpen.php">Home</a>
       <a href='/yardSale/loginPage.php'>Login</a>
       <a href='/yardSale/registerPage.php'>Register</a>
     </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <form class="" action="" method="post">
         <label for="searchBar">Search: </label>
@@ -32,9 +34,8 @@
         <button type="submit" formmethod="post">Search</button>
       </form>
     </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <!-- Displays all the active yardsales; with name, id, host, address,
-         date, and description -->
     <div class="">
       <?php
         include 'functions/databaseConnect.php';
@@ -42,61 +43,66 @@
         $searchString = $_POST["searchBar"];
         $searchOption = $_POST["searchOptions"];
 
-       //  will display all the yardsales in the database when nothing is searched
-          if (!empty($_POST['searchBar'])) {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//  displays the search results based off user input
+        if (!empty($_POST['searchBar'])) {
 
-            $searchQuery = "SELECT * FROM YardSales
-                            WHERE $searchOption
-                            LIKE '%$searchString%'";
+          $searchQuery = "SELECT * FROM YardSales
+                          WHERE $searchOption
+                          LIKE '%$searchString%'";
 
-            $searchResult = $mysqli->query($searchQuery);
+          $searchResult = $mysqli->query($searchQuery);
 
-              if ($searchResult->num_rows > 0) {
+          if ($searchResult->num_rows > 0) {
 
-                while ($row = $searchResult->fetch_assoc()) {
-                  echo "<h3>" . $row["yardSaleName"] . "</h3>" .
-                       "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                       "Host: " . $row["userID"] . "<br>" .
-                       "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
-                       . $row["state"] . " " . $row["zipCode"] .  "<br>" .
-                       "Date: " . $row["yardSaleDate"] . "<br>" .
-                       "Time: " . $row["yardSaleTime"] . "<br>" .
-                       "Description: " . $row["yardSaleDescription"] . "<br>";
-                }
-              }
-
-              else {
-                echo "<br>";
-                echo "There are no yardsales that match the search";
-              }
+            while ($row = $searchResult->fetch_assoc()) {
+              echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                   "Host: " . $row["userID"] . "<br>" .
+                   "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                   . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                   "Date: " . $row["yardSaleDate"] . "<br>" .
+                   "Time: " . $row["yardSaleTime"] . "<br>" .
+                   "Description: " . $row["yardSaleDescription"] . "<br>";
+            }
           }
 
           else {
-              $allYardSales = "SELECT * FROM YardSales";
-              $result = $mysqli->query($allYardSales);
+            echo "There are no yardsales that match the search";
+            }
+        }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-              if ($result->num_rows > 0) {
-                  while ($row = $result->fetch_assoc()) {
-                    echo "<h3>" . $row["yardSaleName"] . "</h3>" .
-                         "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                         "Host: " . $row["userID"] . "<br>" .
-                         "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
-                         . $row["state"] . " " . $row["zipCode"] .  "<br>" .
-                         "Date: " . $row["yardSaleDate"] . "<br>" .
-                         "Time: " . $row["yardSaleTime"] . "<br>" .
-                         "Description: " . $row["yardSaleDescription"] . "<br>";
-                  }
-              }
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Displays all yardsales in the db
+        else {
+          $allYardSales = "SELECT * FROM YardSales";
+          $result = $mysqli->query($allYardSales);
 
-              else {
-                echo "There are no yardsales";
-              }
-           }
-        ?>
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                   "Host: " . $row["userID"] . "<br>" .
+                   "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                   . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                   "Date: " . $row["yardSaleDate"] . "<br>" .
+                   "Time: " . $row["yardSaleTime"] . "<br>" .
+                   "Description: " . $row["yardSaleDescription"] . "<br>";
+            }
+          }
+
+          else {
+            echo "There are no yardsales";
+          }
+        }
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      ?>
     </div>
   </body>
 </html>
 
+<!-- ~~~~~~~~~~~~~~~~~~~ START: DROPDOWN POP FUNCTION ~~~~~~~~~~~~~~~~~~~~~~ -->
 <script type="text/javascript">
   var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
                       "zipCode"];
@@ -110,3 +116,4 @@
     searchOptions.appendChild(opt);
   }
 </script>
+<!-- ~~~~~~~~~~~~~~~~~~~~ END: DROPDOWN POP FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~ -->
