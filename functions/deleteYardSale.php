@@ -11,7 +11,7 @@
   $userID = $_SESSION['userName'];
 
   if (!empty($_POST)) {
-    $deleteQuery = "DELETE FROM YardSales WHERE yardSaleID = $yardSaleID";
+    $deleteQuery = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'";
     $query = $mysqli->query($deleteQuery);
     // header("Location: /yardSale/userPage.php");
   }
