@@ -13,7 +13,16 @@
 
   if (!empty($_POST)) {
     $deleteQuery = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'";
-    $result = $mysqli->query($deleteQuery);
+
+    if ($mysqli->query($deleteQuery) === true) {
+      echo "Success";
+    }
+
+    else {
+      echo "Failure";
+    }
+
+    // $result = $mysqli->query($deleteQuery);
     // header("Location: /yardSale/userPage.php");
   }
 
