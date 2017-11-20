@@ -131,14 +131,12 @@
       <br>
 			<!-- <label for="description">Description: </label> -->
       <p><b>Description</b></p>
-			<textarea id="description" name="yardSaleDescription" row="10" columns="100" required></textarea>
+			<textarea id="description" name="yardSaleDescription" rows="10" columns="100" required></textarea>
 
 			<br>
 			<br>
 			<button type="submit" formmethod="post" name="button">Create</button>
 		</form>
-
-		<hr>
 	</div>
 
 </body>
