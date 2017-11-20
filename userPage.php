@@ -51,6 +51,7 @@
       <form class="" action="" method="post">
         <label for="editYardSale"></label>
         <input type="text" name="editYardSale" id="editYardSale">
+        <button type="submit" formmethod="post">Edit</button>
       </form>
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
