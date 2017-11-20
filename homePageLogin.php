@@ -84,8 +84,8 @@
                       "Time: " . $row["yardSaleTime"] . "<br>" .
                       "Description: " . $row["yardSaleDescription"] . "<br>";
                }
-               $searchString = "";
-               $searchOption = "";
+              //  $searchString = "";
+              //  $searchOption = "";
              }
 
              else {
