@@ -49,7 +49,7 @@
 
            $searchResult = $mysqli->query($searchQuery);
 
-             if ($searchResult->num_rows > 0) {
+             if ($searchResult->num_rows >= 0) {
 
                while ($row = $searchResult->fetch_assoc()) {
                  echo "<h3>" . $row["yardSaleName"] . "</h3>" .
