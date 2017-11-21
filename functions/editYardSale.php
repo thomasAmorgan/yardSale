@@ -71,20 +71,24 @@
           		<form action='' method='post'>
                 <p><b>Yardsale Name</b></p>
           			<label for='yardSaleName'>Name: </label>
-          			<input type='text' name='yardSaleName' id='yardSaleName' required>
+          			<input type='text' name='yardSaleName' id='yardSaleName'
+                 value='$yardSaleName' required>
                 <br>
 
                 <p><b>Yardsale Address</b></p>
           			<label for='yardSaleStreet'>Street: </label>
-          			<input type='text' name='yardSaleStreet' id='yardSaleStreet' required>
+          			<input type='text' name='yardSaleStreet' id='yardSaleStreet'
+                 value='$streetAddress' required>
                 <br>
           			<label for='yardSaleCity'>City: </label>
-          			<input type='text' name='yardSaleCity' id='yardSaleCity' required>
+          			<input type='text' name='yardSaleCity' id='yardSaleCity'
+                 value='$city' required>
           			<label for='yardSaleState'>State: </label>
           			<select id='states' name='yardSaleState'> </select>
                 <br>
                 <label for='yardSaleZip'>Zip Code: </label>
-          			<input type='text' name='yardSaleZip' id='yardSaleZip' required>
+          			<input type='text' name='yardSaleZip' id='yardSaleZip'
+                 value='$zipCode' required>
           			<br>
 
                 <p><b>Date of Yardsale</b></p>
@@ -102,7 +106,7 @@
                 <br>
           			<!-- <label for='description'>Description: </label> -->
                 <p><b>Description</b></p>
-          			<textarea id='description' name='yardSaleDescription' rows='10' cols='50' required></textarea>
+          			<textarea id='description' name='yardSaleDescription' rows='10' cols='50' value='$yardSaleDescription' required></textarea>
 
           			<br>
           			<br>
