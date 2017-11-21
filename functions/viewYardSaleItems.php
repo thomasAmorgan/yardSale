@@ -4,17 +4,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
-    <?php
-      include 'databaseConnect.php';
-
-      if ($_SESSION['loggedIn'] == false) {
-        $_SESSION['status'] = "failed";
-        header("location: loginPage.php");
-      }
-    ?>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
   </head>
 
   <body>
@@ -34,6 +23,8 @@
 
     <?php
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      include 'databaseConnect.php';
+
       $yardSaleID = $_POST['viewItems'];
 
       $findYardSaleMatch = "SELECT * FROM YardSales
