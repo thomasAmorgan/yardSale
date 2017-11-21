@@ -76,10 +76,7 @@
       else {
         echo "Invalid Yardsale ID";
       }
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ?>
-
-
   </body>
 </html>
