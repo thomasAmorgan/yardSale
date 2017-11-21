@@ -51,6 +51,23 @@
                "Date: " . $row["yardSaleDate"] . "<br>" .
                "Time: " . $row["yardSaleTime"] . "<br>" .
                "Description: " . $row["yardSaleDescription"] . "<br><br>";
+
+               echo "<p><b>Items:</b></p> <br>";
+
+               $displayItems = "SELECT * FROM Merchandise
+                                WHERE yardSaleID = '$yardSaleID'";
+
+               $displayResult = $mysqli->query($displayItems);
+
+               if ($displayResult->num_rows > 0) {
+                 while ($row = $displayResult->fetch_assoc()) {
+                   echo "<br><b> Merch ID: " . $row["merchID"] . "</b> <br>" .
+                        "Name: " . $row["itemName"] . "<br>" .
+                        "Price: $" . $row["price"] .  "<br>" .
+                        "Sold: " . $row["sold"] . "<br>" .
+                        "Description: " . $row["description"] . "<br>";
+                 }
+               }
         }
       }
 
