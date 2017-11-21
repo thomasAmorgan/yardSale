@@ -132,14 +132,12 @@
         }
 
         else {
-          echo "first one";
           echo "Invalid Yardsale ID";
         }
       }
     }
 
     else {
-      echo "second one";
       echo "Invalid Yardsale ID";
     }
    ?>
