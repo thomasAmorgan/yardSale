@@ -71,13 +71,9 @@
           $day = substr($yardSaleDate, 3, 2);
           $year = substr($yardSaleDate, 6, 4);
 
-          echo "$month" . " " . "$day" . " " . "$year";
-
           // 01AM
           $hours = substr($yardSaleTime, 0, 2);
           $amPM = substr($yardSaleTime, 2, 2);
-
-          echo "$hours" . " " . "$amPM";
 
           echo "	<div>
           		<form action='' method='post'>
@@ -96,7 +92,9 @@
           			<input type='text' name='yardSaleCity' id='yardSaleCity'
                  value='$city' required>
           			<label for='yardSaleState'>State: </label>
-          			<select id='states' name='yardSaleState'> </select>
+          			<select id='states' name='yardSaleState'>
+                  <option selected>$state</option>
+                </select>
                 <br>
                 <label for='yardSaleZip'>Zip Code: </label>
           			<input type='text' name='yardSaleZip' id='yardSaleZip'
@@ -128,7 +126,7 @@
                 <br>
           			<!-- <label for='description'>Description: </label> -->
                 <p><b>Description</b></p>
-          			<textarea id='description' name='yardSaleDescription' rows='10' cols='50' value='$yardSaleDescription' required></textarea>
+          			<textarea id='description' name='yardSaleDescription' rows='10' cols='50' required>$yardSaleDescription</textarea>
 
           			<br>
           			<br>
