@@ -145,6 +145,32 @@
           		</form>
           	</div>";
         }
+
+        if (!empty($_POST)) {
+
+          $deleteMatch = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
+                          AND userID = '$userID'";
+
+          if ($mysqli->query($deleteMatch) === true) {
+            $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
+                                    yardSaleDate, yardSaleTime, streetAddress,
+                                    yardSaleName, yardSaleDescription, state,
+                                    zipCode, city)
+                                    VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
+                                    '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
+                                    '$yardSaleDescription', '$yardSaleState',
+                                    '$yardSaleZip', '$yardSaleCity')";
+
+            $createYardSaleResult = $mysqli->query($createYardSaleQuery);
+
+            header("Location: /yardSale/homePageLogin.php");
+          }
+
+          else {
+            header("Location: /yardSale/userPage.php");
+          }
+        }
+
        ?>
     </div>
 
