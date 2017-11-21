@@ -94,64 +94,71 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          echo "	<div>
-          		<form action='deleteUpdateYardSale.php' method='post'>
-                <p><b>Yardsale Name</b></p>
-          			<label for='yardSaleName'>Name: </label>
-          			<input type='text' name='yardSaleName' id='yardSaleName'
-                 value='$yardSaleName' required>
-                <br>
+          if ($userName == $userID) {
+            echo "	<div>
+                <form action='deleteUpdateYardSale.php' method='post'>
+                  <p><b>Yardsale Name</b></p>
+                  <label for='yardSaleName'>Name: </label>
+                  <input type='text' name='yardSaleName' id='yardSaleName'
+                   value='$yardSaleName' required>
+                  <br>
 
-                <p><b>Yardsale Address</b></p>
-          			<label for='yardSaleStreet'>Street: </label>
-          			<input type='text' name='yardSaleStreet' id='yardSaleStreet'
-                 value='$streetAddress' required>
-                <br>
-          			<label for='yardSaleCity'>City: </label>
-          			<input type='text' name='yardSaleCity' id='yardSaleCity'
-                 value='$city' required>
-          			<label for='yardSaleState'>State: </label>
-          			<select id='states' name='yardSaleState'>
-                  <option selected>$state</option>
-                </select>
-                <br>
-                <label for='yardSaleZip'>Zip Code: </label>
-          			<input type='text' name='yardSaleZip' id='yardSaleZip'
-                 value='$zipCode' required>
-          			<br>
+                  <p><b>Yardsale Address</b></p>
+                  <label for='yardSaleStreet'>Street: </label>
+                  <input type='text' name='yardSaleStreet' id='yardSaleStreet'
+                   value='$streetAddress' required>
+                  <br>
+                  <label for='yardSaleCity'>City: </label>
+                  <input type='text' name='yardSaleCity' id='yardSaleCity'
+                   value='$city' required>
+                  <label for='yardSaleState'>State: </label>
+                  <select id='states' name='yardSaleState'>
+                    <option selected>$state</option>
+                  </select>
+                  <br>
+                  <label for='yardSaleZip'>Zip Code: </label>
+                  <input type='text' name='yardSaleZip' id='yardSaleZip'
+                   value='$zipCode' required>
+                  <br>
 
-                <p><b>Date of Yardsale</b></p>
-          			<label for='months'>Month: </label>
-          			<select id='months' name='yardSaleMonth'>
-                 <option selected>$month</option>
-                </select>
-          			<label for='days'>Day: </label>
-          			<select id='days' name='yardSaleDay' value='$day'>
-                  <option selected>$day</option>
-                </select>
-          			<label for='years'>Year: </label>
-          			<select id='years' name='yardSaleYear' value='$year'>
-                  <option selected>$year</option>
-                </select>
-                <br>
-                <label for='yardSaleHour'>Time: </label>
-          			<select id='hours' name='yardSaleHour' value='$hours'>
-                  <option selected>$hours</option>
-                </select>
-          			<select id='ampm' name='yardSaleAMPM' value='$amPM'>
-                  <option selected>$amPM</option>
-                </select>
+                  <p><b>Date of Yardsale</b></p>
+                  <label for='months'>Month: </label>
+                  <select id='months' name='yardSaleMonth'>
+                   <option selected>$month</option>
+                  </select>
+                  <label for='days'>Day: </label>
+                  <select id='days' name='yardSaleDay' value='$day'>
+                    <option selected>$day</option>
+                  </select>
+                  <label for='years'>Year: </label>
+                  <select id='years' name='yardSaleYear' value='$year'>
+                    <option selected>$year</option>
+                  </select>
+                  <br>
+                  <label for='yardSaleHour'>Time: </label>
+                  <select id='hours' name='yardSaleHour' value='$hours'>
+                    <option selected>$hours</option>
+                  </select>
+                  <select id='ampm' name='yardSaleAMPM' value='$amPM'>
+                    <option selected>$amPM</option>
+                  </select>
 
-                <br>
-          			<!-- <label for='description'>Description: </label> -->
-                <p><b>Description</b></p>
-          			<textarea id='description' name='yardSaleDescription' rows='10' cols='50' required>$yardSaleDescription</textarea>
+                  <br>
+                  <!-- <label for='description'>Description: </label> -->
+                  <p><b>Description</b></p>
+                  <textarea id='description' name='yardSaleDescription' rows='10' cols='50' required>$yardSaleDescription</textarea>
 
-          			<br>
-          			<br>
-          			<button type='submit' formmethod='post' name='button'>Create</button>
-          		</form>
-          	</div>";
+                  <br>
+                  <br>
+                  <button type='submit' formmethod='post' name='button'>Create</button>
+                </form>
+              </div>";
+          }
+
+          else {
+            echo "<p><b>User ID does not match!</b></p>";
+          }
+
         }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
