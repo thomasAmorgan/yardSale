@@ -14,9 +14,9 @@
     <div class="">
       <?php
         if ($_SESSION['loggedIn'] == true) {
-          echo "<a href='/yardSale/homePageLogin.php'>Home</a>";
-          echo "<a href='/yardSale/userPage.php'>User Page</a>";
-          echo "<a href='/yardSale/newYardSalePage.php'>Create Yardsale</a>";
+          echo "<a href='/yardSale/homePageLogin.php'>Home</a> ";
+          echo "<a href='/yardSale/userPage.php'>User Page</a> ";
+          echo "<a href='/yardSale/newYardSalePage.php'>Create Yardsale</a> ";
         }
         else {
           echo "<a href='/yardSale/homePageOpen.php'>Home</a>";
