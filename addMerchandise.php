@@ -52,6 +52,8 @@
              "Description: " . $row["yardSaleDescription"] . "<br><br>";
 
         echo "<p><b>Edit Items Below</b></p>";
+      }
+    }
    ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
