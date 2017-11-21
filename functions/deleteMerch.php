@@ -13,7 +13,7 @@
   $yardSaleID = $_SESSION['yardSaleID'];
 
   if (!empty($_POST)) {
-    $deleteQuery = "DELETE FROM Merchandise WHERE merchId = $merchID
+    $deleteQuery = "DELETE FROM Merchandise WHERE merchID = $merchID
                     AND yardSaleID = '$yardSaleID'
                     AND userID = '$userID'";
 

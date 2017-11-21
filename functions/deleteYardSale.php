@@ -10,6 +10,7 @@
   $yardSaleID = $_POST['deleteYardSale'];
   $userID = $_SESSION['userName'];
 
+  // also needs to delete items associated with the yardSale
   if (!empty($_POST)) {
     $deleteQuery = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
                     AND userID = '$userID'";
