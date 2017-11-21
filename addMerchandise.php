@@ -93,6 +93,8 @@
 
   <div class="">
     <?php
+      $yardSaleID = $_SESSION['yardSaleID'];
+
       $displayItems = "SELECT * FROM Merchandise
                        WHERE yardSaleID = '$yardSaleID'";
 
