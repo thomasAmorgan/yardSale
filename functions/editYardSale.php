@@ -71,7 +71,7 @@
                    . $row["state"] . " " . $row["zipCode"] .  "<br>" .
                    "Date: " . $row["yardSaleDate"] . "<br>" .
                    "Time: " . $row["yardSaleTime"] . "<br>" .
-                   "Description: " . $row["yardSaleDescription"] . "<br>";
+                   "Description: " . $row["yardSaleDescription"] . "<br><br>";
 
               echo "<p><b>Edit Info Below</b></p>";
             }
