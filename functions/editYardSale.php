@@ -94,7 +94,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          elseif ($userName == $userID) {
+          if ($userName == $userID) {
             echo "	<div>
                 <form action='deleteUpdateYardSale.php' method='post'>
                   <p><b>Yardsale Name</b></p>
