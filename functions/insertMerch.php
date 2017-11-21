@@ -28,9 +28,9 @@
     $merchID = "item#" . "$randNum";
 
     $createYardSaleQuery = "INSERT INTO Merchandise (merchID, itemName,
-                            description, price, userID, yardSaleID)
+                            description, price, userID, yardSaleID, sold)
                             VALUES ('$merchID', '$itemName', '$itemDescription',
-                            '$itemPrice', '$userID', '$yardSaleID')";
+                            '$itemPrice', '$userID', '$yardSaleID', 'false')";
 
     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
