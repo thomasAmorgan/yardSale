@@ -68,14 +68,14 @@
 
           // 01/01/2017
           $month = substr($yardSaleDate, 0, 2);
-          $day = substr($yardSaleDate,2, 2);
-          $year = substr($yardSaleDate,5 , 4);
+          $day = substr($yardSaleDate, 3, 2);
+          $year = substr($yardSaleDate, 6, 4);
 
           echo "$month" . " " . "$day" . " " . "$year";
 
           // 01AM
           $hours = substr($yardSaleTime, 0, 2);
-          $amPM = substr($yardSaleTime,2 , 2);
+          $amPM = substr($yardSaleTime, 2, 2);
 
           echo "$hours" . " " . "$amPM";
 
