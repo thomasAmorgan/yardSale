@@ -44,7 +44,7 @@
       <?php
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // also saves all the values from the yardsale being edited
-        if (!empty($_POST['editYardSale'])) {
+        if (!empty($_POST)) {
           $findYardSaleMatch = "SELECT * FROM Merchandise
                                 WHERE merchID = '$merchID'
                                 AND yardSaleID = '$yardSaleID'";

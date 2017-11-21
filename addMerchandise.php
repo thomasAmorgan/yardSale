@@ -86,11 +86,10 @@
                        WHERE yardSaleID = '$yardSaleID'";
 
       $displayResult = $mysqli->query($displayItems);
-      echo "<br>";
 
       if ($displayResult->num_rows > 0) {
         while ($row = $displayResult->fetch_assoc()) {
-          echo "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
+          echo "<br><b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                "Name: " . $row["itemName"] . "<br>" .
                "Price: $" . $row["price"] .  "<br>" .
                "Sold: " . $row["sold"] . "<br>" .
