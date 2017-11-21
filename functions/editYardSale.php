@@ -15,7 +15,6 @@
       }
 
       $userName = $_SESSION['userName'];
-      echo "$userName";
       $yardSaleID = $_POST['editYardSale'];
       $_SESSION['yardSaleID'] = $yardSaleID;
 
@@ -79,17 +78,18 @@
               echo "<p><b>Edit Info Below</b></p>";
             }
 
-            //~~~~~~~~~~~~~~~~~~~~~~~~ START: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                      // 01/01/2017
-                      $month = substr($yardSaleDate, 0, 2);
-                      $day = substr($yardSaleDate, 3, 2);
-                      $year = substr($yardSaleDate, 6, 4);
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            // 01/01/2017
+            $month = substr($yardSaleDate, 0, 2);
+            $day = substr($yardSaleDate, 3, 2);
+            $year = substr($yardSaleDate, 6, 4);
 
-                      // 01AM
-                      $hours = substr($yardSaleTime, 0, 2);
-                      $amPM = substr($yardSaleTime, 2, 2);
-            //~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            // 01AM
+            $hours = substr($yardSaleTime, 0, 2);
+            $amPM = substr($yardSaleTime, 2, 2);
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             if ($userName == $userID) {
               echo "	<div>
                   <form action='deleteUpdateYardSale.php' method='post'>
@@ -151,31 +151,18 @@
                 </div>";
             }
 
-            // else {
-            //   echo "<p><b>User ID does not match! You can only edit your own
-            //         yardsales.</b></p>";
-            // }
-
-            // WHENEVER AN INPUT IS PUT IN INC
             elseif ($userName != $userID) {
-              echo "OUTPUT:" . " " . "$userID" . " " . "$userName" . "<br>";
               echo "<p><b>User ID does not match! You can only edit your own
                     yardsales.</b></p>";
             }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           }
-//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
           else {
             echo "Invalid Yardsale ID";
           }
-
         }
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
     </div>
 
