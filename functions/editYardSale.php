@@ -24,7 +24,6 @@
       $state;
       $zipCode;
       $city;
-      $
     ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
   </head>
