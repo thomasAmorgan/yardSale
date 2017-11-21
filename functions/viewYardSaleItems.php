@@ -19,7 +19,7 @@
           echo "<a href='/yardSale/newYardSalePage.php'>Create Yardsale</a> ";
         }
         else {
-          echo "<a href='/yardSale/homePageOpen.php'>Home</a>";
+          echo "<a href='/yardSale/homePageOpen.php'>Home</a> ";
         }
        ?>
       <a href='/yardSale/functions/logout.php'>Logout</a>
