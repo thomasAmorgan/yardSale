@@ -36,20 +36,16 @@
     if (!empty($_POST)) {
 
       $randNum = generateID();
-      $yardSaleID = "$yardSaleID" . "i#" . "$randNum";
+      $merchID = "$yardSaleID" . "i#" . "$randNum";
 
-      $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
-                              yardSaleDate, yardSaleTime, streetAddress,
-                              yardSaleName, yardSaleDescription, state,
-                              zipCode, city)
-                              VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-                              '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-                              '$yardSaleDescription', '$yardSaleState',
-                              '$yardSaleZip', '$yardSaleCity')";
+      $createYardSaleQuery = "INSERT INTO Merchandise (merchID, itemName,
+                              description, price, userID, yardSaleID)
+                              VALUES ('$merchID', '$itemName', '$itemDescription',
+                              '$itemPrice', '$userID', '$yardSaleID')";
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-      header("Location: /yardSale/homePageLogin.php");
+      header("Location: /yardSale/addMerchandise.php");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
@@ -94,5 +90,30 @@
 		</form>
 	</div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <div class="">
+    <?php
+      $displayItems = "SELECT * FROM Merchandise
+                       WHERE yardSaleID = '$yardSaleID'";
+
+      $displayResult = $mysqli->query($displayItems);
+
+      if ($displayResult->num_rows > 0) {
+        while ($row = $displayResult->fetch_assoc()) {
+          echo "<h3>Items for: " . $row["yardSaleName"] . "</h3>" .
+               "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
+               "Name: " . $row["itemName"] . "<br>" .
+               "Price: " . $row["itemPrice"] .  "<br>" .
+               "Description: " . $row["itemDescription"] . "<br>";
+        }
+      }
+
+      else {
+        echo "There are no items";
+      }
+    }
+     ?>
+  </div>
+
 </body>
 </html>
