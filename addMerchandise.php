@@ -31,6 +31,34 @@
 
   <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <?php
+    $yardSaleID = $_SESSION['yardSaleID'];
+
+    $findYardSaleMatch = "SELECT * FROM YardSales
+                          WHERE yardSaleID = '$yardSaleID'";
+
+    $matchResult = $mysqli->query($findYardSaleMatch);
+
+    if ($matchResult->num_rows > 0) {
+      while ($row = $matchResult->fetch_assoc()) {
+        echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+             "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+             "Host: " . $row["userID"] . "<br>" .
+             "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+             . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+             "Date: " . $row["yardSaleDate"] . "<br>" .
+             "Time: " . $row["yardSaleTime"] . "<br>" .
+             "Description: " . $row["yardSaleDescription"] . "<br><br>";
+
+        echo "<p><b>Edit Items Below</b></p>";
+   ?>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+  <div class="">
+    <p>If you are done, or don't want to add anything navigate with the options above</p>
+  </div>
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <p>To delete an item enter its ID and press delete</p>
@@ -80,7 +108,7 @@
 
   <div class="">
     <?php
-      $yardSaleID = $_SESSION['yardSaleID'];
+      // $yardSaleID = $_SESSION['yardSaleID'];
 
       $displayItems = "SELECT * FROM Merchandise
                        WHERE yardSaleID = '$yardSaleID'";
