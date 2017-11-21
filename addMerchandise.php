@@ -16,45 +16,10 @@
     }
   ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-  <?php
-//     include 'functions/databaseConnect.php';
-//
-//     $itemName = $_POST['itemName'];
-//     $itemPrice = (int) $_POST['itemPrice'];
-//     $itemDescription = $_POST['itemDescription'];
-//
-//     $userID = $_SESSION['userName'];
-//     $yardSaleID = $_SESSION['yardSaleID'];
-//
-// //~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START: GENERATE ID ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//     function generateID() {
-//       $randNumber = rand(0, 99999);
-//       return $randNumber;
-//     }
-// //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: GENERATE ID ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-// //~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
-//     if (!empty($_POST)) {
-//
-//       $randNum = generateID();
-//       $merchID = "item#" . "$randNum";
-//
-//       $createYardSaleQuery = "INSERT INTO Merchandise (merchID, itemName,
-//                               description, price, userID, yardSaleID)
-//                               VALUES ('$merchID', '$itemName', '$itemDescription',
-//                               '$itemPrice', '$userID', '$yardSaleID')";
-//
-//       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
-//
-//       header("Location: /yardSale/addMerchandise.php");
-//     }
-//~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ?>
 </head>
 
 <body>
-	<h3>Add Items</h3>
+	<h3>Edit Items</h3>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
@@ -66,22 +31,31 @@
 
   <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div class="">
+    <p>To delete an item enter its ID and press delete</p>
+      <form class="" action="functions/deleteMerch.php" method="post">
+        <label for="deleteItem"></label>
+        <input type="text" name="deleteItem" id="deleteItem">
+        <button type="submit" formmethod="post">Delete</button>
+      </form>
+  </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div>
     <!-- should call another file that will insert the item -->
 		<form action="functions/insertMerch.php" method="post">
-      <p><b>Item Name</b></p>
+      <p><b>Add an Item</b></p>
 			<label for="itemName">Name: </label>
 			<input type="text" name="itemName" id="itemName" required>
       <br>
 
-      <p><b>Price</b></p>
 			<label for="itemPrice">Price: </label>
 			<input type="number" name="itemPrice" id="itemPrice" required>
       <br>
 
-			<!-- <label for="description">Description: </label> -->
-      <p><b>Description</b></p>
+      <p>Description</p>
 			<textarea id="description" name="itemDescription" rows="10" cols="50"
                 required>
       </textarea>
@@ -96,7 +70,6 @@
   <div class="">
     <?php
       $yardSaleID = $_SESSION['yardSaleID'];
-      echo "$yardSaleID";
 
       $displayItems = "SELECT * FROM Merchandise
                        WHERE yardSaleID = '$yardSaleID'";
@@ -105,8 +78,7 @@
 
       if ($displayResult->num_rows > 0) {
         while ($row = $displayResult->fetch_assoc()) {
-          echo "<h3>Items for: " . $row["yardSaleName"] . "</h3>" .
-               "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
+          echo "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                "Name: " . $row["itemName"] . "<br>" .
                "Price: $" . $row["price"] .  "<br>" .
                "Description: " . $row["description"] . "<br>";
