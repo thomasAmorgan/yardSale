@@ -87,7 +87,7 @@
           $amPM = substr($yardSaleTime, 2, 2);
 
           echo "	<div>
-          		<form action='updateYardSale()' method='post'>
+          		<form action='deleteUpdateYardSale.php' method='post'>
                 <p><b>Yardsale Name</b></p>
           			<label for='yardSaleName'>Name: </label>
           			<input type='text' name='yardSaleName' id='yardSaleName'
@@ -146,30 +146,30 @@
           	</div>";
         }
 
-        // if (!empty($_POST)) {
-        function editYardSale() {
-          $deleteMatch = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
-                          AND userID = '$userID'";
-
-          if ($mysqli->query($deleteMatch) === true) {
-            $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
-                                    yardSaleDate, yardSaleTime, streetAddress,
-                                    yardSaleName, yardSaleDescription, state,
-                                    zipCode, city)
-                                    VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-                                    '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-                                    '$yardSaleDescription', '$yardSaleState',
-                                    '$yardSaleZip', '$yardSaleCity')";
-
-            $createYardSaleResult = $mysqli->query($createYardSaleQuery);
-
-            header("Location: /yardSale/userPage.php");
-          }
-
-          else {
-            header("Location: /yardSale/userPage.php");
-          }
-        }
+        // // if (!empty($_POST)) {
+        // function editYardSale() {
+        //   $deleteMatch = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
+        //                   AND userID = '$userID'";
+        //
+        //   if ($mysqli->query($deleteMatch) === true) {
+        //     $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
+        //                             yardSaleDate, yardSaleTime, streetAddress,
+        //                             yardSaleName, yardSaleDescription, state,
+        //                             zipCode, city)
+        //                             VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
+        //                             '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
+        //                             '$yardSaleDescription', '$yardSaleState',
+        //                             '$yardSaleZip', '$yardSaleCity')";
+        //
+        //     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
+        //
+        //     header("Location: /yardSale/userPage.php");
+        //   }
+        //
+        //   else {
+        //     header("Location: /yardSale/userPage.php");
+        //   }
+        // }
 
 
         // }
