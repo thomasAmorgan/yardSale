@@ -28,9 +28,6 @@
 
     $createMerchResult = $mysqli->query($createMerchQuery);
 
-    // $_SESSION['yardSaleID'] = "";
-    // $_SESSION['merchID'] = "";
-
     header("Location: /yardSale/addMerchandise.php");
   }
 

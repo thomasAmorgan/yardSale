@@ -41,6 +41,16 @@
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="">
+      <form class="" action="functions/viewYardSaleItems.php" method="post">
+        <p>To view a yardsale's items enter its ID</p>
+        <input type="text" name="viewItems" id="viewItems">
+        <button type="submit" formmethod="post">Search</button>
+      </form>
+    </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
     <div class="">
       <?php
         include 'functions/databaseConnect.php';
