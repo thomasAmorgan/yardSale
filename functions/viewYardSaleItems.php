@@ -34,7 +34,7 @@
 
     <?php
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
-      // Displays all yardsales in the db
+      $yardSaleID = $_POST['viewItems'];
 
       $findYardSaleMatch = "SELECT * FROM YardSales
                             WHERE yardSaleID = '$yardSaleID'";

@@ -36,7 +36,7 @@
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: VIEW ITEMS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <form class="" action="functions/viewYardSaleItems.php" method="post">
         <p>To view a yardsale's items enter its ID</p>
@@ -44,7 +44,7 @@
         <button type="submit" formmethod="post">Search</button>
       </form>
     </div>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: VIEW ITEMS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <div class="">
       <?php
