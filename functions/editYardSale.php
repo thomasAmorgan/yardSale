@@ -169,7 +169,7 @@
           else {
             header("Location: /yardSale/userPage.php");
           }
-        };
+        }
 
 
         // }
