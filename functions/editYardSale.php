@@ -7,7 +7,7 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
     <?php
-      include 'databaseConnect.php';
+      // include 'databaseConnect.php';
 
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
@@ -46,6 +46,7 @@
 
     <div class="">
       <?php
+        include 'databaseConnect.php';
         if (!empty($_POST['editYardSale'])) {
           $findYardSaleMatch = "SELECT * FROM YardSales
                                 WHERE yardSaleID = '$yardSaleID'";
