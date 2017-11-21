@@ -34,6 +34,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <?php
     $yardSaleID = $_SESSION['yardSaleID'];
+    $display = true;
 
     if (!empty($_POST)) {
       $yardSaleID = $_POST['editYardSaleItems'];
@@ -60,7 +61,8 @@
     }
 
     else {
-      echo "Invalid Item ID";
+      echo "Invalid Yardsale ID";
+      $display = false;
     }
    ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -118,7 +120,7 @@
 
   <div class="">
     <?php
-      if ($matchResult->num_rows <= 0) {
+      if ($display) {
         // $yardSaleID = $_SESSION['yardSaleID'];
 
         $displayItems = "SELECT * FROM Merchandise
