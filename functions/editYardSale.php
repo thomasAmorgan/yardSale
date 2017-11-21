@@ -63,6 +63,15 @@
               $state = $row['state'];
               $zipCode = $row['zipCode'];
               $city = $row['city'];
+
+              echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                   "Host: " . $row["userID"] . "<br>" .
+                   "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                   . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                   "Date: " . $row["yardSaleDate"] . "<br>" .
+                   "Time: " . $row["yardSaleTime"] . "<br>" .
+                   "Description: " . $row["yardSaleDescription"] . "<br>";
             }
           }
 
