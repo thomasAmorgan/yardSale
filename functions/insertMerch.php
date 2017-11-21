@@ -27,12 +27,12 @@
     $randNum = generateID();
     $merchID = "item#" . "$randNum";
 
-    $createYardSaleQuery = "INSERT INTO Merchandise (merchID, itemName,
+    $createMerchQuery = "INSERT INTO Merchandise (merchID, itemName,
                             description, price, userID, yardSaleID, sold)
                             VALUES ('$merchID', '$itemName', '$itemDescription',
                             '$itemPrice', '$userID', '$yardSaleID', true)";
 
-    $createYardSaleResult = $mysqli->query($createYardSaleQuery);
+    $createMerchResult = $mysqli->query($createMerchQuery);
 
     header("Location: /yardSale/addMerchandise.php");
   }

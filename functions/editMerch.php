@@ -18,6 +18,8 @@
       $merchID = $_POST['editMerch'];
       $yardSaleID = $_SESSION['yardSaleID'];
 
+      $_SESSION['merchID'] = $merchID;
+
       $itemName;
       $description;
       $price;
@@ -59,6 +61,9 @@
               $userID = $row['userID'];
               $sold = $row['sold'];
 
+              $_SESSION['merchPrice'] = $price;
+              $_SESSION['merchSold'] = $sold;
+
               echo "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                    "Name: " . $row["itemName"] . "<br>" .
                    "Price: $" . $row["price"] .  "<br>" .
@@ -72,7 +77,7 @@
             if ($userName == $userID) {
               echo "	<div>
                   <!-- should call another file that will insert the item -->
-              		<form action='functions/insertMerch.php' method='post'>
+              		<form action='updateMerch.php' method='post'>
                     <p><b>Add an Item</b></p>
               			<label for='itemName'>Name: </label>
               			<input type='text' name='itemName' id='itemName'

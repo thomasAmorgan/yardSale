@@ -92,7 +92,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             if ($userName == $userID) {
               echo "	<div>
-                  <form action='deleteUpdateYardSale.php' method='post'>
+                  <form action='updateYardSale.php' method='post'>
                     <p><b>Yardsale Name</b></p>
                     <label for='yardSaleName'>Name: </label>
                     <input type='text' name='yardSaleName' id='yardSaleName'
