@@ -148,6 +148,9 @@
 
 		for (var i = 1; i <= 31; i++) {
                         var opt = document.createElement("option");
+                        if (i < 10) {
+                          i = "0" + "i";
+                        }
                         opt.value = i;
                         opt.innerHTML = i;
                         days.appendChild(opt);
