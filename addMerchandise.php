@@ -42,6 +42,17 @@
   </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="">
+      <p>To edit a yardsale enter its ID and press edit</p>
+      <form class="" action="functions/editMerch.php" method="post">
+        <label for="editMerch"></label>
+        <input type="text" name="editMerch" id="editMerch">
+        <button type="submit" formmethod="post">Edit</button>
+      </form>
+    </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div>
     <!-- should call another file that will insert the item -->
