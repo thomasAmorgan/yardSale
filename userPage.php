@@ -43,8 +43,6 @@
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <br>
-
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <p>To edit a yardsale enter its ID and press edit</p>

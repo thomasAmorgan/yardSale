@@ -99,7 +99,7 @@
 
               			<br>
               			<br>
-              			<button type='submit' formmethod='post' name='button'>Create</button>
+              			<button type='submit' formmethod='post' name='button'>Edit</button>
                     <br>
               		</form>
               	</div>";

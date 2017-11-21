@@ -58,6 +58,10 @@
         echo "<p><b>Edit Items Below</b></p>";
       }
     }
+
+    else {
+      echo "Invalid Item ID";
+    }
    ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
@@ -114,26 +118,28 @@
 
   <div class="">
     <?php
-      // $yardSaleID = $_SESSION['yardSaleID'];
+      if ($matchResult->num_rows <= 0) {
+        // $yardSaleID = $_SESSION['yardSaleID'];
 
-      $displayItems = "SELECT * FROM Merchandise
-                       WHERE yardSaleID = '$yardSaleID'";
+        $displayItems = "SELECT * FROM Merchandise
+                         WHERE yardSaleID = '$yardSaleID'";
 
-      $displayResult = $mysqli->query($displayItems);
+        $displayResult = $mysqli->query($displayItems);
 
-      if ($displayResult->num_rows > 0) {
-        while ($row = $displayResult->fetch_assoc()) {
-          echo "<br><b> Merch ID: " . $row["merchID"] . "</b> <br>" .
-               "Name: " . $row["itemName"] . "<br>" .
-               "Price: $" . $row["price"] .  "<br>" .
-               "Sold: " . $row["sold"] . "<br>" .
-               "Description: " . $row["description"] . "<br>";
+        if ($displayResult->num_rows > 0) {
+          while ($row = $displayResult->fetch_assoc()) {
+            echo "<br><b> Merch ID: " . $row["merchID"] . "</b> <br>" .
+                 "Name: " . $row["itemName"] . "<br>" .
+                 "Price: $" . $row["price"] .  "<br>" .
+                 "Sold: " . $row["sold"] . "<br>" .
+                 "Description: " . $row["description"] . "<br>";
+          }
         }
-      }
 
-      else {
-        echo "<br>";
-        echo "There are no items";
+        else {
+          echo "<br>";
+          echo "There are no items";
+        }
       }
      ?>
   </div>
