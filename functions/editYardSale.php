@@ -72,6 +72,8 @@
                    "Date: " . $row["yardSaleDate"] . "<br>" .
                    "Time: " . $row["yardSaleTime"] . "<br>" .
                    "Description: " . $row["yardSaleDescription"] . "<br>";
+
+              echo "<p><b>Edit Info Below</b></p>";
             }
           }
 
