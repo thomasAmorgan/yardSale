@@ -16,7 +16,6 @@
 
       $userName = $_SESSION['userName'];
       $yardSaleID = $_POST['editYardSale'];
-      echo "$yardSaleID";
 
       $userID;
       $yardSaleDate;
@@ -72,6 +71,14 @@
           $day = substr($yardSaleDate,2, 2);
           $year = substr($yardSaleDate,5 , 4);
 
+          echo "$month" . " " . "$day" . " " . "$year";
+
+          // 01AM
+          $hours = substr($yardSaleTime, 0, 2);
+          $amPM = substr($yardSaleTime,2 , 2);
+
+          echo "$hours" . " " . "$amPM";
+
           echo "	<div>
           		<form action='' method='post'>
                 <p><b>Yardsale Name</b></p>
@@ -98,14 +105,14 @@
 
                 <p><b>Date of Yardsale</b></p>
           			<label for='months'>Month: </label>
-          			<select id='months' name='yardSaleMonth' value='$'> </select>
+          			<select id='months' name='yardSaleMonth' value='$month'> </select>
           			<label for='days'>Day: </label>
-          			<select id='days' name='yardSaleDay'> </select>
+          			<select id='days' name='yardSaleDay' value="$day"> </select>
           			<label for='years'>Year: </label>
-          			<select id='years' name='yardSaleYear'> </select>
+          			<select id='years' name='yardSaleYear' value="$year"> </select>
                 <br>
                 <label for='yardSaleHour'>Time: </label>
-          			<select id='hours' name='yardSaleHour'> </select>
+          			<select id='hours' name='yardSaleHour' value="$"> </select>
           			<select id='ampm' name='yardSaleAMPM'> </select>
 
                 <br>
