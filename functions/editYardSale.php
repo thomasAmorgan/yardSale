@@ -7,6 +7,8 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
     <?php
+      include 'functions/databaseConnect.php';
+
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
         header("location: loginPage.php");
