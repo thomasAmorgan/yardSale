@@ -156,7 +156,8 @@
           }
 
           else {
-            echo "<p><b>User ID does not match!</b></p>";
+            echo "<p><b>User ID does not match! You can only edit your own
+                  yardsales.</b></p>";
           }
 
         }
