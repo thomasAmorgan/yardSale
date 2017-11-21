@@ -87,7 +87,7 @@
           $amPM = substr($yardSaleTime, 2, 2);
 
           echo "	<div>
-          		<form action='' method='post'>
+          		<form action='updateYardSale()' method='post'>
                 <p><b>Yardsale Name</b></p>
           			<label for='yardSaleName'>Name: </label>
           			<input type='text' name='yardSaleName' id='yardSaleName'
@@ -147,7 +147,7 @@
         }
 
         // if (!empty($_POST)) {
-
+        function editYardSale() {
           $deleteMatch = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
                           AND userID = '$userID'";
 
@@ -163,12 +163,15 @@
 
             $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-            header("Location: /yardSale/homePageLogin.php");
+            header("Location: /yardSale/userPage.php");
           }
 
           else {
             header("Location: /yardSale/userPage.php");
           }
+        };
+
+
         // }
 
        ?>
