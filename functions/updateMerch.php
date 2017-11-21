@@ -10,12 +10,11 @@
   $itemName = $_POST['itemName'];
   $price = $_POST['price'];
   $description = $_POST['description'];
+  $sold = $_POST['merchSold'];
 
   $userID = $_SESSION['userName'];
   $yardSaleID = $_SESSION['yardSaleID'];
   $merchID = $_SESSION['merchID'];
-  $price = $_SESSION['merchPrice'];
-  $sold = $_SESSION['merchSold'];
 
   $deleteMatch = "DELETE FROM Merchandise WHERE merchID = '$merchID'
                   AND yardSaleID = '$yardSaleID'
@@ -25,14 +24,12 @@
     $createMerchQuery = "INSERT INTO Merchandise (merchID, itemName,
                          description, price, userID, yardSaleID, sold)
                          VALUES ('$merchID', '$itemName', '$itemDescription',
-                         '$itemPrice', '$userID', '$yardSaleID', true)";
+                         '$price', '$userID', '$yardSaleID', '$sold')";
 
     $createMerchResult = $mysqli->query($createMerchQuery);
 
     $_SESSION['yardSaleID'] = "";
     $_SESSION['merchID'] = "";
-    $_SESSION['merchPrice'] = "";
-    $_SESSION['merchSold'] = "";
 
     header("Location: /yardSale/addMerchandise.php");
   }

@@ -61,9 +61,6 @@
               $userID = $row['userID'];
               $sold = $row['sold'];
 
-              $_SESSION['merchPrice'] = $price;
-              $_SESSION['merchSold'] = $sold;
-
               echo "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                    "Name: " . $row["itemName"] . "<br>" .
                    "Price: $" . $row["price"] .  "<br>" .
@@ -88,6 +85,13 @@
               			<input type='number' name='itemPrice' id='itemPrice'
                      value='$price' required>
                     <br>
+
+                    <label for='itemSold'>Price: </label>
+                    <select id='itemSold' name='itemSold'>
+                      <option selected>$sold</option>
+                      <option>true</option>
+                      <option>false</option>
+                    </select>
 
                     <p>Description</p>
               			<textarea id='description' name='itemDescription' rows='10' cols='50'

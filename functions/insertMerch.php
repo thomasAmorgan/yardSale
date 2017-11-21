@@ -30,7 +30,7 @@
     $createMerchQuery = "INSERT INTO Merchandise (merchID, itemName,
                             description, price, userID, yardSaleID, sold)
                             VALUES ('$merchID', '$itemName', '$itemDescription',
-                            '$itemPrice', '$userID', '$yardSaleID', true)";
+                            '$itemPrice', '$userID', '$yardSaleID', false)";
 
     $createMerchResult = $mysqli->query($createMerchQuery);
 
