@@ -75,7 +75,7 @@
 
       <p><b>Price</b></p>
 			<label for="itemPrice">Price: </label>
-			<input type="text" name="itemPrice" id="itemPrice" required>
+			<input type="number" name="itemPrice" id="itemPrice" required>
       <br>
 
 			<!-- <label for="description">Description: </label> -->
