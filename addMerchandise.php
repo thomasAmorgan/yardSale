@@ -105,8 +105,8 @@
           echo "<h3>Items for: " . $row["yardSaleName"] . "</h3>" .
                "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                "Name: " . $row["itemName"] . "<br>" .
-               "Price: $" . $row["itemPrice"] .  "<br>" .
-               "Description: " . $row["itemDescription"] . "<br>";
+               "Price: $" . $row["price"] .  "<br>" .
+               "Description: " . $row["description"] . "<br>";
         }
       }
 
