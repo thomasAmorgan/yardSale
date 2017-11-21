@@ -105,7 +105,8 @@
 
                 <p><b>Date of Yardsale</b></p>
           			<label for='months'>Month: </label>
-          			<select id='months' name='yardSaleMonth' value='$month'> </select>
+          			<select id='months' name='yardSaleMonth'>
+                 <option selected>$month</option></select>
           			<label for='days'>Day: </label>
           			<select id='days' name='yardSaleDay' value='$day'> </select>
           			<label for='years'>Year: </label>
