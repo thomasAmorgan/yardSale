@@ -157,7 +157,7 @@
           }
 
           else if ($userName != $userID){
-            echo "$userID" . " " . "$userName" . "<br>";
+            echo "test" . " " . "$userID" . " " . "$userName" . "<br>";
             echo "<p><b>User ID does not match! You can only edit your own
                   yardsales.</b></p>";
           }
