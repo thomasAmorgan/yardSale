@@ -61,8 +61,8 @@
     }
 
     else {
-      echo "Invalid Yardsale ID";
       $display = false;
+      echo "Invalid Yardsale ID";
     }
    ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -120,7 +120,7 @@
 
   <div class="">
     <?php
-      if ($display) {
+      if ($display == true) {
         // $yardSaleID = $_SESSION['yardSaleID'];
 
         $displayItems = "SELECT * FROM Merchandise
