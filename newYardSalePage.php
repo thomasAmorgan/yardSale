@@ -149,10 +149,10 @@
 		for (var i = 1; i <= 31; i++) {
                         var opt = document.createElement("option");
                         if (i < 10) {
-                          temp = "0" + "i";
+                          temp = "0" + i;
                         }
                         else {
-                          temp = "i";
+                          temp = i;
                         }
                         opt.value = temp;
                         opt.innerHTML = temp;
