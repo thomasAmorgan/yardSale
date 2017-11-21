@@ -110,8 +110,6 @@
           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~ -->
           ";
 
-          // $yardSaleID = $_SESSION['yardSaleID'];
-
           $displayItems = "SELECT * FROM Merchandise
                            WHERE yardSaleID = '$yardSaleID'";
 
@@ -134,12 +132,14 @@
         }
 
         else {
+          echo "first one";
           echo "Invalid Yardsale ID";
         }
       }
     }
 
     else {
+      echo "second one";
       echo "Invalid Yardsale ID";
     }
    ?>
