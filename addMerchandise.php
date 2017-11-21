@@ -34,7 +34,6 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <?php
     $yardSaleID = $_SESSION['yardSaleID'];
-    $display = true;
 
     if (!empty($_POST)) {
       $yardSaleID = $_POST['editYardSaleItems'];
@@ -57,70 +56,77 @@
              "Description: " . $row["yardSaleDescription"] . "<br><br>";
 
         echo "<p><b>Edit Items Below</b></p>";
+
+        if ($yardSaleID == $row['yardSaleID']) {
+          echo "  <div class=''>
+              <p>If you are done, or don't want to add anything navigate with the options above</p>
+            </div>
+
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class=''>
+              <p>To delete an item enter its ID and press delete</p>
+                <form class='' action='functions/deleteMerch.php' method='post'>
+                  <label for='deleteItem'></label>
+                  <input type='text' name='deleteItem' id='deleteItem'>
+                  <button type='submit' formmethod='post'>Delete</button>
+                </form>
+            </div>
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+              <div class=''>
+                <p>To edit an item enter its ID and press edit</p>
+                <form class='' action='functions/editMerch.php' method='post'>
+                  <label for='editMerch'></label>
+                  <input type='text' name='editMerch' id='editMerch'>
+                  <button type='submit' formmethod='post'>Edit</button>
+                </form>
+              </div>
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
+          	<div>
+              <!-- should call another file that will insert the item -->
+          		<form action='functions/insertMerch.php' method='post'>
+                <p><b>Add an Item</b></p>
+          			<label for='itemName'>Name: </label>
+          			<input type='text' name='itemName' id='itemName' required>
+                <br>
+
+          			<label for='itemPrice'>Price: </label>
+          			<input type='number' name='itemPrice' id='itemPrice' required>
+                <br>
+
+                <p>Description</p>
+          			<textarea id='description' name='itemDescription' rows='10' cols='50'
+                          required></textarea>
+
+          			<br>
+          			<br>
+          			<button type='submit' formmethod='post' name='button'>Create</button>
+                <br>
+          		</form>
+          	</div>
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          ";
+        }
+
+        else {
+          echo "Invalid Yardsale ID";
+        }
       }
     }
 
     else {
-      $display = false;
       echo "Invalid Yardsale ID";
     }
    ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-  <div class="">
-    <p>If you are done, or don't want to add anything navigate with the options above</p>
-  </div>
 
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-  <div class="">
-    <p>To delete an item enter its ID and press delete</p>
-      <form class="" action="functions/deleteMerch.php" method="post">
-        <label for="deleteItem"></label>
-        <input type="text" name="deleteItem" id="deleteItem">
-        <button type="submit" formmethod="post">Delete</button>
-      </form>
-  </div>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: DELETE FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="">
-      <p>To edit an item enter its ID and press edit</p>
-      <form class="" action="functions/editMerch.php" method="post">
-        <label for="editMerch"></label>
-        <input type="text" name="editMerch" id="editMerch">
-        <button type="submit" formmethod="post">Edit</button>
-      </form>
-    </div>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<div>
-    <!-- should call another file that will insert the item -->
-		<form action="functions/insertMerch.php" method="post">
-      <p><b>Add an Item</b></p>
-			<label for="itemName">Name: </label>
-			<input type="text" name="itemName" id="itemName" required>
-      <br>
-
-			<label for="itemPrice">Price: </label>
-			<input type="number" name="itemPrice" id="itemPrice" required>
-      <br>
-
-      <p>Description</p>
-			<textarea id="description" name="itemDescription" rows="10" cols="50"
-                required></textarea>
-
-			<br>
-			<br>
-			<button type="submit" formmethod="post" name="button">Create</button>
-      <br>
-		</form>
-	</div>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
   <div class="">
     <?php
-      if ($display == true) {
         // $yardSaleID = $_SESSION['yardSaleID'];
 
         $displayItems = "SELECT * FROM Merchandise
@@ -142,7 +148,6 @@
           echo "<br>";
           echo "There are no items";
         }
-      }
      ?>
   </div>
 
