@@ -19,7 +19,7 @@
     include 'functions/databaseConnect.php';
 
     $itemName = $_POST['itemName'];
-    $itemPrice = $_POST['itemPrice'];
+    $itemPrice = (int) $_POST['itemPrice'];
     $itemDescription = $_POST['itemDescription'];
 
     $userID = $_SESSION['userName'];
@@ -103,7 +103,7 @@
           echo "<h3>Items for: " . $row["yardSaleName"] . "</h3>" .
                "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                "Name: " . $row["itemName"] . "<br>" .
-               "Price: " . $row["itemPrice"] .  "<br>" .
+               "Price: $" . $row["itemPrice"] .  "<br>" .
                "Description: " . $row["itemDescription"] . "<br>";
         }
       }
