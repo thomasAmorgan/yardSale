@@ -8,9 +8,9 @@
   }
 
   $itemName = $_POST['itemName'];
-  $price = $_POST['price'];
-  $description = $_POST['description'];
-  $sold = $_POST['merchSold'];
+  $price = $_POST['itemPrice'];
+  $description = $_POST['itemDescription'];
+  $sold = $_POST['itemSold'];
 
   $userID = $_SESSION['userName'];
   $yardSaleID = $_SESSION['yardSaleID'];

@@ -95,8 +95,7 @@
 
                     <p>Description</p>
               			<textarea id='description' name='itemDescription' rows='10' cols='50'
-                              required>$description
-                    </textarea>
+                              required>$description</textarea>
 
               			<br>
               			<br>
