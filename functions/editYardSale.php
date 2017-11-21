@@ -146,7 +146,7 @@
           	</div>";
         }
 
-        if (!empty($_POST)) {
+        // if (!empty($_POST)) {
 
           $deleteMatch = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
                           AND userID = '$userID'";
@@ -169,7 +169,7 @@
           else {
             header("Location: /yardSale/userPage.php");
           }
-        }
+        // }
 
        ?>
     </div>
