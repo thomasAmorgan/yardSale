@@ -111,7 +111,6 @@
       else {
         echo "There are no items";
       }
-    }
      ?>
   </div>
 
