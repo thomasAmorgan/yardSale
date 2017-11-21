@@ -89,8 +89,8 @@
                     <label for='itemSold'>Price: </label>
                     <select id='itemSold' name='itemSold'>
                       <option selected>$sold</option>
-                      <option>true</option>
-                      <option>false</option>
+                      <option value='1'>true</option>
+                      <option value='0'>false</option>
                     </select>
 
                     <p>Description</p>
