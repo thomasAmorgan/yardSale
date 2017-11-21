@@ -59,6 +59,10 @@
                         "Description: " . $row["description"] . "<br>";
                  }
                }
+
+               else {
+                 echo "No items in this yardsale";
+               }
         }
       }
 
