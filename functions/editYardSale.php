@@ -106,15 +106,24 @@
                 <p><b>Date of Yardsale</b></p>
           			<label for='months'>Month: </label>
           			<select id='months' name='yardSaleMonth'>
-                 <option selected>$month</option></select>
+                 <option selected>$month</option>
+                </select>
           			<label for='days'>Day: </label>
-          			<select id='days' name='yardSaleDay' value='$day'> </select>
+          			<select id='days' name='yardSaleDay' value='$day'>
+                  <option selected>$day</option>
+                </select>
           			<label for='years'>Year: </label>
-          			<select id='years' name='yardSaleYear' value='$year'> </select>
+          			<select id='years' name='yardSaleYear' value='$year'>
+                  <option selected>$year</option>
+                </select>
                 <br>
                 <label for='yardSaleHour'>Time: </label>
-          			<select id='hours' name='yardSaleHour' value='$hours'> </select>
-          			<select id='ampm' name='yardSaleAMPM' value='$amPM'> </select>
+          			<select id='hours' name='yardSaleHour' value='$hours'>
+                  <option selected>$hours</option>
+                </select>
+          			<select id='ampm' name='yardSaleAMPM' value='$amPM'>
+                  <option selected>$amPM</option>
+                </select>
 
                 <br>
           			<!-- <label for='description'>Description: </label> -->
