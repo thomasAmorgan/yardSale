@@ -117,6 +117,75 @@
        ?>
     </div>
 
+    <?php echo "<script>
+    	window.onload = function() {
+    		var monthArray = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+
+    		var months = document.getElementById('months');
+
+    		for (var i = 0; i < monthArray.length; i++) {
+    			var opt = document.createElement('option');
+    			opt.value = monthArray[i];
+    			opt.innerHTML = monthArray[i];
+    			months.appendChild(opt);
+    		}
+
+    		var days = document.getElementById('days');
+
+    		for (var i = 1; i <= 31; i++) {
+                            var opt = document.createElement('option');
+                            opt.value = i;
+                            opt.innerHTML = i;
+                            days.appendChild(opt);
+        }
+
+    		var year = document.getElementById('years');
+
+    		for (var i = 2017; i <= 2025; i++) {
+                            var opt = document.createElement('option');
+                            opt.value = i;
+                            opt.innerHTML = i;
+                            years.appendChild(opt);
+        }
+
+        var statesArray = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL',
+                           'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA',
+                           'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC',
+                           'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK',
+                           'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA',
+                           'VT', 'WA', 'WI', 'WV', 'WY'];
+
+    		var states = document.getElementById('states');
+
+        for (var i = 0; i < statesArray.length; i++) {
+    			var opt = document.createElement('option');
+    			opt.value = statesArray[i];
+    			opt.innerHTML = statesArray[i];
+    			states.appendChild(opt);
+    		}
+
+        var hoursArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+        var mornAfterArray = ['AM', 'PM'];
+
+        var hours = document.getElementById('hours');
+        var amPM = document.getElementById('ampm');
+
+        for (var i = 0; i < hoursArray.length; i++) {
+    			var opt = document.createElement('option');
+    			opt.value = hoursArray[i];
+    			opt.innerHTML = hoursArray[i];
+    			hours.appendChild(opt);
+    		}
+
+        for (var i = 0; i < mornAfterArray.length; i++) {
+    			var opt = document.createElement('option');
+    			opt.value = mornAfterArray[i];
+    			opt.innerHTML = mornAfterArray[i];
+    			amPM.appendChild(opt);
+    		}
+    	}
+    </script>' ?>
+
 
   </body>
 </html>
