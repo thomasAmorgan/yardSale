@@ -72,8 +72,6 @@
           $day = substr($yardSaleDate,2, 2);
           $year = substr($yardSaleDate,5 , 4);
 
-          echo "$month" . " " . "$day" . " " . "$year";
-
           echo "	<div>
           		<form action='' method='post'>
                 <p><b>Yardsale Name</b></p>
