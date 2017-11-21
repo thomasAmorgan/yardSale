@@ -52,7 +52,7 @@
                "Time: " . $row["yardSaleTime"] . "<br>" .
                "Description: " . $row["yardSaleDescription"] . "<br><br>";
 
-               echo "<p><b>Items:</b></p>";
+               echo "<b>Items:</b>";
 
                $displayItems = "SELECT * FROM Merchandise
                                 WHERE yardSaleID = '$yardSaleID'";
