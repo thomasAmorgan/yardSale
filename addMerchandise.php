@@ -20,6 +20,7 @@
 
     $itemName = $_POST['itemName'];
     $itemPrice = (int) $_POST['itemPrice'];
+    echo "$itemPrice";
     $itemDescription = $_POST['itemDescription'];
 
     $userID = $_SESSION['userName'];
