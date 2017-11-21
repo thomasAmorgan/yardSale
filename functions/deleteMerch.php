@@ -18,11 +18,13 @@
                     AND userID = '$userID'";
 
     if ($mysqli->query($deleteQuery) === true) {
-      header("Location: /yardSale/addMerchandise.php");
+      // header("Location: /yardSale/addMerchandise.php");
+      echo "$merchID" . " " . "$userID" . " " . "$yardSaleID";
     }
 
     else {
-      header("Location: /yardSale/addMerchandise.php");
+      // header("Location: /yardSale/addMerchandise.php");
+      echo "$merchID" . " " . "$userID" . " " . "$yardSaleID";
     }
   }
 
