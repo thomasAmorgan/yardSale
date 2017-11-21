@@ -107,13 +107,13 @@
           			<label for='months'>Month: </label>
           			<select id='months' name='yardSaleMonth' value='$month'> </select>
           			<label for='days'>Day: </label>
-          			<select id='days' name='yardSaleDay' value="$day"> </select>
+          			<select id='days' name='yardSaleDay' value='$day'> </select>
           			<label for='years'>Year: </label>
-          			<select id='years' name='yardSaleYear' value="$year"> </select>
+          			<select id='years' name='yardSaleYear' value='$year'> </select>
                 <br>
                 <label for='yardSaleHour'>Time: </label>
-          			<select id='hours' name='yardSaleHour' value="$"> </select>
-          			<select id='ampm' name='yardSaleAMPM'> </select>
+          			<select id='hours' name='yardSaleHour' value='$hours'> </select>
+          			<select id='ampm' name='yardSaleAMPM' value='$amPM'> </select>
 
                 <br>
           			<!-- <label for='description'>Description: </label> -->
