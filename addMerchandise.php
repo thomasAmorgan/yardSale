@@ -44,7 +44,7 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
-      <p>To edit a yardsale enter its ID and press edit</p>
+      <p>To edit an item enter its ID and press edit</p>
       <form class="" action="functions/editMerch.php" method="post">
         <label for="editMerch"></label>
         <input type="text" name="editMerch" id="editMerch">
