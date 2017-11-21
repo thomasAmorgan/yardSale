@@ -47,7 +47,7 @@
 
     <div class="">
       <?php
-
+        $userName = $_SESSION['userName'];
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // also saves all the values from the yardsale being edited
         if (!empty($_POST['editYardSale'])) {
