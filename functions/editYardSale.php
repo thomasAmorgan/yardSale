@@ -67,6 +67,12 @@
             }
           }
 
+          $month = substr($yardSaleDate, 0, 2);
+          $day = substr($yardSaleDate,3, 2);
+          $year = substr($yardSaleDate,6 , 2);
+
+          echo "$month" . " " "$day" . "$year";
+
           echo "	<div>
           		<form action='' method='post'>
                 <p><b>Yardsale Name</b></p>
@@ -93,7 +99,7 @@
 
                 <p><b>Date of Yardsale</b></p>
           			<label for='months'>Month: </label>
-          			<select id='months' name='yardSaleMonth'> </select>
+          			<select id='months' name='yardSaleMonth' value='$'> </select>
           			<label for='days'>Day: </label>
           			<select id='days' name='yardSaleDay'> </select>
           			<label for='years'>Year: </label>
