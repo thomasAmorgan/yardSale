@@ -68,8 +68,7 @@
 
       <p>Description</p>
 			<textarea id="description" name="itemDescription" rows="10" cols="50"
-                required>
-      </textarea>
+                required></textarea>
 
 			<br>
 			<br>
@@ -87,6 +86,7 @@
                        WHERE yardSaleID = '$yardSaleID'";
 
       $displayResult = $mysqli->query($displayItems);
+      echo "<br>";
 
       if ($displayResult->num_rows > 0) {
         while ($row = $displayResult->fetch_assoc()) {

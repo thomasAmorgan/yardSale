@@ -16,7 +16,7 @@
 
       $userName = $_SESSION['userName'];
       $merchID = $_POST['editMerch'];
-      $_SESSION['yardSaleID'] = $yardSaleID;
+      $yardSaleID = $_SESSION['yardSaleID'];
 
       $itemName;
       $description;
