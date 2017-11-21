@@ -67,9 +67,10 @@
             }
           }
 
+          // 01/01/2017
           $month = substr($yardSaleDate, 0, 2);
-          $day = substr($yardSaleDate,3, 2);
-          $year = substr($yardSaleDate,6 , 2);
+          $day = substr($yardSaleDate,2, 2);
+          $year = substr($yardSaleDate,5 , 4);
 
           echo "$month" . " " . "$day" . " " . "$year";
 
@@ -170,7 +171,7 @@
     			states.appendChild(opt);
     		}
 
-        var hoursArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+        var hoursArray = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
         var mornAfterArray = ['AM', 'PM'];
 
         var hours = document.getElementById('hours');
