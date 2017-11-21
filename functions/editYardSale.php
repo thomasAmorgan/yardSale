@@ -7,7 +7,7 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
     <?php
-      // include 'databaseConnect.php';
+      include 'databaseConnect.php';
 
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
@@ -47,7 +47,6 @@
 
     <div class="">
       <?php
-        include 'databaseConnect.php';
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // also saves all the values from the yardsale being edited
@@ -161,7 +160,7 @@
           //         yardsales.</b></p>";
           // }
 
-          elseif ($userName != $userID){
+          elseif ($userName != $userID) {
             echo "OUTPUT:" . " " . "$userID" . " " . "$userName" . "<br>";
             echo "<p><b>User ID does not match! You can only edit your own
                   yardsales.</b></p>";
