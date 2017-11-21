@@ -47,7 +47,6 @@
 
     <div class="">
       <?php
-        $userName = $_SESSION['userName'];
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // also saves all the values from the yardsale being edited
         if (!empty($_POST['editYardSale'])) {
@@ -161,6 +160,7 @@
           // }
 
           elseif ($userName != $userID) {
+            $userName = $_SESSION['userName'];
             echo "OUTPUT:" . " " . "$userID" . " " . "$userName" . "<br>";
             echo "<p><b>User ID does not match! You can only edit your own
                   yardsales.</b></p>";
