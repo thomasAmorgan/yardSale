@@ -23,7 +23,7 @@
   if ($mysqli->query($deleteMatch) === true) {
     $createMerchQuery = "INSERT INTO Merchandise (merchID, itemName,
                          description, price, userID, yardSaleID, sold)
-                         VALUES ('$merchID', '$itemName', '$itemDescription',
+                         VALUES ('$merchID', '$itemName', '$description',
                          '$price', '$userID', '$yardSaleID', '$sold')";
 
     $createMerchResult = $mysqli->query($createMerchQuery);
