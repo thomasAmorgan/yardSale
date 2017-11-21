@@ -47,6 +47,9 @@
     <div class="">
       <?php
         include 'databaseConnect.php';
+
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// also saves all the values from the yardsale being edited
         if (!empty($_POST['editYardSale'])) {
           $findYardSaleMatch = "SELECT * FROM YardSales
                                 WHERE yardSaleID = '$yardSaleID'";
@@ -77,7 +80,9 @@
               echo "<p><b>Edit Info Below</b></p>";
             }
           }
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~
           // 01/01/2017
           $month = substr($yardSaleDate, 0, 2);
           $day = substr($yardSaleDate, 3, 2);
@@ -86,7 +91,9 @@
           // 01AM
           $hours = substr($yardSaleTime, 0, 2);
           $amPM = substr($yardSaleTime, 2, 2);
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
           echo "	<div>
           		<form action='deleteUpdateYardSale.php' method='post'>
                 <p><b>Yardsale Name</b></p>
@@ -146,38 +153,11 @@
           		</form>
           	</div>";
         }
-
-        // // if (!empty($_POST)) {
-        // function editYardSale() {
-        //   $deleteMatch = "DELETE FROM YardSales WHERE yardSaleID = '$yardSaleID'
-        //                   AND userID = '$userID'";
-        //
-        //   if ($mysqli->query($deleteMatch) === true) {
-        //     $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
-        //                             yardSaleDate, yardSaleTime, streetAddress,
-        //                             yardSaleName, yardSaleDescription, state,
-        //                             zipCode, city)
-        //                             VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-        //                             '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-        //                             '$yardSaleDescription', '$yardSaleState',
-        //                             '$yardSaleZip', '$yardSaleCity')";
-        //
-        //     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
-        //
-        //     header("Location: /yardSale/userPage.php");
-        //   }
-        //
-        //   else {
-        //     header("Location: /yardSale/userPage.php");
-        //   }
-        // }
-
-
-        // }
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~ END: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
     </div>
 
+<!-- ~~~~~~~~~~~~~~~~~~~ START: DROPDOWN POP FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~ -->
     <?php echo "<script>
     	window.onload = function() {
     		var monthArray = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
@@ -252,7 +232,6 @@
     		}
     	}
     </script>"; ?>
-
-
+<!-- ~~~~~~~~~~~~~~~~~~~~ END: DROPDOWN POP FUNCTIONS ~~~~~~~~~~~~~~~~~~~~~~ -->
   </body>
 </html>
