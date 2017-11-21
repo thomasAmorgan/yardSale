@@ -98,8 +98,6 @@
 
       $displayResult = $mysqli->query($displayItems);
 
-      echo "$itemPrice";
-
       if ($displayResult->num_rows > 0) {
         while ($row = $displayResult->fetch_assoc()) {
           echo "<h3>Items for: " . $row["yardSaleName"] . "</h3>" .
