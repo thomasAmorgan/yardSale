@@ -15,6 +15,7 @@
       }
 
       $userName = $_SESSION['userName'];
+      echo "$userName";
       $yardSaleID = $_POST['editYardSale'];
       $_SESSION['yardSaleID'] = $yardSaleID;
 
