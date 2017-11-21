@@ -35,6 +35,10 @@
   <?php
     $yardSaleID = $_SESSION['yardSaleID'];
 
+    if (!empty($_POST)) {
+      $yardSaleID = $_POST['editYardSaleItems'];
+    }
+
     $findYardSaleMatch = "SELECT * FROM YardSales
                           WHERE yardSaleID = '$yardSaleID'";
 

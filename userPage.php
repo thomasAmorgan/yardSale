@@ -56,6 +56,17 @@
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: EDIT ITEMS ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="">
+      <p>To edit a yardsale's items enter its ID and press edit</p>
+      <form class="" action="functions/addMerchandise.php" method="post">
+        <label for="editYardSaleItems"></label>
+        <input type="text" name="editYardSaleItems" id="editYardSaleItems">
+        <button type="submit" formmethod="post">Edit</button>
+      </form>
+    </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: EDIT ITEMS ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SHOW USER YSs ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <?php
