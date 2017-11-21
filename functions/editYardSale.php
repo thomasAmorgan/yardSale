@@ -94,7 +94,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~ START: UPDATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          if ($userName == $userID) {
+          else if ($userName == $userID) {
             echo "	<div>
                 <form action='deleteUpdateYardSale.php' method='post'>
                   <p><b>Yardsale Name</b></p>
@@ -155,9 +155,19 @@
               </div>";
           }
 
-          else {
+          // else {
+          //   echo "<p><b>User ID does not match! You can only edit your own
+          //         yardsales.</b></p>";
+          // }
+
+          else if ($userName != $userID){
+            echo "test" . " " . "$userID" . " " . "$userName" . "<br>";
             echo "<p><b>User ID does not match! You can only edit your own
                   yardsales.</b></p>";
+          }
+
+          else {
+            echo "Invalid Yardsale ID";
           }
 
         }
