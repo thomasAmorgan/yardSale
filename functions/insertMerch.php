@@ -30,7 +30,7 @@
     $createYardSaleQuery = "INSERT INTO Merchandise (merchID, itemName,
                             description, price, userID, yardSaleID, sold)
                             VALUES ('$merchID', '$itemName', '$itemDescription',
-                            '$itemPrice', '$userID', '$yardSaleID', 'false')";
+                            '$itemPrice', '$userID', '$yardSaleID', true)";
 
     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 

@@ -93,12 +93,13 @@
           echo "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                "Name: " . $row["itemName"] . "<br>" .
                "Price: $" . $row["price"] .  "<br>" .
-               "Sold: " . $row["sold"] . "<br>" . 
+               "Sold: " . $row["sold"] . "<br>" .
                "Description: " . $row["description"] . "<br>";
         }
       }
 
       else {
+        echo "<br>";
         echo "There are no items";
       }
      ?>
