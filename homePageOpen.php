@@ -41,7 +41,7 @@
       <form class="" action="functions/viewYardSaleItems.php" method="post">
         <p>To view a yardsale's items enter its ID</p>
         <input type="text" name="viewItems" id="viewItems">
-        <button type="submit" formmethod="post">Search</button>
+        <button type="submit" formmethod="post">View Items</button>
       </form>
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: VIEW ITEMS FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
