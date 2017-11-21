@@ -52,7 +52,7 @@
 
       $randNum = generateID();
       $yardSaleID = "$userID" . "$randNum";
-      // $yardSaleID = checkID();
+      $_SESSION['yardSaleID'] = $yardSaleID;
 
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
@@ -77,6 +77,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <a href='/yardSale/homePageLogin.php'>Home</a>
+    <a href="/yardSale/userPage.php">User Page</a>
     <a href='/yardSale/loginPage.php'>Logout</a>
   </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
