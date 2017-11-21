@@ -65,7 +65,8 @@
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-      header("Location: /yardSale/homePageLogin.php");
+      // header("Location: /yardSale/homePageLogin.php");
+      header("Location: /yardSale/addMerchandise.php");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
