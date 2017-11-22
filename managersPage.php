@@ -16,7 +16,7 @@
       $isManager = false;
 
       $checkManager = "SELECT * FROM UserProfiles
-                       WHERE manager = 'true'
+                       WHERE manager = true
                        AND userID = '$userID'";
 
       $checkManagerResult = $mysqli->query($checkManager);
