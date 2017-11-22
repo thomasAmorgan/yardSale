@@ -13,7 +13,7 @@
         header("location: loginPage.php");
       }
 
-      if (!$_SESSION['isManager']) {
+      if ($_SESSION['isManager'] == false) {
         header("location: homePageLogin.php");
       }
       // $userID = $_SESSION['userName'];
