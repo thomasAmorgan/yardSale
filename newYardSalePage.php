@@ -36,6 +36,8 @@
 
     $userID = $_SESSION['userName'];
     $yardSaleID;
+    $adPrice;
+    $currentPromotion;
 
     $yardSaleDate = "$yardSaleMonth" . '/' . "$yardSaleDay" . '/' . "$yardSaleYear";
     $yardSaleTime = "$yardSaleHour" . "$yardSaleAMPM";
@@ -50,6 +52,18 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (!empty($_POST)) {
 
+      $currentPromoPrice = "SELECT * FROM Discount";
+
+      $result = $mysqli->query($currentPromoPrice);
+
+      if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+          $adPrice = $row['adPrice'];
+          $currentPromotion = $row['currentPromotion'];
+        }
+      }
+
       $randNum = generateID();
       $yardSaleID = "$userID" . "$randNum";
       $_SESSION['yardSaleID'] = $yardSaleID;
@@ -57,11 +71,12 @@
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
-                              zipCode, city)
+                              zipCode, city, discountPercentage, adPrice)
                               VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                               '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                               '$yardSaleDescription', '$yardSaleState',
-                              '$yardSaleZip', '$yardSaleCity')";
+                              '$yardSaleZip', '$yardSaleCity', $currentPromotion)
+                              '$adPrice'";
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 

@@ -57,28 +57,53 @@
 //  displays the search results based off user input
         if (!empty($_POST['searchBar'])) {
 
-          $searchQuery = "SELECT * FROM YardSales
-                          WHERE $searchOption
-                          LIKE '%$searchString%'";
+          if ($searchOption == 'itemName') {
+            $searchQuery = "SELECT * FROM Merchandise
+                            WHERE $searchOption
+                            LIKE '%$searchString%'";
 
-          $searchResult = $mysqli->query($searchQuery);
+            $searchResult = $mysqli->query($searchQuery);
 
-          if ($searchResult->num_rows > 0) {
+            if ($searchResult->num_rows > 0) {
 
-            while ($row = $searchResult->fetch_assoc()) {
-              echo "<h3>" . $row["yardSaleName"] . "</h3>" .
-                   "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                   "Host: " . $row["userID"] . "<br>" .
-                   "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
-                   . $row["state"] . " " . $row["zipCode"] .  "<br>" .
-                   "Date: " . $row["yardSaleDate"] . "<br>" .
-                   "Time: " . $row["yardSaleTime"] . "<br>" .
-                   "Description: " . $row["yardSaleDescription"] . "<br>";
+              while ($row = $searchResult->fetch_assoc()) {
+                echo "<br><b> Merch ID: " . $row["merchID"] . "</b> <br>" .
+                     "Name: " . $row["itemName"] . "<br>" .
+                     "Price: $" . $row["price"] .  "<br>" .
+                     "Sold: " . $row["sold"] . "<br>" .
+                     "Description: " . $row["description"] . "<br>";
+              }
+            }
+
+            else {
+              echo "<br> <br>There are no items that match the search";
             }
           }
 
           else {
-            echo "There are no yardsales that match the search";
+            $searchQuery = "SELECT * FROM YardSales
+                            WHERE $searchOption
+                            LIKE '%$searchString%'";
+
+            $searchResult = $mysqli->query($searchQuery);
+
+            if ($searchResult->num_rows > 0) {
+
+              while ($row = $searchResult->fetch_assoc()) {
+                echo "<h3>" . $row["yardSaleName"] . "</h3>" .
+                     "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                     "Host: " . $row["userID"] . "<br>" .
+                     "Address: " . $row["streetAddress"] . ", " . $row["city"] . " "
+                     . $row["state"] . " " . $row["zipCode"] .  "<br>" .
+                     "Date: " . $row["yardSaleDate"] . "<br>" .
+                     "Time: " . $row["yardSaleTime"] . "<br>" .
+                     "Description: " . $row["yardSaleDescription"] . "<br>";
+              }
+            }
+
+            else {
+              echo "<br> <br>There are no yardsales that match the search";
+            }
           }
         }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,7 +128,7 @@
           }
 
           else {
-            echo "There are no yardsales";
+            echo "<br> <br>There are no yardsales";
           }
         }
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~

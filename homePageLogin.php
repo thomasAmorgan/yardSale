@@ -82,7 +82,7 @@
             }
 
             else {
-              echo "<br> There are no items that match the search";
+              echo "<br> <br>There are no items that match the search";
             }
           }
 
@@ -108,7 +108,7 @@
             }
 
             else {
-              echo "There are no yardsales that match the search";
+              echo "<br> <br>There are no yardsales that match the search";
             }
           }
         }
@@ -134,7 +134,7 @@
           }
 
           else {
-            echo "There are no yardsales";
+            echo "<br> <br>There are no yardsales";
           }
         }
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
