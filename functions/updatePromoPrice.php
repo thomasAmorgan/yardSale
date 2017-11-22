@@ -11,21 +11,11 @@
   $amount = $_POST['amount'];
   $promoPrice = $_POST['promoPrice'];
 
-  // $deleteMatch = "TRUNCATE Discount";
+  $updatePromoPriceQuery = "UPDATE Discount
+                            SET $promoPrice = $amount";
 
-  // if ($mysqli->query($deleteMatch) === true) {
-    // $updatePromoPriceQuery = "INSERT INTO Discount (currentPromotion, adPrice)
-    //                           VALUES ('$amount', '$promoPrice')";
-    $updatePromoPriceQuery = "UPDATE Discount
-                              SET $promoPrice = $amount";
+  $updatePromoPriceResult = $mysqli->query($updatePromoPriceQuery);
 
-    $updatePromoPriceResult = $mysqli->query($updatePromoPriceQuery);
-
-    header("Location: /yardSale/managersPage.php");
-  // }
-
-  // else {
-  //   header("Location: /yardSale/managersPage.php");
-  // }
+  header("Location: /yardSale/managersPage.php");
 
  ?>

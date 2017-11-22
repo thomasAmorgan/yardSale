@@ -44,6 +44,23 @@
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~ END: CHANGE PROMOS/PRICE FORM ~~~~~~~~~~~~~~~~~~~~~~ -->
 
+    <div class="">
+      <p>Current Promotion and Price/Ad</p>
+      <?php
+        $currentPromoPrice = "SELECT * FROM Discount";
+
+        $result = $mysqli->query($currentPromoPrice);
+
+        if ($result->num_rows > 0) {
+
+          while ($row = $result->fetch_assoc()) {
+            echo "Promotion: " . $row["currentPromotion"] . "<br>" .
+                 "Advertisement Price: $" . $row["adPrice"] .  "<br>";
+          }
+        }
+       ?>
+    </div>
+
 
   </body>
 </html>
