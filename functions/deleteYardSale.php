@@ -20,11 +20,10 @@
 
       $deleteItems = "DELETE FROM Merchandise
                       WHERE yardSaleID = '$yardSaleID'
-                      AND userID = '$userID'"
+                      AND userID = '$userID'";
 
       if ($mysqli->query($deleteItems) === true) {
         header("Location: /yardSale/userPage.php");
-      }
 
       header("Location: /yardSale/userPage.php");
     }
