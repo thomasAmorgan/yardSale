@@ -23,6 +23,7 @@
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
       <a href="/yardSale/userPage.php">User Page</a>
+      <a href="/yardSale/managersPage.php">Manager Page</a>
       <a href='/yardSale/newYardSalePage.php'>Create Yardsale</a>
       <a href='/yardSale/functions/logout.php'>Logout</a>
     </div>
@@ -81,7 +82,7 @@
             }
 
             else {
-              echo "There are no yardsales that match the search";
+              echo "<br> There are no items that match the search";
             }
           }
 
