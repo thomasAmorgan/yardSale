@@ -49,7 +49,9 @@
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: GENERATE ID ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    function getPromoPrice() {
+//~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if (!empty($_POST)) {
+
       $currentPromoPrice = "SELECT * FROM Discount";
 
       $result = $mysqli->query($currentPromoPrice);
@@ -61,11 +63,6 @@
           $currentPromotion = $row['currentPromotion'];
         }
       }
-    }
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if (!empty($_POST)) {
-      getPromoPrice();
 
       $randNum = generateID();
       $yardSaleID = "$userID" . "$randNum";
