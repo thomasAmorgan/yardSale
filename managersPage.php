@@ -45,8 +45,10 @@
 <!-- ~~~~~~~~~~~~~~~~~~ END: CHANGE PROMOS/PRICE FORM ~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <div class="">
-      <p>Current Promotion and Price/Ad</p>
+      <p><b>Current Promotion and Price/Ad</b></p>
       <?php
+        include 'functions/databaseConnect.php';
+        
         $currentPromoPrice = "SELECT * FROM Discount";
 
         $result = $mysqli->query($currentPromoPrice);
