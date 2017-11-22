@@ -145,7 +145,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~ START: DROPDOWN POP FUNCTION ~~~~~~~~~~~~~~~~~~~~~~ -->
 <script type="text/javascript">
   var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
-                      "zipCode, itemName"];
+                      "zipCode", "itemName"];
 
   var searchOptions = document.getElementById("searchOptions");
 
