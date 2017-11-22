@@ -11,7 +11,7 @@
   $amount = (int) $_POST['amount'];
   $promoPrice = $_POST['promoPrice'];
 
-  $deleteMatch = "DELETE * FROM Discount";
+  $deleteMatch = "TRUNCATE Discount";
 
   if ($mysqli->query($deleteMatch) === true) {
     $updatePromoPriceQuery = "INSERT INTO Discount
