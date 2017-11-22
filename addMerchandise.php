@@ -57,7 +57,7 @@
 
         echo "<p><b>Edit Items Below</b></p>";
 
-        if ($yardSaleID == $row['yardSaleID']) {
+        // if ($yardSaleID == $row['yardSaleID']) {
           echo "  <div class=''>
               <p>If you are done, or don't want to add anything navigate with the options above</p>
             </div>
@@ -129,11 +129,11 @@
             echo "<br>";
             echo "There are no items";
           }
-        }
+        // }
 
-        else {
-          echo "Invalid Yardsale ID";
-        }
+        // else {
+        //   echo "Invalid Yardsale ID";
+        // }
       }
     }
 
