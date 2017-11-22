@@ -14,7 +14,7 @@
   $deleteMatch = "TRUNCATE Discount";
 
   if ($mysqli->query($deleteMatch) === true) {
-    $updatePromoPriceQuery = "INSERT INTO Discount
+    $updatePromoPriceQuery = "INSERT INTO Discount (currentPromotion, adPrice)
                               VALUES ('$amount', '$promoPrice')";
 
     $updatePromoPriceResult = $mysqli->query($updatePromoPriceQuery);
