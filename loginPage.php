@@ -42,8 +42,6 @@
 			else {
 				$_SESSION['userName'] = $userName;
 				$_SESSION['loggedIn'] = true;
-				header("Location: /yardSale/homePageLogin.php");
-
 	      $_SESSION['isManager'] = false;
 
 	      $checkManager = "SELECT * FROM UserProfiles
@@ -55,6 +53,8 @@
 	      if ($checkManagerResult->num_rows > 0) {
 	        $_SESSION['isManager'] = true;
 	      }
+
+				header("Location: /yardSale/homePageLogin.php");
 
 				exit;
 			}
