@@ -7,26 +7,27 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
     <?php
+      include 'functions/databaseConnect.php';
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
         header("location: loginPage.php");
       }
-      // $userID = $_SESSION['userName'];
-      // $isManager = false;
-      //
-      // $checkManager = "SELECT * FROM UserProfiles
-      //                  WHERE manager = 'true'
-      //                  AND userID = '$userID'";
-      //
-      // $checkManagerResult = $mysqli->query($checkManager);
-      //
-      // if ($checkManagerResult->num_rows > 0) {
-      //   $isManager = true;
-      // }
-      //
-      // else {
-      //   header("location: homePageLogin.php");
-      // }
+      $userID = $_SESSION['userName'];
+      $isManager = false;
+
+      $checkManager = "SELECT * FROM UserProfiles
+                       WHERE manager = 'true'
+                       AND userID = '$userID'";
+
+      $checkManagerResult = $mysqli->query($checkManager);
+
+      if ($checkManagerResult->num_rows > 0) {
+        $isManager = true;
+      }
+
+      else {
+        header("location: homePageLogin.php");
+      }
     ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
   </head>
@@ -63,7 +64,7 @@
     <div class="">
       <p><b>Current Promotion and Price/Ad</b></p>
       <?php
-        include 'functions/databaseConnect.php';
+        // include 'functions/databaseConnect.php';
 
         $currentPromoPrice = "SELECT * FROM Discount";
 
