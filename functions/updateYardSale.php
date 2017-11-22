@@ -44,7 +44,7 @@
 
     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-    $_SESSION['yardSaleID'] = "";
+    // $_SESSION['yardSaleID'] = "";
 
     header("Location: /yardSale/userPage.php");
   }
