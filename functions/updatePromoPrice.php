@@ -8,14 +8,14 @@
     header("location: loginPage.php");
   }
 
-  $amount = (int) $_POST['amount'];
+  $amount = $_POST['amount'];
   $promoPrice = $_POST['promoPrice'];
 
   $deleteMatch = "TRUNCATE Discount";
 
   // if ($mysqli->query($deleteMatch) === true) {
     $updatePromoPriceQuery = "INSERT INTO Discount (currentPromotion, adPrice)
-                              VALUES ('$amount', '$promoPrice')";
+                              VALUES ($amount, $promoPrice)";
 
     $updatePromoPriceResult = $mysqli->query($updatePromoPriceQuery);
 
