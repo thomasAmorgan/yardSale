@@ -48,7 +48,7 @@
       <p><b>Current Promotion and Price/Ad</b></p>
       <?php
         include 'functions/databaseConnect.php';
-        
+
         $currentPromoPrice = "SELECT * FROM Discount";
 
         $result = $mysqli->query($currentPromoPrice);
@@ -56,7 +56,7 @@
         if ($result->num_rows > 0) {
 
           while ($row = $result->fetch_assoc()) {
-            echo "Promotion: " . $row["currentPromotion"] . "<br>" .
+            echo "Promotion: " . ($row["currentPromotion"] * 100 - 100) . "%<br>" .
                  "Advertisement Price: $" . $row["adPrice"] .  "<br>";
           }
         }
