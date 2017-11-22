@@ -43,6 +43,19 @@
 				$_SESSION['userName'] = $userName;
 				$_SESSION['loggedIn'] = true;
 				header("Location: /yardSale/homePageLogin.php");
+
+	      $_SESSION['isManager'] = false;
+
+	      $checkManager = "SELECT * FROM UserProfiles
+	                       WHERE manager = true
+	                       AND userID = '$userID'";
+
+	      $checkManagerResult = $mysqli->query($checkManager);
+
+	      if ($checkManagerResult->num_rows > 0) {
+	        $_SESSION['isManager'] = true;
+	      }
+
 				exit;
 			}
 		}
