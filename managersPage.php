@@ -35,7 +35,10 @@
       <form class="" action="functions/updatePromoPrice.php" method="post">
         <p>Adjust the promotion percent or the amount per advertisement</p>
         <input type="text" name="amount" id="amount">
-        <select name="promoPrice" id="promoPrice"></select>
+        <select name="promoPrice" id="promoPrice">
+          <option value="currentPromotion">Promotion</option>
+          <option value="adPrice">Price</option>
+        </select>
         <button type="submit" formmethod="post">View Items</button>
       </form>
     </div>
