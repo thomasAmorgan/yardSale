@@ -52,32 +52,40 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (!empty($_POST)) {
 
-      $currentPromoPrice = "SELECT * FROM Discount";
-
-      $result = $mysqli->query($currentPromoPrice);
-
-      if ($result->num_rows > 0) {
-
-        while ($row = $result->fetch_assoc()) {
-          $adPrice = $row['adPrice'];
-          $currentPromotion = $row['currentPromotion'];
-          echo " " . $adprice . " " . $currentPromotion;
-        }
-      }
+      // $currentPromoPrice = "SELECT * FROM Discount";
+      //
+      // $result = $mysqli->query($currentPromoPrice);
+      //
+      // if ($result->num_rows > 0) {
+      //
+      //   while ($row = $result->fetch_assoc()) {
+      //     $adPrice = $row['adPrice'];
+      //     $currentPromotion = $row['currentPromotion'];
+      //     echo " " . $adprice . " " . $currentPromotion;
+      //   }
+      // }
 
       $randNum = generateID();
       $yardSaleID = "$userID" . "$randNum";
       $_SESSION['yardSaleID'] = $yardSaleID;
 
+      // $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
+      //                         yardSaleDate, yardSaleTime, streetAddress,
+      //                         yardSaleName, yardSaleDescription, state,
+      //                         zipCode, city, discountPercentage, adPrice)
+      //                         VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
+      //                         '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
+      //                         '$yardSaleDescription', '$yardSaleState',
+      //                         '$yardSaleZip', '$yardSaleCity', $currentPromotion
+      //                         $adPrice)";
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
-                              zipCode, city, discountPercentage, adPrice)
+                              zipCode, city)
                               VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                               '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                               '$yardSaleDescription', '$yardSaleState',
-                              '$yardSaleZip', '$yardSaleCity', $currentPromotion)
-                              '$adPrice'";
+                              '$yardSaleZip', '$yardSaleCity')";
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
