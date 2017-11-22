@@ -24,6 +24,7 @@
 
       if ($mysqli->query($deleteItems) === true) {
         header("Location: /yardSale/userPage.php");
+      }
 
       header("Location: /yardSale/userPage.php");
     }
