@@ -13,17 +13,17 @@
 
   $deleteMatch = "TRUNCATE Discount";
 
-  if ($mysqli->query($deleteMatch) === true) {
+  // if ($mysqli->query($deleteMatch) === true) {
     $updatePromoPriceQuery = "INSERT INTO Discount (currentPromotion, adPrice)
                               VALUES ('$amount', '$promoPrice')";
 
     $updatePromoPriceResult = $mysqli->query($updatePromoPriceQuery);
 
     header("Location: /yardSale/managersPage.php");
-  }
+  // }
 
-  else {
-    header("Location: /yardSale/managersPage.php");
-  }
+  // else {
+  //   header("Location: /yardSale/managersPage.php");
+  // }
 
  ?>
