@@ -61,7 +61,7 @@
         while ($row = $result->fetch_assoc()) {
           $currentPromotion = $row['currentPromotion'];
           $adPrice = $row['adPrice'];
-          echo " " . $adPrice . " " . $currentPromotion;
+          // echo " " . $adPrice . " " . $currentPromotion;
         }
       }
 
@@ -69,27 +69,27 @@
       $yardSaleID = "$userID" . "$randNum";
       $_SESSION['yardSaleID'] = $yardSaleID;
 
-      // $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
-      //                         yardSaleDate, yardSaleTime, streetAddress,
-      //                         yardSaleName, yardSaleDescription, state,
-      //                         zipCode, city, discountPercentage, adPrice)
-      //                         VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
-      //                         '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-      //                         '$yardSaleDescription', '$yardSaleState',
-      //                         '$yardSaleZip', '$yardSaleCity', $currentPromotion
-      //                         $adPrice)";
       $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                               yardSaleDate, yardSaleTime, streetAddress,
                               yardSaleName, yardSaleDescription, state,
-                              zipCode, city)
+                              zipCode, city, discountPercentage, adPrice)
                               VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                               '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                               '$yardSaleDescription', '$yardSaleState',
-                              '$yardSaleZip', '$yardSaleCity')";
+                              '$yardSaleZip', '$yardSaleCity', $currentPromotion
+                              $adPrice)";
+      // $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
+      //                         yardSaleDate, yardSaleTime, streetAddress,
+      //                         yardSaleName, yardSaleDescription, state,
+      //                         zipCode, city)
+      //                         VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
+      //                         '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
+      //                         '$yardSaleDescription', '$yardSaleState',
+      //                         '$yardSaleZip', '$yardSaleCity')";
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-      // header("Location: /yardSale/addMerchandise.php");
+      header("Location: /yardSale/addMerchandise.php");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
