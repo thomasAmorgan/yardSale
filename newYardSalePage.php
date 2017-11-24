@@ -52,18 +52,18 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
     if (!empty($_POST)) {
 
-      // $currentPromoPrice = "SELECT * FROM Discount";
-      //
-      // $result = $mysqli->query($currentPromoPrice);
-      //
-      // if ($result->num_rows > 0) {
-      //
-      //   while ($row = $result->fetch_assoc()) {
-      //     $adPrice = $row['adPrice'];
-      //     $currentPromotion = $row['currentPromotion'];
-      //     echo " " . $adprice . " " . $currentPromotion;
-      //   }
-      // }
+      $currentPromoPrice = "SELECT * FROM Discount";
+
+      $result = $mysqli->query($currentPromoPrice);
+
+      if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+          $currentPromotion = $row['currentPromotion'];
+          $adPrice = $row['adPrice'];
+          echo " " . $adprice . " " . $currentPromotion;
+        }
+      }
 
       $randNum = generateID();
       $yardSaleID = "$userID" . "$randNum";
@@ -89,7 +89,7 @@
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-      header("Location: /yardSale/addMerchandise.php");
+      // header("Location: /yardSale/addMerchandise.php");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
