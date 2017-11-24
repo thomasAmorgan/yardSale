@@ -61,7 +61,7 @@
         while ($row = $result->fetch_assoc()) {
           $currentPromotion = $row['currentPromotion'];
           $adPrice = $row['adPrice'];
-          echo " " . $adprice . " " . $currentPromotion;
+          echo " " . $adPrice . " " . $currentPromotion;
         }
       }
 
