@@ -152,7 +152,7 @@
   var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
                       "zipCode", "itemName"];
   var displayOptions = ["Yardsale ID", "Host", "Yardsale Name", "City", "Zip Code",
-                        "Item Name"]
+                        "Item Name"];
 
   var searchOptions = document.getElementById("searchOptions");
 

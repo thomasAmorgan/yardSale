@@ -141,13 +141,15 @@
 <script type="text/javascript">
   var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
                       "zipCode"];
+  var displayOptions = ["Yardsale ID", "Host", "Yardsale Name", "City", "Zip Code",
+                        "Item Name"];
 
   var searchOptions = document.getElementById("searchOptions");
 
   for (var i = 0; i < optionsArray.length; i++) {
     var opt = document.createElement("option");
     opt.value = optionsArray[i];
-    opt.innerHTML = optionsArray[i];
+    opt.innerHTML = displayOptions[i];
     searchOptions.appendChild(opt);
   }
 </script>
