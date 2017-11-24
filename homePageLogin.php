@@ -7,6 +7,7 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~ -->
     <?php
+      include 'functions/databaseConnect.php';
       if ($_SESSION['loggedIn'] == false) {
         $_SESSION['status'] = "failed";
         header("location: loginPage.php");
@@ -23,7 +24,10 @@
     <div class="">
       <a href="/yardSale/homePageLogin.php">Home</a>
       <a href="/yardSale/userPage.php">User Page</a>
-      <a href="/yardSale/managersPage.php">Manager Page</a>
+      <?php if ($_SESSION['isManager']) {
+        echo "<a href='/yardSale/managersPage.php'>Manager Page</a>";
+      } ?>
+      <!-- <a href="/yardSale/managersPage.php">Manager Page</a> -->
       <a href='/yardSale/newYardSalePage.php'>Create Yardsale</a>
       <a href='/yardSale/functions/logout.php'>Logout</a>
     </div>
@@ -54,7 +58,7 @@
 
     <div class="">
       <?php
-        include 'functions/databaseConnect.php';
+        // include 'functions/databaseConnect.php';
 
         $searchString = $_POST["searchBar"];
         $searchOption = $_POST["searchOptions"];
