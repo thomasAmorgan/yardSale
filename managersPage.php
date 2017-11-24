@@ -13,25 +13,25 @@
         header("location: loginPage.php");
       }
 
-      // if ($_SESSION['isManager'] == false) {
-      //   header("location: homePageLogin.php");
-      // }
-      $userID = $_SESSION['userName'];
-      $isManager = false;
-
-      $checkManager = "SELECT * FROM UserProfiles
-                       WHERE manager = true
-                       AND userID = '$userID'";
-
-      $checkManagerResult = $mysqli->query($checkManager);
-
-      if ($checkManagerResult->num_rows > 0) {
-        $isManager = true;
-      }
-
-      else {
+      if ($_SESSION['isManager'] == false) {
         header("location: homePageLogin.php");
       }
+      // $userID = $_SESSION['userName'];
+      // $isManager = false;
+      //
+      // $checkManager = "SELECT * FROM UserProfiles
+      //                  WHERE manager = true
+      //                  AND userID = '$userID'";
+      //
+      // $checkManagerResult = $mysqli->query($checkManager);
+      //
+      // if ($checkManagerResult->num_rows > 0) {
+      //   $isManager = true;
+      // }
+      //
+      // else {
+      //   header("location: homePageLogin.php");
+      // }
     ?>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~ END: CHECK IF LOGGED IN ~~~~~~~~~~~~~~~~~~~~~~~ -->
   </head>
