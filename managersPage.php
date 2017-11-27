@@ -83,8 +83,8 @@
               "Host: " . $row["userID"] . "<br>" .
               "Date: " . $row["yardSaleDate"] . "<br>" .
               "Promotion: " . $row["discountPercentage"] . "<br>" .
-              "Price: " . $row["adPrice"] . "<br>" .
-              "Profit: " . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br><br>";
+              "Price: $" . $row["adPrice"] . "<br>" .
+              "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br><br>";
             }
           }
 
