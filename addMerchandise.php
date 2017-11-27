@@ -37,7 +37,6 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <?php
     $yardSaleID = $_SESSION['yardSaleID'];
-    echo "YARDSALEID: " . "$yardSaleID";
 
     if (!empty($_POST)) {
       $yardSaleID = $_POST['editYardSaleItems'];
@@ -124,7 +123,7 @@
               echo "<br><b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                    "Name: " . $row["itemName"] . "<br>" .
                    "Price: $" . $row["price"] .  "<br>";
-                   
+
               if ($row['sold'] == 0) {
                 echo "Sold: Not Sold <br>";
               }
