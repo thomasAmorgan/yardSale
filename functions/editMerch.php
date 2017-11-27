@@ -64,8 +64,16 @@
               echo "<b> Merch ID: " . $row["merchID"] . "</b> <br>" .
                    "Name: " . $row["itemName"] . "<br>" .
                    "Price: $" . $row["price"] .  "<br>" .
-                   "Sold: " . $row["sold"] . "<br>" .
-                   "Description: " . $row["description"] . "<br>";
+
+              if ($row['sold'] == 0) {
+                echo "Sold: Not Sold <br>";
+              }
+
+              else {
+                echo "Sold: Sold <br>";
+              }
+
+              echo "Description: " . $row["description"] . "<br>";
 
               echo "<p><b>Edit Info Below</b></p>";
             }
