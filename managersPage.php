@@ -54,8 +54,6 @@
     <div class="">
       <p><b>Current Promotion and Price/Ad</b></p>
       <?php
-        // include 'functions/databaseConnect.php';
-
         $currentPromoPrice = "SELECT * FROM Discount";
 
         $result = $mysqli->query($currentPromoPrice);
@@ -67,6 +65,35 @@
                  "Advertisement Price: $" . $row["adPrice"] .  "<br>";
           }
         }
+       ?>
+    </div>
+
+    <div class="">
+      <p><b>Yardsale Incomes</b></p>
+      <?php
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Displays all yardsales in the db
+        else {
+          $allYardSales = "SELECT * FROM YardSales";
+          $result = $mysqli->query($allYardSales);
+
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "<b>" .$row["yardSaleName"] . "</b>" .
+              "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+              "Host: " . $row["userID"] . "<br>" .
+              "Date: " . $row["yardSaleDate"] . "<br>" .
+              "Promotion: " . $row["discountPercentage"] . "<br>"
+              "Price: " . $row["adPrice"] . "<br>"
+              "Profit: " . $row['adPrice'] - ($row["discountPercentage"] * $row['adPrice']) . "<br>";
+            }
+          }
+
+          else {
+            echo "<br> <br>There are no yardsales";
+          }
+        }
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
     </div>
 
