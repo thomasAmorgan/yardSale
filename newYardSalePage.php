@@ -129,7 +129,7 @@
 			<select id="states" name="yardSaleState"> </select>
       <br>
       <label for="yardSaleZip">Zip Code: </label>
-			<input type="text" name="yardSaleZip" id="yardSaleZip" required>
+			<input type="number" name="yardSaleZip" id="yardSaleZip" required>
 			<br>
 
       <p><b>Date of Yardsale</b></p>
