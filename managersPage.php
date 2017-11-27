@@ -40,7 +40,7 @@
     <div class="">
       <form class="" action="functions/updatePromoPrice.php" method="post">
         <p>Adjust the promotion percent or the amount per advertisement.</p>
-        <p>Promotion should be entered in as a decimal value example 0.6 = 40%</p>
+        <p>Promotion should be entered in as a decimal value example 0.4 = 40%</p>
         <input type="number" step="0.01" name="amount" id="amount">
         <select name="promoPrice" id="promoPrice">
           <option value="currentPromotion">Promotion</option>
