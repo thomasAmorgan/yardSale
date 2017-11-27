@@ -113,7 +113,7 @@
                     </select>
                     <br>
                     <label for='yardSaleZip'>Zip Code: </label>
-                    <input type='text' name='yardSaleZip' id='yardSaleZip'
+                    <input type='number' name='yardSaleZip' id='yardSaleZip'
                      value='$zipCode' required>
                     <br>
 
