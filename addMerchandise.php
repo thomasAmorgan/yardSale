@@ -34,6 +34,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <?php
     $yardSaleID = $_SESSION['yardSaleID'];
+    echo "YARDSALEID: " . "$yardSaleID";
 
     if (!empty($_POST)) {
       $yardSaleID = $_POST['editYardSaleItems'];
