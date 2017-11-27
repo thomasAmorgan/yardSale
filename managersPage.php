@@ -63,7 +63,7 @@
         if ($result->num_rows > 0) {
 
           while ($row = $result->fetch_assoc()) {
-            echo "Promotion: " . (100 - ($row["currentPromotion"] * 100)) . "%<br>" .
+            echo "Promotion: " . (($row["currentPromotion"] * 100)) . "%<br>" .
                  "Advertisement Price: $" . $row["adPrice"] .  "<br>";
           }
         }
