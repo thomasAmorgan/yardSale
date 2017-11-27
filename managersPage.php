@@ -83,8 +83,8 @@
               "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
               "Host: " . $row["userID"] . "<br>" .
               "Date: " . $row["yardSaleDate"] . "<br>" .
-              "Promotion: " . $row["discountPercentage"] . "<br>"
-              "Price: " . $row["adPrice"] . "<br>"
+              "Promotion: " . $row["discountPercentage"] . "<br>" .
+              "Price: " . $row["adPrice"] . "<br>" .
               "Profit: " . $row['adPrice'] - ($row["discountPercentage"] * $row['adPrice']) . "<br>";
             }
           }
@@ -92,7 +92,7 @@
           else {
             echo "<br> <br>There are no yardsales";
           }
-        
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
     </div>
