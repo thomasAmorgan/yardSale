@@ -25,6 +25,9 @@
   <div class="">
     <a href='/yardSale/homePageLogin.php'>Home</a>
     <a href="/yardSale/userPage.php">User Page</a>
+    <?php if ($_SESSION['isManager']) {
+      echo "<a href='/yardSale/managersPage.php'>Manager Page</a>";
+    } ?>
     <a href='/yardSale/loginPage.php'>Logout</a>
   </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ END: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

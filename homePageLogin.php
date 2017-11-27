@@ -27,7 +27,6 @@
       <?php if ($_SESSION['isManager']) {
         echo "<a href='/yardSale/managersPage.php'>Manager Page</a>";
       } ?>
-      <!-- <a href="/yardSale/managersPage.php">Manager Page</a> -->
       <a href='/yardSale/newYardSalePage.php'>Create Yardsale</a>
       <a href='/yardSale/functions/logout.php'>Logout</a>
     </div>
