@@ -61,7 +61,7 @@
         while ($row = $result->fetch_assoc()) {
           $currentPromotion = $row['currentPromotion'];
           $adPrice = $row['adPrice'];
-          // echo " " . $adPrice . " " . $currentPromotion;
+          echo " PROMO/PRICE: " . $adPrice . " " . $currentPromotion;
         }
       }
 
@@ -89,7 +89,7 @@
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-      header("Location: /yardSale/addMerchandise.php");
+      // header("Location: /yardSale/addMerchandise.php");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
