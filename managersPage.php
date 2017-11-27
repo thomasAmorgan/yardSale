@@ -82,7 +82,7 @@
               "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
               "Host: " . $row["userID"] . "<br>" .
               "Date: " . $row["yardSaleDate"] . "<br>" .
-              "Promotion: " . $row["discountPercentage"] . "%<br>" .
+              "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
               "Price: $" . $row["adPrice"] . "<br>" .
               "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br><br>";
             }
