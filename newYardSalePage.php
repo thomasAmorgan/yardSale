@@ -76,7 +76,7 @@
                               VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                               '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                               '$yardSaleDescription', '$yardSaleState',
-                              '$yardSaleZip', '$yardSaleCity', '$currentPromotion'
+                              '$yardSaleZip', '$yardSaleCity', '$currentPromotion',
                               '$adPrice')";
       // $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
       //                         yardSaleDate, yardSaleTime, streetAddress,
