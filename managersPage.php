@@ -73,7 +73,7 @@
       <?php
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Displays all yardsales in the db
-        else {
+
           $allYardSales = "SELECT * FROM YardSales";
           $result = $mysqli->query($allYardSales);
 
@@ -92,7 +92,7 @@
           else {
             echo "<br> <br>There are no yardsales";
           }
-        }
+        
 //~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
     </div>
