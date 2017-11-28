@@ -35,6 +35,19 @@
 
     <hr>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="">
+      <p>To look at statistics for last week, month, or year select the option below and click view</p>
+      <form class="" action="" method="post">
+        <label for="incomeStatistic">Income Statistics: </label>
+        <select name="incomeStatistic" id="incomeStatistic"></select>
+        <button type="submit" formmethod="post">View</button>
+      </form>
+    </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <hr>
+
 <!-- ~~~~~~~~~~~~~~~~~ START: CHANGE PROMOS/PRICE FORM ~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <form class="" action="functions/updatePromoPrice.php" method="post">
@@ -51,7 +64,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~ END: CHANGE PROMOS/PRICE FORM ~~~~~~~~~~~~~~~~~~~~~~ -->
 
     <div class="">
-      <p><b>Current Promotion and Price/Ad</b></p>
+      <p><b>Current Promotion and Price</b></p>
       <?php
         $currentPromoPrice = "SELECT * FROM Discount";
 
