@@ -123,7 +123,7 @@
             // WEEK
             if ($_POST['incomeStatistic'] == "week") {
               $d = strtotime($yardSaleDate);
-              echo "WEEK: " . $d;
+              echo "WEEK: " . date("m/d/Y", $d);
             }
 
             // MONTH
