@@ -115,10 +115,11 @@
 
             $lastCalculatedPrice = $lastPrice - ($lastPromo * $lastPrice);
 
+            $lastWeek = strtotime($currentDate) - (6 * 24 * 60 * 60);
+            $twoWeeksAgo = strtotime($currentDate) - (2 * (6 * 24 * 60 * 60));
+
             // WEEK
             if ($_POST['incomeStatistic'] == "week") {
-              $lastWeek = strtotime($currentDate) - (6 * 24 * 60 * 60);
-              $twoWeeksAgo = strtotime($currentDate) - (2 * (6 * 24 * 60 * 60));
 
               if ((-1 * ($currentDate - $lastWeek)) >= $d && (-1 * ($currentDate - $twoWeeksAgo)) < $d) {
                 $lastTotal += $lastCalculatedPrice;
@@ -130,6 +131,10 @@
             elseif ($_POST['incomeStatistic'] == "month") {
               $lastMonth = strtotime($currentDate) - (30 * 24 * 60 * 60);
               $twoMonthsAgo = strtotime($currentDate) - (2 * (30 * 24 * 60 * 60));
+
+              if ((-1 * ($currentDate - $lastWeek)) >= $d && (-1 * ($currentDate - $twoWeeksAgo)) < $d) {
+                $profitsLastWeek += $lastCalculatedPrice;
+              }
 
               if ((-1 * ($currentDate - $lastMonth)) >= $d && (-1 * ($currentDate - $twoMonthsAgo)) < $d) {
                 $lastTotal += $lastCalculatedPrice;
