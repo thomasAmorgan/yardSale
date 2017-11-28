@@ -118,8 +118,6 @@
             $lastPromo = $row['discountPercentage'];
             $lastPrice = $row['adPrice'];
 
-            echo "string";
-
             $lastCalculatedPrice = $lastPrice - ($lastPromo * $lastPrice);
 
             if ($_POST['incomeStatistic'] == "week") {
