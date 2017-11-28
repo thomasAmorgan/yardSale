@@ -22,7 +22,7 @@
 
   <body>
 
-    <h1>YardSale!</h1>
+    <h3>Manager Page</h3>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ START: NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
@@ -67,12 +67,37 @@
        ?>
     </div>
 
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY TOTAL PROFITS ~~~~~~~~~~~~~~~~~~~~~~~~
+    <div class="">
+      <p><b>Total Income</b></p>
+      <?php
+        $income = 0;
+        $totalIncomeQuery = "SELECT discountPercentage, adPrice FROM YardSales";
+
+        $incomeResult = $mysqli->query($totalIncomeQuery);
+
+        if ($incomeResult->num_rows > 0) {
+          while ($row = $incomeResult->fetch_assoc()) {
+            $promo = $row['discountPercentage'];
+            $price = $row['adPrice'];
+
+            $calculatedPrice = $price - ($promo * $price);
+
+            $income += $calculatedPrice;
+
+
+          }
+          echo "Income: $" . $income;
+        }
+      ?>
+    </div>
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY TOTAL PROFITS ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Displays all yardsales in the db
     <div class="">
       <p><b>Yardsale Incomes</b></p>
       <?php
-//~~~~~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Displays all yardsales in the db
-
           $allYardSales = "SELECT * FROM YardSales";
           $result = $mysqli->query($allYardSales);
 
@@ -91,11 +116,9 @@
           else {
             echo "<br> <br>There are no yardsales";
           }
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ?>
     </div>
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   </body>
 </html>
