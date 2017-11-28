@@ -94,7 +94,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~ END: DISPLAY TOTAL PROFITS ~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <!-- ~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~ -->
-// Displays all yardsales in the db
+<!-- Displays all yardsales in the db -->
     <div class="">
       <p><b>Yardsale Incomes</b></p>
       <?php
