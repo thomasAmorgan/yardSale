@@ -162,8 +162,8 @@
               $lastWeek = strtotime($currentDate) - (7 * 24 * 60 * 60);
               $twoWeeksAgo = strtotime($currentDate) - (2 * (7 * 24 * 60 * 60));
 
-              echo "LAST WEEK: " . $lastWeek;
-              echo "TWO WEEKS AGO: " . $twoWeeksAgo;
+              echo "<br>LAST WEEK: " . $lastWeek;
+              echo "<br>TWO WEEKS AGO: " . $twoWeeksAgo;
 
               if (($currentDate - $lastWeek) >= $d && ($currentDate - $twoWeeksAgo) < $d) {
                 $lastTotal += $lastCalculatedPrice;
