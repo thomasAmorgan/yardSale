@@ -124,6 +124,13 @@
             if ($_POST['incomeStatistic'] == "week") {
               $d = strtotime($yardSaleDate);
               echo "<br>WEEK: " . date("m/d/Y", $d);
+
+              $lastWeek = time() - (7 * 24 * 60 * 60);
+              $twoWeeksAgo = time() - (2 * (7 * 24 * 60 * 60));
+
+              if (($currentDate - $lastWeek) >= $d && ($currentDate - $twoWeeksAgo) < $d) {
+                $lastTotal += $lastCalculatedPrice;
+              }
             }
 
             // MONTH
