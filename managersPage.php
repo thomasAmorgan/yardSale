@@ -73,10 +73,10 @@
       <form class="" action="" method="post">
         <label for="incomeStatistic">Income Statistics: </label>
         <select name="incomeStatistic" id="incomeStatistic">
+          <option value="all">All</option>
           <option value="week">Week</option>
           <option value="month">Month</option>
           <option value="year">Year</option>
-          <option value="all">All</option>
         </select>
         <button type="submit" formmethod="post">Filter</button>
       </form>
