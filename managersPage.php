@@ -153,7 +153,7 @@
             }
           }
           echo "<p><b>Last Month Income</b></p>";
-          echo "Income: $" . $income;
+          echo "Income: $" . $lastTotal;
         }
 
         else {
