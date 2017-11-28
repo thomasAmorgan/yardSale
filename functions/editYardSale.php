@@ -65,7 +65,7 @@
               $state = $row['state'];
               $zipCode = $row['zipCode'];
               $city = $row['city'];
-              $_SESSION['currentPromotion'] = $row['currentPromotion'];
+              $_SESSION['currentPromotion'] = $row['discountPercentage'];
               $_SESSION['adPrice'] = $row['adPrice'];
 
               echo "<h3>" . $row["yardSaleName"] . "</h3>" .
