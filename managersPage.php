@@ -120,10 +120,13 @@
 
             $lastCalculatedPrice = $lastPrice - ($lastPromo * $lastPrice);
 
+            // WEEK
             if ($_POST['incomeStatistic'] == "week") {
-              echo "<br>WEEK";
+              $d = strtotime($yardSaleDate);
+              echo "WEEK: " . $d;
             }
 
+            // MONTH
             elseif ($_POST['incomeStatistic'] == "month") {
               if (((int)$currentMonth - 1) == (int)$yardSaleMonth) {
                 $lastTotal += $lastCalculatedPrice;
@@ -134,6 +137,7 @@
               }
             }
 
+            // YEAR
             else {
               if (((int)$currentYear - 1) == (int)$yardSaleYear) {
                 $lastTotal += $lastCalculatedPrice;
