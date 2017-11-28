@@ -84,7 +84,8 @@
             }
 
             elseif ($_POST['incomeStatistic'] == month) {
-              echo "<br>MONTH";
+              echo "<br>MONTH: ";
+              echo (int)$yardSaleMonth;
             }
 
             else {
