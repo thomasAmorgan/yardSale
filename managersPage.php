@@ -75,7 +75,8 @@
         <select name="incomeStatistic" id="incomeStatistic">
           <option value="week">Week</option>
           <option value="month">Month</option>
-          <option value="Year">Year</option>
+          <option value="year">Year</option>
+          <option value="all">All</option>
         </select>
         <button type="submit" formmethod="post">Filter</button>
       </form>
@@ -85,7 +86,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <?php
-      if (!empty($_POST['incomeStatistic'])) {
+      if ($_POST['incomeStatistic'] != "all") {
 
         $searchQuery = "SELECT * FROM YardSales";
 
@@ -168,7 +169,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~ START: DISPLAY TOTAL PROFITS ~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
       <?php
-        if (empty($_POST['incomeStatistic'])) {
+        if ($_POST['incomeStatistic'] == "all") {
           echo "<p><b>Total Income</b></p>";
           $income = 0;
           $totalIncomeQuery = "SELECT discountPercentage, adPrice FROM YardSales";
@@ -197,7 +198,7 @@
 <!-- Displays all yardsales in the db -->
     <div class="">
       <?php
-        if (empty($_POST['incomeStatistic'])) {
+        if ($_POST['incomeStatistic'] == "all") {
           echo "<br><p><b>Yardsale Incomes</b></p>";
           $allYardSales = "SELECT * FROM YardSales";
           $result = $mysqli->query($allYardSales);
