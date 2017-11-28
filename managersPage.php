@@ -69,6 +69,7 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
+      <p><b>Filter</b></p>
       <p>To filter statistics for last week, month, or year select an option below and click filter</p>
       <form class="" action="" method="post">
         <label for="incomeStatistic">Income Statistics: </label>
@@ -130,13 +131,13 @@
 
                 $lastTotal += $calculatedPrice;
 
-                echo "<b>Name: " . $row["yardSaleName"] . "</b><br>" .
-                "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                "Host: " . $row["userID"] . "<br>" .
-                "Date: " . $row["yardSaleDate"] . "<br>" .
-                "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
-                "Price: $" . $row["adPrice"] . "<br>" .
-                "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br><br>";
+                // echo "<br><b>Name: " . $row["yardSaleName"] . "</b><br>" .
+                // "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+                // "Host: " . $row["userID"] . "<br>" .
+                // "Date: " . $row["yardSaleDate"] . "<br>" .
+                // "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
+                // "Price: $" . $row["adPrice"] . "<br>" .
+                // "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br>";
               }
 
               else {
@@ -147,15 +148,9 @@
             else {
               echo "<br>YEAR";
             }
-
-            // echo "<b>Name: " . $row["yardSaleName"] . "</b><br>" .
-            // "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-            // "Host: " . $row["userID"] . "<br>" .
-            // "Date: " . $row["yardSaleDate"] . "<br>" .
-            // "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
-            // "Price: $" . $row["adPrice"] . "<br>" .
-            // "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br><br>";
           }
+          echo "<p><b>Last Month Income</b></p>";
+          echo "Income: $" . $income;
         }
 
         else {
