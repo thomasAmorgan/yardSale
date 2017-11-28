@@ -66,27 +66,29 @@
         $currentDay = substr($currentDate, 3, 2);
         $currentYear = substr($currentDate, 6, 4);
 
-        echo "SEPERATED - MONTH: " . $currentMonth . "DAY: " . $currentDay . "YEAR: " . $currentYear;
+        echo "<br>SEPERATED - MONTH: " . $currentMonth . " DAY: " . $currentDay . " YEAR: " . $currentYear;
 
         if ($searchResult->num_rows > 0) {
 
           while ($row = $searchResult->fetch_assoc()) {
 
             $yardSaleDate = $row['yardSaleDate'];
-            // echo "<br>DATE: " . $yardSaleDate . "<br>";
-            // $date = strtotime(Y/m/d, $yardSaleDate);
-            // echo "<br>DATE: " . $date . "<br>";
 
-//~~~~~~~~~~~~~~~~~~~~~~~~ START: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~
             // 01/01/2017
-            $month = substr($yardSaleDate, 0, 2);
-            $day = substr($yardSaleDate, 3, 2);
-            $year = substr($yardSaleDate, 6, 4);
-//~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+            $yardSaleMonth = substr($yardSaleDate, 0, 2);
+            $yardSaleDay = substr($yardSaleDate, 3, 2);
+            $yardSaleYear = substr($yardSaleDate, 6, 4);
 
             if ($_POST['incomeStatistic'] == week) {
-              # code...
+              echo "<br>WEEK";
+            }
+
+            elseif ($_POST['incomeStatistic'] == month) {
+              echo "<br>MONTH";
+            }
+
+            else {
+              echo "<br>YEAR";
             }
 
             // echo "<b>Name: " . $row["yardSaleName"] . "</b><br>" .
