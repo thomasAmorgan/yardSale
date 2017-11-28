@@ -40,10 +40,11 @@
       <p>To filter statistics for last week, month, or year select an option below and click filter</p>
       <form class="" action="" method="post">
         <label for="incomeStatistic">Income Statistics: </label>
-        <select name="incomeStatistic" id="incomeStatistic"></select>
+        <select name="incomeStatistic" id="incomeStatistic">
           <option value="week">Week</option>
           <option value="month">Month</option>
           <option value="Year">Year</option>
+        </select>
         <button type="submit" formmethod="post">Filter</button>
       </form>
     </div>
