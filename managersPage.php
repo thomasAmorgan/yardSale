@@ -86,7 +86,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div class="">
     <?php
-      if ($_POST['incomeStatistic'] != "all") {
+      if ($_POST['incomeStatistic'] != "all" && !empty($_POST['incomeStatistic'])) {
 
         $searchQuery = "SELECT * FROM YardSales";
 
