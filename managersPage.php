@@ -125,6 +125,7 @@
             }
 
             elseif ($_POST['incomeStatistic'] == "month") {
+              echo "<br>MONTH: " . $yardSaleMonth;
               if ((int)$yardSaleMonth - 1 < (int)$currentMonth) {
                 //figure out how to check for january
 
