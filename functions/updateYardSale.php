@@ -39,7 +39,7 @@
     $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                             yardSaleDate, yardSaleTime, streetAddress,
                             yardSaleName, yardSaleDescription, state,
-                            zipCode, city, currentPromotion, adPrice)
+                            zipCode, city, discountPercentage, adPrice)
                             VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                             '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                             '$yardSaleDescription', '$yardSaleState',
