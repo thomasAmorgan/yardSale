@@ -37,16 +37,14 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
-      <p>To look at statistics for last week, month, or year select the option below and click view</p>
+      <p>To filter statistics for last week, month, or year select an option below and click filter</p>
       <form class="" action="" method="post">
         <label for="incomeStatistic">Income Statistics: </label>
         <select name="incomeStatistic" id="incomeStatistic"></select>
-        <button type="submit" formmethod="post">View</button>
+        <button type="submit" formmethod="post">Filter</button>
       </form>
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-    <hr>
 
 <!-- ~~~~~~~~~~~~~~~~~ START: CHANGE PROMOS/PRICE FORM ~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
