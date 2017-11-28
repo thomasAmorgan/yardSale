@@ -100,6 +100,19 @@
         $currentDay = substr($currentDate, 3, 2);
         $currentYear = substr($currentDate, 6, 4);
 
+        if ($currentDay >= 1 && $currentDay <= 7) {
+          $currentWeek = 1;
+        }
+        elseif ($currentDay >= 8 && $currentDay <= 15) {
+          $currentWeek = 2;
+        }
+        elseif ($currentDay >= 16 && $currentDay <= 23) {
+          $currentWeek = 3;
+        }
+        elseif ($currentDay >= 24 && $currentDay <= 31) {
+          $currentWeek = 4;
+        }
+
         $lastTotal = 0;
 
         echo "<br>SEPERATED - MONTH: " . $currentMonth . " DAY: " . $currentDay . " YEAR: " . $currentYear;
@@ -115,6 +128,19 @@
             $yardSaleDay = substr($yardSaleDate, 3, 2);
             $yardSaleYear = substr($yardSaleDate, 6, 4);
 
+            if ($yardSaleDay >= 1 && $yardSaleDay <= 7) {
+              $yardSaleWeek = 1;
+            }
+            elseif ($yardSaleDay >= 8 && $yardSaleDay <= 15) {
+              $yardSaleWeek = 2;
+            }
+            elseif ($yardSaleDay >= 16 && $yardSaleDay <= 23) {
+              $yardSaleWeek = 3;
+            }
+            elseif ($yardSaleDay >= 24 && $yardSaleDay <= 31) {
+              $yardSaleWeek = 4;
+            }
+
             $lastPromo = $row['discountPercentage'];
             $lastPrice = $row['adPrice'];
 
@@ -122,15 +148,23 @@
 
             // WEEK
             if ($_POST['incomeStatistic'] == "week") {
-              $d = strtotime($yardSaleDate);
-              echo "<br>WEEK: " . date("m/d/Y", $d);
-
-              $lastWeek = strtotime($currentDate) - (7 * 24 * 60 * 60);
-              $twoWeeksAgo = strtotime($currentDate) - (2 * (7 * 24 * 60 * 60));
-
-              if (($currentDate - $lastWeek) >= $d && ($currentDate - $twoWeeksAgo) < $d) {
+              if (($currentWeek - 1) == $yardSaleWeek) {
                 $lastTotal += $lastCalculatedPrice;
               }
+              elseif ($yardSaleWeek == 1 && $currentWeek == 4) {
+                $lastTotal += $lastCalculatedPrice;
+              }
+
+              // $d = strtotime($yardSaleDate);
+              // echo "<br>WEEK: " . date("m/d/Y", $d);
+              //
+              // $lastWeek = strtotime($currentDate) - (7 * 24 * 60 * 60);
+              // $twoWeeksAgo = strtotime($currentDate) - (2 * (7 * 24 * 60 * 60));
+              //
+              // if (($currentDate - $lastWeek) >= $d && ($currentDate - $twoWeeksAgo) < $d) {
+              //   $lastTotal += $lastCalculatedPrice;
+              // }
+
             }
 
             // MONTH
@@ -153,15 +187,15 @@
           }
 
           if ($_POST['incomeStatistic'] == "week") {
-            echo "<p><b>Last Week Income</b></p>";
+            echo "<p><b>Last Week's Income</b></p>";
           }
 
           elseif ($_POST['incomeStatistic'] == "month") {
-            echo "<p><b>Last Month Income</b></p>";
+            echo "<p><b>Last Month's Income</b></p>";
           }
 
           else {
-            echo "<p><b>Last Year Income</b></p>";
+            echo "<p><b>Last Year's Income</b></p>";
           }
           echo "Income: $" . $lastTotal;
         }
