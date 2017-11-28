@@ -170,7 +170,7 @@
               echo "<br>CURR - 2LAST: " . -1 * ($currentDate - $twoWeeksAgo);
 
 
-              if (($currentDate - $lastWeek) >= $d && ($currentDate - $twoWeeksAgo) < $d) {
+              if ((-1 * ($currentDate - $lastWeek)) >= $d && (-1 * ($currentDate - $twoWeeksAgo)) < $d) {
                 $lastTotal += $lastCalculatedPrice;
               }
 
