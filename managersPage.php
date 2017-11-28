@@ -126,30 +126,32 @@
 
             elseif ($_POST['incomeStatistic'] == "month") {
               if (((int)$currentMonth - 1) == (int)$yardSaleMonth) {
-                //figure out how to check for january
-
                 $lastTotal += $lastCalculatedPrice;
-
-                // echo "<br><b>Name: " . $row["yardSaleName"] . "</b><br>" .
-                // "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
-                // "Host: " . $row["userID"] . "<br>" .
-                // "Date: " . $row["yardSaleDate"] . "<br>" .
-                // "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
-                // "Price: $" . $row["adPrice"] . "<br>" .
-                // "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br>";
               }
 
               elseif ((int)$yardSaleMonth == 1 && (int)$currentMonth == 12) {
                 $lastTotal += $lastCalculatedPrice;
               }
-
             }
 
             else {
-              echo "<br>YEAR";
+              if (((int)$currentYear - 1) == (int)$yardSaleYear) {
+                $lastTotal += $lastCalculatedPrice;
+              }
             }
           }
-          echo "<p><b>Last Month Income</b></p>";
+
+          if ($_POST['incomeStatistic'] == "week") {
+            echo "<p><b>Last Week Income</b></p>";
+          }
+
+          elseif ($_POST['incomeStatistic'] == "month") {
+            echo "<p><b>Last Month Income</b></p>";
+          }
+
+          else {
+            echo "<p><b>Last Year Income</b></p>";
+          }
           echo "Income: $" . $lastTotal;
         }
 
