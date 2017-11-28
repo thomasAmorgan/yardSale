@@ -94,13 +94,10 @@
         $searchResult = $mysqli->query($searchQuery);
 
         $currentDate = date("m/d/Y");
-        echo "TODAY: " . "$currentDate";
 
         $currentYear = substr($currentDate, 6, 4);
 
         $lastTotal = 0;
-
-        echo "<br>SEPERATED - MONTH: " . $currentMonth . " DAY: " . $currentDay . " YEAR: " . $currentYear;
 
         if ($searchResult->num_rows > 0) {
 
@@ -160,7 +157,7 @@
         }
 
         else {
-          echo "<br> <br>There are no yardsales that match the search";
+          echo "<br>There are no yardsales that match the search";
         }
       }
      ?>
@@ -215,7 +212,7 @@
           }
 
           else {
-            echo "<br> <br>There are no yardsales";
+            echo "<br>There are no yardsales";
           }
         }
       ?>
