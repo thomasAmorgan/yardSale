@@ -157,7 +157,8 @@
 
               $d = strtotime($yardSaleDate);
               // echo "<br>WEEK: " . date("m/d/Y", $d);
-              echo "<br>WEEK: " . $d;
+              echo "<br>CURR WEEK: " . strtotime($currentDate);
+              echo "<br>YS WEEK: " . $d;
 
               $lastWeek = strtotime($currentDate) - (7 * 24 * 60 * 60);
               $twoWeeksAgo = strtotime($currentDate) - (2 * (7 * 24 * 60 * 60));
