@@ -98,6 +98,7 @@
         $currentYear = substr($currentDate, 6, 4);
 
         $lastTotal = 0;
+        $profitsLastWeek = 0;
 
         if ($searchResult->num_rows > 0) {
 
@@ -121,6 +122,7 @@
 
               if ((-1 * ($currentDate - $lastWeek)) >= $d && (-1 * ($currentDate - $twoWeeksAgo)) < $d) {
                 $lastTotal += $lastCalculatedPrice;
+                $profitsLastWeek += $lastCalculatedPrice;
               }
             }
 
@@ -147,6 +149,8 @@
           }
 
           elseif ($_POST['incomeStatistic'] == "month") {
+            $profitsLastWeek = $lastTotal + $profitsLastWeek;
+            
             echo "<p><b>Last Month's Income</b></p>";
           }
 
