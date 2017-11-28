@@ -41,10 +41,60 @@
       <form class="" action="" method="post">
         <label for="incomeStatistic">Income Statistics: </label>
         <select name="incomeStatistic" id="incomeStatistic"></select>
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+          <option value="Year">Year</option>
         <button type="submit" formmethod="post">Filter</button>
       </form>
     </div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ END: SEARCH FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div class="">
+    <?php
+      if (!empty($_POST['incomeStatistic'])) {
+
+        $searchQuery = "SELECT * FROM YardSales";
+
+        $searchResult = $mysqli->query($searchQuery);
+
+        echo "TODAY: " . date("Y/m/d");
+
+        if ($searchResult->num_rows > 0) {
+
+          while ($row = $searchResult->fetch_assoc()) {
+
+            $yardSaleDate = $row['yardSaleDate'];
+
+//~~~~~~~~~~~~~~~~~~~~~~~~ START: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            // 01/01/2017
+            $month = substr($yardSaleDate, 0, 2);
+            $day = substr($yardSaleDate, 3, 2);
+            $year = substr($yardSaleDate, 6, 4);
+//~~~~~~~~~~~~~~~~~~~~~~~~~ END: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+            if ($_POST['incomeStatistic'] == week) {
+              # code...
+            }
+
+            // echo "<b>Name: " . $row["yardSaleName"] . "</b><br>" .
+            // "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
+            // "Host: " . $row["userID"] . "<br>" .
+            // "Date: " . $row["yardSaleDate"] . "<br>" .
+            // "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
+            // "Price: $" . $row["adPrice"] . "<br>" .
+            // "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br><br>";
+          }
+        }
+
+        else {
+          echo "<br> <br>There are no yardsales that match the search";
+        }
+      }
+     ?>
+  </div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~ START: SEARCH FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <!-- ~~~~~~~~~~~~~~~~~ START: CHANGE PROMOS/PRICE FORM ~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="">
