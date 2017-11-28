@@ -59,14 +59,21 @@
 
         $searchResult = $mysqli->query($searchQuery);
 
-        echo "TODAY: " . date("Y/m/d");
+        $currentDate = date("m/d/Y");
+        echo "TODAY: " . "$currentDate";
+
+        $currentMonth = substr($currentDate, 0, 2);
+        $currentDay = substr($currentDate, 3, 2);
+        $currentYear = substr($currentDate, 6, 4);
+
+        echo "SEPERATED - MONTH: " . $currentMonth . "DAY: " . $currentDay . "YEAR: " . $currentYear;
 
         if ($searchResult->num_rows > 0) {
 
           while ($row = $searchResult->fetch_assoc()) {
 
             $yardSaleDate = $row['yardSaleDate'];
-            echo "<br>DATE: " . $yardSaleDate . "<br>";
+            // echo "<br>DATE: " . $yardSaleDate . "<br>";
             // $date = strtotime(Y/m/d, $yardSaleDate);
             // echo "<br>DATE: " . $date . "<br>";
 
