@@ -43,7 +43,7 @@
                             VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                             '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                             '$yardSaleDescription', '$yardSaleState',
-                            '$yardSaleZip', '$yardSaleCity', 0.15, 15)";
+                            '$yardSaleZip', '$yardSaleCity', '$promo', '$price')";
 
     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
