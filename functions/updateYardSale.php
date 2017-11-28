@@ -26,6 +26,9 @@
   $userID = $_SESSION['userName'];
   $yardSaleID = $_SESSION['yardSaleID'];
 
+  $promo = $_SESSION['currentPromotion'];
+  $price = $_SESSION['adPrice'];
+
   $yardSaleDate = "$yardSaleMonth" . '/' . "$yardSaleDay" . '/' . "$yardSaleYear";
   $yardSaleTime = "$yardSaleHour" . "$yardSaleAMPM";
 
@@ -36,11 +39,11 @@
     $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
                             yardSaleDate, yardSaleTime, streetAddress,
                             yardSaleName, yardSaleDescription, state,
-                            zipCode, city)
+                            zipCode, city, currentPromotion, adPrice)
                             VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                             '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
                             '$yardSaleDescription', '$yardSaleState',
-                            '$yardSaleZip', '$yardSaleCity')";
+                            '$yardSaleZip', '$yardSaleCity', 0.15, 15)";
 
     $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
