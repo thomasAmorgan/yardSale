@@ -66,6 +66,8 @@
           while ($row = $searchResult->fetch_assoc()) {
 
             $yardSaleDate = $row['yardSaleDate'];
+            $date = strtotime(Y/m/d,$yardSaleDate);
+            echo "DATE: " . $date . "<br>";
 
 //~~~~~~~~~~~~~~~~~~~~~~~~ START: SPLICE DATE & TIME ~~~~~~~~~~~~~~~~~~~~~~~~~~~
             // 01/01/2017
