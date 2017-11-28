@@ -149,7 +149,7 @@
           }
 
           elseif ($_POST['incomeStatistic'] == "month") {
-            echo "<p>PROFITS LAST WEEK: " . $lastTotal;
+            echo "<p>PROFITS LAST WEEK: " . $profitsLastWeek;
             $lastTotal = $lastTotal + $profitsLastWeek;
             echo "<p><b>Last Month's Income</b></p>";
           }
