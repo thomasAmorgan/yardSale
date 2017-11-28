@@ -118,6 +118,8 @@
             $lastPromo = $row['discountPercentage'];
             $lastPrice = $row['adPrice'];
 
+            echo "string";
+
             $lastCalculatedPrice = $lastPrice - ($lastPromo * $lastPrice);
 
             if ($_POST['incomeStatistic'] == "week") {
@@ -129,7 +131,7 @@
               if (((int)$currentMonth - 1) == (int)$yardSaleMonth) {
                 //figure out how to check for january
 
-                $lastTotal += $calculatedPrice;
+                $lastTotal += $lastCalculatedPrice;
 
                 // echo "<br><b>Name: " . $row["yardSaleName"] . "</b><br>" .
                 // "<b> Yardsale ID: " . $row["yardSaleID"] . "</b> <br>" .
@@ -141,12 +143,9 @@
               }
 
               elseif ((int)$yardSaleMonth == 1 && (int)$currentMonth == 12) {
-                $lastTotal += $calculatedPrice;
+                $lastTotal += $lastCalculatedPrice;
               }
 
-              else {
-                echo "<br>There were no yardsales last month.";
-              }
             }
 
             else {
