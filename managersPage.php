@@ -96,6 +96,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~ START: DISPLAY YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- Displays all yardsales in the db -->
     <div class="">
+      <br>
       <p><b>Yardsale Incomes</b></p>
       <?php
           $allYardSales = "SELECT * FROM YardSales";
