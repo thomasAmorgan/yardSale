@@ -125,7 +125,6 @@
             }
 
             elseif ($_POST['incomeStatistic'] == "month") {
-              echo "<br>MONTH: ";
               if ((int)$yardSaleMonth - 1 < (int)$currentMonth) {
                 //figure out how to check for january
 
@@ -138,6 +137,10 @@
                 // "Promotion: " . ($row["discountPercentage"] * 100) . "%<br>" .
                 // "Price: $" . $row["adPrice"] . "<br>" .
                 // "Profit: $" . ($row['adPrice'] - ($row["discountPercentage"] * $row['adPrice'])) . "<br>";
+              }
+
+              elseif ((int)$yardSaleMonth == 1 && (int)$currentMonth == 12) {
+                $lastTotal += $calculatedPrice;
               }
 
               else {
