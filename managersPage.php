@@ -96,8 +96,6 @@
         $currentDate = date("m/d/Y");
         echo "TODAY: " . "$currentDate";
 
-        $currentMonth = substr($currentDate, 0, 2);
-        $currentDay = substr($currentDate, 3, 2);
         $currentYear = substr($currentDate, 6, 4);
 
         $lastTotal = 0;
@@ -112,8 +110,6 @@
             $d = strtotime($yardSaleDate);
 
             // 01/01/2017
-            $yardSaleMonth = substr($yardSaleDate, 0, 2);
-            $yardSaleDay = substr($yardSaleDate, 3, 2);
             $yardSaleYear = substr($yardSaleDate, 6, 4);
 
             $lastPromo = $row['discountPercentage'];
@@ -139,13 +135,6 @@
               if ((-1 * ($currentDate - $lastMonth)) >= $d && (-1 * ($currentDate - $twoMonthsAgo)) < $d) {
                 $lastTotal += $lastCalculatedPrice;
               }
-              // if (((int)$currentMonth - 1) == (int)$yardSaleMonth) {
-              //   $lastTotal += $lastCalculatedPrice;
-              // }
-              //
-              // elseif ((int)$yardSaleMonth == 1 && (int)$currentMonth == 12) {
-              //   $lastTotal += $lastCalculatedPrice;
-              // }
             }
 
             // YEAR
@@ -196,8 +185,6 @@
               $calculatedPrice = $price - ($promo * $price);
 
               $income += $calculatedPrice;
-
-
             }
             echo "Income: $" . $income;
           }
