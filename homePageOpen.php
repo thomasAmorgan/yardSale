@@ -1,6 +1,13 @@
 <!-- Authors: Thomas Morgan & Grayson Murphy
      Description: Main page, has links for user to login or register. Also
      displays all of the yardsales that are active.
+     https://www.linode.com/docs/troubleshooting/troubleshooting-common-apache-issues
+     https://help.github.com/articles/fetching-a-remote/
+     https://www.w3schools.com/php/php_ref_mysqli.asp
+     https://www.w3schools.com/php/php_mysql_select.asp
+     https://www.w3schools.com/php/php_date.asp
+     http://php.net/manual/en/function.time.php
+     https://gist.github.com/hofmannsven/9164408
 -->
 
 <!DOCTYPE html>
