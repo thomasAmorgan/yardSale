@@ -97,7 +97,7 @@
                 <br>
 
           			<label for='itemPrice'>Price: </label>
-          			<input type='number' name='itemPrice' id='itemPrice' required>
+          			<input type='number' step='0.01' name='itemPrice' id='itemPrice' required>
                 <br>
 
                 <p>Description</p>

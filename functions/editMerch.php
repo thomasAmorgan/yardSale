@@ -90,7 +90,7 @@
                     <br>
 
               			<label for='itemPrice'>Price: </label>
-              			<input type='number' name='itemPrice' id='itemPrice'
+              			<input type='number' step='0.01' name='itemPrice' id='itemPrice'
                      value='$price' required>
                     <br>
 
