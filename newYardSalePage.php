@@ -124,7 +124,7 @@
           while ($row = $result->fetch_assoc()) {
             echo "Current Promotion: " . (($row["currentPromotion"] * 100)) . "%<br>" .
                  "Advertisement Price: $" . $row["adPrice"] .  "<br>" .
-                 "YOur Charge: $" . ($row['adPrice'] - ($row["currentPromotion"] * $row['adPrice']));
+                 "Your Charge: $" . ($row['adPrice'] - ($row["currentPromotion"] * $row['adPrice']));
           }
         }
       ?>
