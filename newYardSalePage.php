@@ -114,6 +114,10 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div>
 		<form action="" method="post">
+      <p>Current promotion: <?php echo "$currentPromotion"; ?></p>
+      <p>Fee for yardsale: <?php echo "$adPrice"; ?></p>
+      <p>You will be charged: <?php echo $adPrice - ($currentPromotion * $adPrice); ?></p>
+
       <p><b>Yardsale Name</b></p>
 			<label for="yardSaleName">Name: </label>
 			<input type="text" name="yardSaleName" id="yardSaleName" required>
