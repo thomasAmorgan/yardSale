@@ -148,7 +148,7 @@
 
                     <br>
                     <br>
-                    <button type='submit' formmethod='post' name='button'>Edit</button>
+                    <button type='submit' formmethod='post' name='button'>Save</button>
                   </form>
                 </div>";
             }
