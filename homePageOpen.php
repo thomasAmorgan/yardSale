@@ -148,7 +148,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~ START: DROPDOWN POP FUNCTION ~~~~~~~~~~~~~~~~~~~~~~ -->
 <script type="text/javascript">
   var optionsArray = ["yardSaleID", "userID", "yardSaleName", "city",
-                      "zipCode"];
+                      "zipCode", "itemName"];
   var displayOptions = ["Yardsale ID", "Host", "Yardsale Name", "City", "Zip Code",
                         "Item Name"];
 
