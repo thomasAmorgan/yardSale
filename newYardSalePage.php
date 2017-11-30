@@ -89,7 +89,7 @@
 
       $createYardSaleResult = $mysqli->query($createYardSaleQuery);
 
-      header("Location: /yardSale/addMerchandise.php");
+      // header("Location: /yardSale/addMerchandise.php");
     }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~ END: CREATE YS FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ?>
@@ -113,11 +113,25 @@
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ START: CREATE YS FORM ~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<div>
-    <?php
-      echo "<p>Current promotion: " . $currentPromotion . "</p>";
-      echo "<p>Fee for yardsale: " . $adPrice . "</p>";
-      echo "<p>You will be charged: " . ($adPrice - ($currentPromotion * $adPrice)) . "</p>";
-    ?>
+    <div class="">
+      <?php
+        $currentPromoPrice = "SELECT * FROM Discount";
+
+        $result = $mysqli->query($currentPromoPrice);
+
+        if ($result->num_rows > 0) {
+
+          while ($row = $result->fetch_assoc()) {
+            echo "Current Promotion: " . (($row["currentPromotion"] * 100)) . "%<br>" .
+                 "Advertisement Price: $" . $row["adPrice"] .  "<br>" .
+                 "Profit: $" . ($row['adPrice'] - ($row["currentPromotion"] * $row['adPrice']));
+          }
+        }
+        echo "<p>Current promotion: " . $currentPromotion . "</p>";
+        echo "<p>Fee for yardsale: " . $adPrice . "</p>";
+        echo "<p>You will be charged: " . ($adPrice - ($currentPromotion * $adPrice)) . "</p>";
+      ?>
+    </div>
 
 		<form action="" method="post">
       <p><b>Yardsale Name</b></p>
