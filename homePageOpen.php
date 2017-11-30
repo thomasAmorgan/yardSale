@@ -1,6 +1,7 @@
 <!-- Authors: Thomas Morgan & Grayson Murphy
      Description: Main page, has links for user to login or register. Also
      displays all of the yardsales that are active.
+     http://tamo234.netlab.uky.edu/yardSale/homePageOpen.php
      https://www.linode.com/docs/troubleshooting/troubleshooting-common-apache-issues
      https://help.github.com/articles/fetching-a-remote/
      https://www.w3schools.com/php/php_ref_mysqli.asp
