@@ -116,7 +116,7 @@
     <?php
       echo "<p>Current promotion: " . $currentPromotion . "</p>";
       echo "<p>Fee for yardsale: " . $adPrice . "</p>";
-      echo "<p>You will be charged: " . $adPrice - ($currentPromotion * $adPrice) . "</p>";
+      echo "<p>You will be charged: " . ($adPrice - ($currentPromotion * $adPrice)) . "</p>";
     ?>
 
 		<form action="" method="post">
