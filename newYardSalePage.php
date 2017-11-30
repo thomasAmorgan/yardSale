@@ -75,7 +75,7 @@
                               zipCode, city, discountPercentage, adPrice)
                               VALUES ('$yardSaleID', '$userID', '$yardSaleDate',
                               '$yardSaleTime', '$yardSaleStreet', '$yardSaleName',
-                              '$yardSaleDescription', '$yardSaleState',
+                              "$yardSaleDescription", '$yardSaleState',
                               '$yardSaleZip', '$yardSaleCity', '$currentPromotion',
                               '$adPrice')";
       // $createYardSaleQuery = "INSERT INTO YardSales (yardSaleID, userID,
